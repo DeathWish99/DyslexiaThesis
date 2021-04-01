@@ -12,9 +12,9 @@ public class ObjectEventHandler : MonoBehaviour
     public Text uiText;
     private void OnMouseDown()
     {
-        uiText.text = "Pointed";
         panel.GetComponent<OpenAndUpdatePanel>().active = true;
         panel.GetComponent<OpenAndUpdatePanel>().SwitchShowHide();
+        panel.GetComponent<OpenAndUpdatePanel>().LoadWord(objName);
         gameController.GetComponent<VoiceController>().currObj = gameObject;
     }
 

@@ -9,6 +9,7 @@ public class VoiceController : MonoBehaviour
 {
     const string LANG_CODE = "id-ID";
 
+    //Object that is to be spawned
     public GameObject currObj;
     [SerializeField] Text uiText;
 
