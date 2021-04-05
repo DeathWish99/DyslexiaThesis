@@ -23,7 +23,7 @@ public class WritingController : LetterTraceClass
     {
         foreach(LetterTrace letterTrace in lettersReceived)
         {
-            GameObject instance = Instantiate(letterTrace.letterObj, gameObject.transform, true);
+            GameObject instance = Instantiate(letterTrace.letterObj, gameObject.transform, false);
 
             if(letterTrace.letter != lettersReceived[0].letter)
             {

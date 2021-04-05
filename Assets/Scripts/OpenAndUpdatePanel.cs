@@ -33,5 +33,6 @@ public class OpenAndUpdatePanel : LetterTraceClass
         }
 
         GetComponent<WritingController>().lettersReceived = lettersToSend;
+        GetComponent<WritingController>().LoadLettersIntoHierarchy();
     }
 }
