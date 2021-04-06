@@ -14,17 +14,17 @@ public class OpenAndUpdatePanel : LetterTraceClass
         gameObject.SetActive(active);
     }
 
-    //Loads an array containing letters of the intended word, and sends it to another script which will handle drawing
+    //Loads an array containing letters of the intended word, and loads it into hierarchy
     public void LoadWord(string receivedWord)
     {
-        List<LetterTrace> lettersToSend = new List<LetterTrace>();
+        List<LetterTrace> lettersToSpawn = new List<LetterTrace>();
 
         foreach (char letter in receivedWord.ToLower())
         {
             int itemIndex = lettersDict.FindIndex(x => x.letter == letter);
             if (itemIndex > -1)
             {
-                lettersToSend.Add(lettersDict[itemIndex]);
+                lettersToSpawn.Add(lettersDict[itemIndex]);
             }
             else
             {
@@ -32,7 +32,17 @@ public class OpenAndUpdatePanel : LetterTraceClass
             }
         }
 
-        GetComponent<WritingController>().lettersReceived = lettersToSend;
-        GetComponent<WritingController>().LoadLettersIntoHierarchy();
+        foreach (LetterTrace letterTrace in lettersToSpawn)
+        {
+            GameObject instance = Instantiate(letterTrace.letterObj, gameObject.transform, false);
+
+            if (letterTrace.letter != lettersToSpawn[0].letter)
+            {
+                instance.SetActive(false);
+            }
+        }
+        
+        GetComponent<DrawLine>().currLetter = lettersToSpawn[0];
+        GetComponent<DrawLine>().currIndex = 0;
     }
 }

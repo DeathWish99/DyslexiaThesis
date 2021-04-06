@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2941244275763544379}
   - component: {fileID: 7853874707382155765}
   - component: {fileID: 7544126756314209060}
+  - component: {fileID: 2962388957645118140}
   m_Layer: 5
   m_Name: Line 1
   m_TagString: Untagged
@@ -74,6 +75,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!136 &2962388957645118140
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1042467088851911817}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4428717201900467545
 GameObject:
   m_ObjectHideFlags: 0
@@ -85,6 +100,7 @@ GameObject:
   - component: {fileID: 7113229044268179775}
   - component: {fileID: 5136687491570323715}
   - component: {fileID: 3563224990976495624}
+  - component: {fileID: 585399556434796952}
   m_Layer: 5
   m_Name: Line 2
   m_TagString: Untagged
@@ -148,6 +164,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!136 &585399556434796952
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428717201900467545}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5802805200310954801
 GameObject:
   m_ObjectHideFlags: 0
@@ -159,6 +189,7 @@ GameObject:
   - component: {fileID: 6436237773154363788}
   - component: {fileID: 260957949575984126}
   - component: {fileID: 1490954553939077399}
+  - component: {fileID: 5264278005340152979}
   m_Layer: 5
   m_Name: Line 3
   m_TagString: Untagged
@@ -222,6 +253,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!136 &5264278005340152979
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5802805200310954801}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.6
+  m_Height: 5
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8677140088101108320
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +329,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:

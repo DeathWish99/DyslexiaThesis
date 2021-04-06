@@ -1,37 +1,34 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class WritingController : LetterTraceClass
 {
-    public List<LetterTrace> lettersReceived;
-    private LetterTrace currLetter;
-    private int currIndex;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public LetterTrace currLetter;
+    public int currIndex;
+    public Vector2[] edgeColliderPoints;
+    [SerializeField]private Canvas canvas;
+    
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        //ShootRayToImage();
     }
 
-    public void LoadLettersIntoHierarchy()
+    public void ShootRayToImage()
     {
-        foreach(LetterTrace letterTrace in lettersReceived)
+        Vector3 fwd = transform.TransformDirection(Vector3.forward);
+
+        RaycastHit hit;
+        
+        foreach (Vector2 point in edgeColliderPoints)
         {
-            GameObject instance = Instantiate(letterTrace.letterObj, gameObject.transform, false);
-
-            if(letterTrace.letter != lettersReceived[0].letter)
-            {
-                instance.SetActive(false);
-            }
+            if (Physics.Raycast(new Vector3(point.x, point.y, transform.position.z), fwd, out hit))
+                Debug.Log(hit.collider.gameObject.name);
+            else
+                Debug.Log("There is nothing in front of the object!");
         }
-
-        currLetter = lettersReceived[0];
-        currIndex = 0;
     }
 }

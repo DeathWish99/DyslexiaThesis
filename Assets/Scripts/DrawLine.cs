@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawLine : MonoBehaviour
+public class DrawLine : LetterTraceClass
 {
     public GameObject linePrefab;
     public GameObject currentLine;
@@ -13,13 +13,10 @@ public class DrawLine : MonoBehaviour
     public EdgeCollider2D edgeCollider;
 
     public List<Vector2> fingerPositions;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
+    public LetterTrace currLetter;
+    public int currIndex;
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -34,8 +31,13 @@ public class DrawLine : MonoBehaviour
                 UpdateLine(tempFingerPos);
             }
         }
+        if (Input.GetMouseButtonUp(0))
+        {
+            EndLine();
+        }
     }
 
+    //Create first point of line when starting to draw
     private void CreateLine()
     {
         currentLine = Instantiate(linePrefab);
@@ -49,11 +51,20 @@ public class DrawLine : MonoBehaviour
         edgeCollider.points = fingerPositions.ToArray();
     }
 
+    //Continues creating line as player drags finger across the screen
     private void UpdateLine(Vector2 newFingerPos)
     {
         fingerPositions.Add(newFingerPos);
         lineRenderer.positionCount++;
         lineRenderer.SetPosition(lineRenderer.positionCount - 1, newFingerPos);
         edgeCollider.points = fingerPositions.ToArray();
+    }
+
+    private void EndLine()
+    {
+        linePrefab.GetComponent<WritingController>().currLetter = currLetter;
+        linePrefab.GetComponent<WritingController>().currIndex = currIndex;
+        linePrefab.GetComponent<WritingController>().edgeColliderPoints = edgeCollider.points;
+        linePrefab.GetComponent<WritingController>().ShootRayToImage();
     }
 }
