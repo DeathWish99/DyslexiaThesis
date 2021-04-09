@@ -71,8 +71,8 @@ public class DrawLine : LetterTraceClass
 
     private void EndLine()
     {
-        linePrefab.GetComponent<WritingController>().edgeColliderPoints = edgeCollider.points;
-        List<GameObject> lines = linePrefab.GetComponent<WritingController>().ShootRayToImage();
+        uiCam.GetComponent<WritingController>().edgeColliderPoints = edgeCollider.points;
+        List<GameObject> lines = uiCam.GetComponent<WritingController>().ShootRayToImage();
 
         if (lines != null)
         {
@@ -115,7 +115,7 @@ public class DrawLine : LetterTraceClass
 
         int maxPoints = Convert.ToInt32(rtLine.localScale.y);
 
-        if (intendedLine.tempCount > maxPoints / 4 && !intendedLine.drawn)
+        if (intendedLine.tempCount > maxPoints / 40 && !intendedLine.drawn)
         {
             intendedLine.drawn = true;
             linesInLetter[lineIndex] = intendedLine;

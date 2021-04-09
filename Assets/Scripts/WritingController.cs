@@ -9,7 +9,7 @@ public class WritingController : LetterTraceClass
     public Vector2[] edgeColliderPoints;
 
     [SerializeField]private Canvas canvas;
-    private List<GameObject> objectsDetectedbyRay;
+    private List<GameObject> objectsDetectedbyRay = new List<GameObject>();
     
 
     public List<GameObject> ShootRayToImage()
@@ -34,7 +34,7 @@ public class WritingController : LetterTraceClass
             }
         }
 
-        if(overflowCount < 10 && objectsDetectedbyRay.Count > 0)
+        if(overflowCount < 100 && objectsDetectedbyRay.Count > 0)
         {
             return objectsDetectedbyRay;
         }

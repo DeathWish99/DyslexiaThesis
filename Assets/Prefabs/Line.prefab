@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5759587343314886981}
   - component: {fileID: 4484056404507788918}
-  - component: {fileID: 7739637893835682844}
   - component: {fileID: 4478940272803388654}
   m_Layer: 8
   m_Name: Line
@@ -130,40 +129,6 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
---- !u!114 &7739637893835682844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5843292834337686392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9ee96ade56fa64c4e8ae495d6bfa4fdf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currLetter:
-    letterObj: {fileID: 8677140088101108320, guid: 1336de2cc16caf044aabf6401d06c01a,
-      type: 3}
-    letter: 107
-  currIndex: 0
-  edgeColliderPoints:
-  - {x: -6.449674, y: 13.401716}
-  - {x: -6.449674, y: 13.401716}
-  - {x: -6.374767, y: 13.32681}
-  - {x: -6.299861, y: 13.251903}
-  - {x: -6.262408, y: 13.15827}
-  - {x: -6.1875014, y: 13.064637}
-  - {x: -6.131322, y: 12.9710045}
-  - {x: -6.0564156, y: 12.877371}
-  - {x: -5.981508, y: 12.8024645}
-  - {x: -5.925329, y: 12.708832}
-  - {x: -5.869149, y: 12.615199}
-  - {x: -5.8129697, y: 12.521566}
-  - {x: -5.7755165, y: 12.427933}
-  - {x: -5.7193365, y: 12.3343}
-  - {x: -5.663157, y: 12.240667}
-  canvas: {fileID: 0}
 --- !u!68 &4478940272803388654
 EdgeCollider2D:
   m_ObjectHideFlags: 0
