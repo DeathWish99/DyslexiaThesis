@@ -6,19 +6,16 @@ using UnityEngine.EventSystems;
 
 public class WritingController : LetterTraceClass
 {
-    public LetterTrace currLetter;
-    public int currIndex;
     public Vector2[] edgeColliderPoints;
-    [SerializeField]private Canvas canvas;
-    
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        //ShootRayToImage();
-    }
 
-    public void ShootRayToImage()
+    [SerializeField]private Canvas canvas;
+    private List<GameObject> objectsDetectedbyRay;
+    
+
+    public List<GameObject> ShootRayToImage()
     {
+        int overflowCount = 0;
+        objectsDetectedbyRay.Clear();
         Vector3 fwd = transform.TransformDirection(Vector3.forward);
 
         RaycastHit hit;
@@ -26,9 +23,25 @@ public class WritingController : LetterTraceClass
         foreach (Vector2 point in edgeColliderPoints)
         {
             if (Physics.Raycast(new Vector3(point.x, point.y, transform.position.z), fwd, out hit))
+            {
                 Debug.Log(hit.collider.gameObject.name);
+                objectsDetectedbyRay.Add(hit.collider.gameObject);
+            }
             else
+            {
                 Debug.Log("There is nothing in front of the object!");
+                overflowCount++;
+            }
+        }
+
+        if(overflowCount < 10 && objectsDetectedbyRay.Count > 0)
+        {
+            return objectsDetectedbyRay;
+        }
+        else
+        {
+            //remove the line obj they just drew
+            return null;
         }
     }
 }

@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class DrawLine : LetterTraceClass
@@ -14,9 +16,16 @@ public class DrawLine : LetterTraceClass
 
     public List<Vector2> fingerPositions;
 
-    public LetterTrace currLetter;
+    public List<LetterTrace> currWord;
     public int currIndex;
 
+
+    [SerializeField] private GameObject speakButton;
+    private List<LinesCondition> linesInLetter = null;
+    private void Start()
+    {
+        speakButton.SetActive(false);
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -62,9 +71,109 @@ public class DrawLine : LetterTraceClass
 
     private void EndLine()
     {
-        linePrefab.GetComponent<WritingController>().currLetter = currLetter;
-        linePrefab.GetComponent<WritingController>().currIndex = currIndex;
         linePrefab.GetComponent<WritingController>().edgeColliderPoints = edgeCollider.points;
-        linePrefab.GetComponent<WritingController>().ShootRayToImage();
+        List<GameObject> lines = linePrefab.GetComponent<WritingController>().ShootRayToImage();
+
+        if (lines != null)
+        {
+            ProcessTraceLines(lines);
+
+            if (CheckDrawn())
+            {
+                NextLetterOrSpeak();
+            }
+        }
+        else
+        {
+            //Play voice telling player to try again
+        }
+    }
+
+    private void ProcessTraceLines(List<GameObject> detectedLines)
+    {
+        if(linesInLetter == null || linesInLetter.Count == 0)
+        {
+            GetLinesInLetterObj();
+        }
+
+        for(int i = 0; i < linesInLetter.Count; i++)
+        {
+            LinesCondition temp;
+            var detectedLinesList = detectedLines.FindAll(x => x.gameObject.name == linesInLetter[i].lineObj.name);
+
+            temp.lineObj = linesInLetter[i].lineObj;
+            temp.tempCount = detectedLinesList.Count;
+            temp.drawn = linesInLetter[i].drawn;
+
+            linesInLetter[i] = temp;
+        }
+
+        var intendedLine = linesInLetter.OrderByDescending(line => line.tempCount).First();
+        var lineIndex = linesInLetter.FindIndex(line => line.lineObj.name == intendedLine.lineObj.name);
+
+        RectTransform rtLine = (RectTransform)intendedLine.lineObj.transform;
+
+        int maxPoints = Convert.ToInt32(rtLine.localScale.y);
+
+        if (intendedLine.tempCount > maxPoints / 4 && !intendedLine.drawn)
+        {
+            intendedLine.drawn = true;
+            linesInLetter[lineIndex] = intendedLine;
+        }
+        else
+        {
+            //Delete line, and tell player to try again
+        }
+    }
+
+    private void GetLinesInLetterObj()
+    {
+        linesInLetter = new List<LinesCondition>();
+        foreach (Transform child in currWord[currIndex].letterObj.transform)
+        {
+            LinesCondition tempLines = new LinesCondition();
+            tempLines.lineObj = child.gameObject;
+            tempLines.drawn = false;
+
+            linesInLetter.Add(tempLines);
+        }
+    }
+
+    private bool CheckDrawn()
+    {
+        if(linesInLetter.Any(line => !line.drawn))
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    private void NextLetterOrSpeak()
+    {
+        GameObject currLetter = GameObject.FindGameObjectWithTag("Current Letter");
+
+        GameObject[] drawnLines = GameObject.FindGameObjectsWithTag("Line");
+
+        foreach (GameObject drawnLine in drawnLines)
+        {
+            Destroy(drawnLine);
+        }
+        if (currIndex < currWord.Count - 1)
+        {
+            currIndex += 1;
+            GameObject nextLetter = Instantiate(currWord[currIndex].letterObj, gameObject.transform, false);
+            nextLetter.SetActive(true);
+            nextLetter.tag = "Current Letter";
+            Destroy(currLetter);
+            linesInLetter = null;
+        }
+        else
+        {
+            speakButton.SetActive(true);
+            Destroy(currLetter);
+        }
     }
 }

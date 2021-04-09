@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4484056404507788918}
   - component: {fileID: 7739637893835682844}
   - component: {fileID: 4478940272803388654}
-  m_Layer: 9
+  m_Layer: 8
   m_Name: Line
-  m_TagString: Untagged
+  m_TagString: Line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,23 @@ MonoBehaviour:
       type: 3}
     letter: 107
   currIndex: 0
+  edgeColliderPoints:
+  - {x: -6.449674, y: 13.401716}
+  - {x: -6.449674, y: 13.401716}
+  - {x: -6.374767, y: 13.32681}
+  - {x: -6.299861, y: 13.251903}
+  - {x: -6.262408, y: 13.15827}
+  - {x: -6.1875014, y: 13.064637}
+  - {x: -6.131322, y: 12.9710045}
+  - {x: -6.0564156, y: 12.877371}
+  - {x: -5.981508, y: 12.8024645}
+  - {x: -5.925329, y: 12.708832}
+  - {x: -5.869149, y: 12.615199}
+  - {x: -5.8129697, y: 12.521566}
+  - {x: -5.7755165, y: 12.427933}
+  - {x: -5.7193365, y: 12.3343}
+  - {x: -5.663157, y: 12.240667}
+  canvas: {fileID: 0}
 --- !u!68 &4478940272803388654
 EdgeCollider2D:
   m_ObjectHideFlags: 0
