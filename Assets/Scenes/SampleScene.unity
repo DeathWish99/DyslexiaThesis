@@ -765,8 +765,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableItems:
-  - obj: {fileID: 7378173290993954906, guid: 4bfa2f1a89a6e32459eb9685eb3e6e0e, type: 3}
-    name: kubus
+  - obj: {fileID: 3103991765211696989, guid: 3b75fbf3691485842babce21ef06f6d0, type: 3}
+    name: kabus
 --- !u!1 &934800580
 GameObject:
   m_ObjectHideFlags: 0

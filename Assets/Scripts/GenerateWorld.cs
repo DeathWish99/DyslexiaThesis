@@ -6,7 +6,7 @@ public class GenerateWorld : MonoBehaviour
     public GameObject plane;
     public GameObject[] decorations;
 
-    public int depth = 20;
+    public int depth = 5;
     public int width = 256;
     public int height = 256;
 
@@ -26,6 +26,7 @@ public class GenerateWorld : MonoBehaviour
     void Start()
     {
         offsetX = Random.Range(0f, 9999f);
+        offsetY = Random.Range(0f, 9999f);
         Terrain terrain = GetComponent<Terrain>();
         terrain.terrainData = GenerateTerrain(terrain.terrainData);
     }
