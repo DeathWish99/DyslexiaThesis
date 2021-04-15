@@ -525,6 +525,9 @@ MonoBehaviour:
   - letterObj: {fileID: 8677140088101108320, guid: 4b446e485f5ce7340a93b322fb1fce20,
       type: 3}
     letter: 115
+  - letterObj: {fileID: 8677140088101108320, guid: 20409e8b61a538c418acd5a5b55e5725,
+      type: 3}
+    letter: 97
 --- !u!114 &595244285
 MonoBehaviour:
   m_ObjectHideFlags: 0
