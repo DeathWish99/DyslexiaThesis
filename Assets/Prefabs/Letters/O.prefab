@@ -27,15 +27,15 @@ RectTransform:
   m_GameObject: {fileID: 2048395463392603817}
   m_LocalRotation: {x: -0, y: -0, z: -0.004064116, w: 0.9999917}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 98.48745, y: 32.726784, z: 25.650002}
+  m_LocalScale: {x: 95.99166, y: 26.267498, z: 25}
   m_Children: []
   m_Father: {fileID: 8513085380948634084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.46600002}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.3, y: 73}
-  m_SizeDelta: {x: 2.5897996, y: 12.354896}
+  m_AnchoredPosition: {x: 8.83, y: 11.85}
+  m_SizeDelta: {x: 2.5861146, y: 10.402505}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1248853717757090227
 CanvasRenderer:
@@ -69,9 +69,9 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.64
+  m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8677140088101108320
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 1832101209543853408}
   - component: {fileID: 714494471470948543}
   m_Layer: 5
-  m_Name: U
+  m_Name: O
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
