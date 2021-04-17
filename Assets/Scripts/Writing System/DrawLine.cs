@@ -141,7 +141,7 @@ public class DrawLine : LetterTraceClass
 
     private bool CheckDrawn()
     {
-        if(linesInLetter.Any(line => !line.drawn))
+        if(linesInLetter.Where(line => line.lineObj.activeSelf).Any(line => !line.drawn))
         {
             return false;
         }
@@ -156,6 +156,7 @@ public class DrawLine : LetterTraceClass
         GameObject currLetter = GameObject.FindGameObjectWithTag("Current Letter");
 
         GameObject[] drawnLines = GameObject.FindGameObjectsWithTag("Line");
+
 
         foreach (GameObject drawnLine in drawnLines)
         {
