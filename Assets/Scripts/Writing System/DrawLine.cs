@@ -18,6 +18,7 @@ public class DrawLine : LetterTraceClass
 
     public List<LetterTrace> currWord;
     public int currIndex;
+    private float wordScore;
 
 
     [SerializeField] private GameObject speakButton;
@@ -91,6 +92,7 @@ public class DrawLine : LetterTraceClass
 
     private void ProcessTraceLines(List<GameObject> detectedLines)
     {
+        float lineScore;
         if(linesInLetter == null || linesInLetter.Count == 0)
         {
             GetLinesInLetterObj();
@@ -113,15 +115,19 @@ public class DrawLine : LetterTraceClass
 
         RectTransform rtLine = (RectTransform)intendedLine.lineObj.transform;
 
-        int maxPoints = Convert.ToInt32(rtLine.localScale.y);
+        int maxPoints = Convert.ToInt32(rtLine.localScale.y) / 2;
 
-        if (intendedLine.tempCount > maxPoints / 40 && !intendedLine.drawn)
+        if (intendedLine.tempCount > edgeCollider.points.Count() / 40 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null))
         {
+            Debug.Log(intendedLine.tempCount + "out of " + edgeCollider.points.Count() + " possible points");
+            lineScore = (intendedLine.tempCount / edgeCollider.points.Count()) * 100f;
+            wordScore += lineScore;
             intendedLine.drawn = true;
             linesInLetter[lineIndex] = intendedLine;
         }
         else
         {
+            Debug.Log("Nothing exists");
             //Delete line, and tell player to try again
         }
     }
@@ -169,6 +175,9 @@ public class DrawLine : LetterTraceClass
             nextLetter.SetActive(true);
             nextLetter.tag = "Current Letter";
             Destroy(currLetter);
+            wordScore /= 3;
+
+            //insert into playerprefs
             linesInLetter = null;
         }
         else

@@ -6,6 +6,7 @@ using UnityEditor;
 [CustomEditor(typeof(MapGenerator))]
 public class MapGeneratorEditor : Editor
 {
+#if UNITY_EDITOR
     public override void OnInspectorGUI()
     {
         MapGenerator mapGen = (MapGenerator)target;
@@ -23,4 +24,5 @@ public class MapGeneratorEditor : Editor
             mapGen.DrawMapInEditor();
         }
     }
+#endif
 }

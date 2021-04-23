@@ -6,6 +6,7 @@ using UnityEditor;
 public class UpdatableDataEditor : Editor
 {
 
+#if UNITY_EDITOR
     public override void OnInspectorGUI()
     {
         base.OnInspectorGUI();
@@ -18,5 +19,5 @@ public class UpdatableDataEditor : Editor
             EditorUtility.SetDirty(target);
         }
     }
-
+#endif
 }
