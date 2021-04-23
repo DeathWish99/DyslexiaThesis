@@ -19,6 +19,7 @@ public class DrawLine : LetterTraceClass
     public List<LetterTrace> currWord;
     public int currIndex;
     private float wordScore;
+    private float[] letterScores;
 
 
     [SerializeField] private GameObject speakButton;
@@ -117,11 +118,12 @@ public class DrawLine : LetterTraceClass
 
         int maxPoints = Convert.ToInt32(rtLine.localScale.y) / 2;
 
-        if (intendedLine.tempCount > edgeCollider.points.Count() / 40 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null))
+        lineScore = ((float)intendedLine.tempCount / (float)edgeCollider.points.Count()) * 100f;
+
+        if (lineScore > 60 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null))
         {
-            Debug.Log(intendedLine.tempCount + "out of " + edgeCollider.points.Count() + " possible points");
-            lineScore = (intendedLine.tempCount / edgeCollider.points.Count()) * 100f;
-            wordScore += lineScore;
+            Debug.Log("Line score: " + lineScore);
+            letterScores[currIndex] += lineScore;
             intendedLine.drawn = true;
             linesInLetter[lineIndex] = intendedLine;
         }
@@ -170,18 +172,26 @@ public class DrawLine : LetterTraceClass
         }
         if (currIndex < currWord.Count - 1)
         {
+            Debug.Log("Letter Score: " + letterScores[currIndex]);
+            letterScores[currIndex] /= linesInLetter.Count;
             currIndex += 1;
             GameObject nextLetter = Instantiate(currWord[currIndex].letterObj, gameObject.transform, false);
             nextLetter.SetActive(true);
             nextLetter.tag = "Current Letter";
             Destroy(currLetter);
-            wordScore /= 3;
 
             //insert into playerprefs
             linesInLetter = null;
         }
         else
         {
+            foreach(float letterScore in letterScores)
+            {
+                wordScore += letterScore;
+            }
+
+            wordScore /= currWord.Count;
+            Debug.Log("Word score: " + wordScore);
             speakButton.SetActive(true);
             Destroy(currLetter);
         }
