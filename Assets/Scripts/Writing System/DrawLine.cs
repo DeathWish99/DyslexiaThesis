@@ -217,7 +217,12 @@ public class DrawLine : LetterTraceClass
 
             if (fromJsonString != "")
             {
-                userScores = JsonUtility.FromJson<List<UserScore>>(fromJsonString);
+                var data = JSONNode.Parse(fromJsonString);
+                foreach (JSONNode node in data)
+                {
+                    userScores.Add(JsonUtility.FromJson<UserScore>(node.ToString()));
+                }
+                
                 bool keyExist = false;
 
                 foreach (UserScore scoreObj in userScores)
@@ -226,6 +231,7 @@ public class DrawLine : LetterTraceClass
                     {
                         scoreObj.scores.Add(wordScore);
                         keyExist = true;
+                        break;
                     }
                 }
 
@@ -238,9 +244,15 @@ public class DrawLine : LetterTraceClass
             {
                 userScores.Add(new UserScore(word, newScore));
             }
-            
 
-            string toJsonString = JsonUtility.ToJson(userScores);
+            string toJsonString = "{\"Records\":";
+            foreach (UserScore userScore in userScores)
+            {
+                toJsonString += JsonUtility.ToJson(userScore) + ",";
+            }
+            toJsonString = toJsonString.Trim(',');
+            toJsonString += "}";
+            
             File.WriteAllText(path, toJsonString);
 
             Debug.Log(toJsonString);

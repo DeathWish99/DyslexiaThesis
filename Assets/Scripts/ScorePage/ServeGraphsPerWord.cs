@@ -19,7 +19,7 @@ public class ServeGraphsPerWord : MonoBehaviour
 
 }
 
-
+[System.Serializable]
 public class UserScore
 {
     public string objectName;
