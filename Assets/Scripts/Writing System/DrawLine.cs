@@ -1,7 +1,9 @@
 ﻿using System;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using SimpleJSON;
 using UnityEngine;
 
 public class DrawLine : LetterTraceClass
@@ -17,16 +19,17 @@ public class DrawLine : LetterTraceClass
     public List<Vector2> fingerPositions;
 
     public List<LetterTrace> currWord;
+    LetterTrace tempLetter;
     public int currIndex;
     private float wordScore;
-    private float[] letterScores;
-
 
     [SerializeField] private GameObject speakButton;
     private List<LinesCondition> linesInLetter = null;
     private void Start()
     {
         speakButton.SetActive(false);
+
+        tempLetter = currWord[currIndex];
     }
     void Update()
     {
@@ -123,7 +126,7 @@ public class DrawLine : LetterTraceClass
         if (lineScore > 60 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null))
         {
             Debug.Log("Line score: " + lineScore);
-            letterScores[currIndex] += lineScore;
+            tempLetter.letterScore += lineScore;
             intendedLine.drawn = true;
             linesInLetter[lineIndex] = intendedLine;
         }
@@ -165,6 +168,10 @@ public class DrawLine : LetterTraceClass
 
         GameObject[] drawnLines = GameObject.FindGameObjectsWithTag("Line");
 
+        tempLetter.letterScore /= linesInLetter.Count;
+        currWord[currIndex] = tempLetter;
+        Debug.Log("Letter Score: " + currWord[currIndex].letterScore);
+
 
         foreach (GameObject drawnLine in drawnLines)
         {
@@ -172,9 +179,8 @@ public class DrawLine : LetterTraceClass
         }
         if (currIndex < currWord.Count - 1)
         {
-            Debug.Log("Letter Score: " + letterScores[currIndex]);
-            letterScores[currIndex] /= linesInLetter.Count;
             currIndex += 1;
+            tempLetter = currWord[currIndex];
             GameObject nextLetter = Instantiate(currWord[currIndex].letterObj, gameObject.transform, false);
             nextLetter.SetActive(true);
             nextLetter.tag = "Current Letter";
@@ -185,13 +191,35 @@ public class DrawLine : LetterTraceClass
         }
         else
         {
-            foreach(float letterScore in letterScores)
+            foreach(LetterTrace letter in currWord)
             {
-                wordScore += letterScore;
+                wordScore += letter.letterScore;
             }
 
             wordScore /= currWord.Count;
-            Debug.Log("Word score: " + wordScore);
+            
+            string word = "";
+            for (int i = 0; i < currWord.Count; i++)
+            {
+                word += currWord[i].letter.ToString();
+            }
+
+            List<float> wordScores = PlayerPrefsX.GetFloatArray(word).ToList();
+
+            if(wordScores.Count > 10)
+            {
+                wordScores = wordScores.Skip(1).ToList();
+            }
+
+            wordScores.Add(wordScore);
+
+            PlayerPrefsX.SetFloatArray(word, wordScores.ToArray());
+            Debug.Log("Current Word: "+word +" Word score: " + wordScore);
+
+            foreach(float score in PlayerPrefsX.GetFloatArray(word))
+            {
+                Debug.Log(score);
+            }
             speakButton.SetActive(true);
             Destroy(currLetter);
         }

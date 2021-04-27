@@ -9,6 +9,7 @@ public abstract class LetterTraceClass : MonoBehaviour
     {
         public GameObject letterObj;
         public char letter;
+        public float letterScore;
     };
 
     protected struct LinesCondition
