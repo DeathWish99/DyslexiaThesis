@@ -23,12 +23,14 @@ public class DrawLine : LetterTraceClass
     public int currIndex;
     private float wordScore;
 
+    private string path;
+
     [SerializeField] private GameObject speakButton;
     private List<LinesCondition> linesInLetter = null;
     private void Start()
     {
         speakButton.SetActive(false);
-
+        path = Application.dataPath + "/ScoreRecords.json";
         tempLetter = currWord[currIndex];
     }
     void Update()
@@ -203,23 +205,62 @@ public class DrawLine : LetterTraceClass
             {
                 word += currWord[i].letter.ToString();
             }
-
-            List<float> wordScores = PlayerPrefsX.GetFloatArray(word).ToList();
-
-            if(wordScores.Count > 10)
+            
+            List<UserScore> userScores = new List<UserScore>();
+            List<float> newScore = new List<float>();
+            newScore.Add(wordScore);
+            string fromJsonString = "";
+            if (File.Exists(path))
             {
-                wordScores = wordScores.Skip(1).ToList();
+                fromJsonString = File.ReadAllText(path);
             }
 
-            wordScores.Add(wordScore);
-
-            PlayerPrefsX.SetFloatArray(word, wordScores.ToArray());
-            Debug.Log("Current Word: "+word +" Word score: " + wordScore);
-
-            foreach(float score in PlayerPrefsX.GetFloatArray(word))
+            if (fromJsonString != "")
             {
-                Debug.Log(score);
+                userScores = JsonUtility.FromJson<List<UserScore>>(fromJsonString);
+                bool keyExist = false;
+
+                foreach (UserScore scoreObj in userScores)
+                {
+                    if (scoreObj.objectName.Equals(word))
+                    {
+                        scoreObj.scores.Add(wordScore);
+                        keyExist = true;
+                    }
+                }
+
+                if (!keyExist)
+                {
+                    userScores.Add(new UserScore(word, newScore));
+                }
             }
+            else
+            {
+                userScores.Add(new UserScore(word, newScore));
+            }
+            
+
+            string toJsonString = JsonUtility.ToJson(userScores);
+            File.WriteAllText(path, toJsonString);
+
+            Debug.Log(toJsonString);
+
+            //List<float> wordScores = PlayerPrefsX.GetFloatArray(word).ToList();
+
+            //if(wordScores.Count > 10)
+            //{
+            //    wordScores = wordScores.Skip(1).ToList();
+            //}
+
+            //wordScores.Add(wordScore);
+
+            //PlayerPrefsX.SetFloatArray(word, wordScores.ToArray());
+            //Debug.Log("Current Word: "+word +" Word score: " + wordScore);
+
+            //foreach(float score in PlayerPrefsX.GetFloatArray(word))
+            //{
+            //    Debug.Log(score);
+            //}
             speakButton.SetActive(true);
             Destroy(currLetter);
         }

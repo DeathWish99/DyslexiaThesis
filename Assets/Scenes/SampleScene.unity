@@ -516,78 +516,103 @@ MonoBehaviour:
   - letterObj: {fileID: 8677140088101108320, guid: 20409e8b61a538c418acd5a5b55e5725,
       type: 3}
     letter: 97
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 40e2c38ee9d098e4888f2cb8adaa8dbe,
       type: 3}
     letter: 98
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 94206c3d8c732a242ac47d824bfc373a,
       type: 3}
     letter: 99
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 405aca5d9c01e0e4faad612b4a504cae,
       type: 3}
     letter: 100
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: d609a5b88bb6f9743b9ee487dab6941e,
       type: 3}
     letter: 101
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: fe3b4b1c90a2fdb47b0ffbc1bcb7366f,
       type: 3}
     letter: 102
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 1294504bbec0c054b892e259d8adfac9,
       type: 3}
     letter: 103
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 2399e0a2763bba442a07082dd62df33e,
       type: 3}
     letter: 104
-  - letterObj: {fileID: 8677140088101108320, guid: e2b7a0535727c784db6830bf286a683a,
-      type: 3}
-    letter: 105
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 34d2037f0ffe6a1448fce7a7e4b26ac1,
       type: 3}
     letter: 106
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 811e4ff574515f442bfbf4dda07b2399,
       type: 3}
     letter: 107
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: a8b89baa1372db248aba72b20369c99a,
       type: 3}
     letter: 108
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 34fc2c581bd305b478fbd24d99d87243,
       type: 3}
     letter: 109
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: afd1e81907ea29649b34137fd6422627,
       type: 3}
     letter: 110
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 39bdd6926a4456a4d9529eb7df57b949,
       type: 3}
     letter: 111
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: c9a5a0640f5d45542b31bbc7b846c844,
       type: 3}
     letter: 112
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: f0e74744e5f406c49908b8e2e5253fbe,
       type: 3}
     letter: 113
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: d79dee910c32dbe4a99509ec981ee5ac,
       type: 3}
     letter: 114
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 4b446e485f5ce7340a93b322fb1fce20,
       type: 3}
     letter: 115
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 875f2d1297f65ce409d8bcc3db7d008c,
       type: 3}
     letter: 116
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 5f1b90dd97c79904994eefe3ae453d6d,
       type: 3}
     letter: 117
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: a3e2af8fa16adb847bec7ae2b3f9b6b4,
       type: 3}
     letter: 118
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 87612ca500ff80f478241de02dd19079,
+      type: 3}
+    letter: 119
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: c32121e7c3b8f9c448e6f1004efeeab6,
       type: 3}
     letter: 120
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: f9a5d0c7bf18d6e46946ad05885c2f3b,
       type: 3}
     letter: 121
+    letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 58281d44e315d3d48b89e188e2e1051b,
       type: 3}
     letter: 122
+    letterScore: 0
 --- !u!114 &595244285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -825,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableItems:
-  - obj: {fileID: 3103991765211696989, guid: 3b75fbf3691485842babce21ef06f6d0, type: 3}
+  - obj: {fileID: 7378173290993954906, guid: 4bfa2f1a89a6e32459eb9685eb3e6e0e, type: 3}
     name: kubus
 --- !u!1 &934800580
 GameObject:
