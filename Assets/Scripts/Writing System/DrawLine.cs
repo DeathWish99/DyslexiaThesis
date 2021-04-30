@@ -144,11 +144,14 @@ public class DrawLine : LetterTraceClass
         linesInLetter = new List<LinesCondition>();
         foreach (Transform child in currWord[currIndex].letterObj.transform)
         {
-            LinesCondition tempLines = new LinesCondition();
-            tempLines.lineObj = child.gameObject;
-            tempLines.drawn = false;
+            if (child.name.Like("%Line%"))
+            {
+                LinesCondition tempLines = new LinesCondition();
+                tempLines.lineObj = child.gameObject;
+                tempLines.drawn = false;
 
-            linesInLetter.Add(tempLines);
+                linesInLetter.Add(tempLines);
+            }
         }
     }
 

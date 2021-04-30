@@ -76,14 +76,14 @@ public class VoiceController : MonoBehaviour
     void OnFinalSpeechResult(string result)
     {
         uiText.text = result;
-        currObj.GetComponent<ObjectEventHandler>().ReplaceContainerWithObject(result);
+        currObj.GetComponent<OpenAndUpdatePanel>().ShowSuccessScreen(result);
     }
 
     void OnPartialSpeechResult(string result)
     {
         uiText.text = result;
 
-        currObj.GetComponent<ObjectEventHandler>().ReplaceContainerWithObject(result);
+        currObj.GetComponent<OpenAndUpdatePanel>().ShowSuccessScreen(result);
     }
     void Setup(string code)
     {

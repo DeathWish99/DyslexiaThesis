@@ -9,8 +9,9 @@ public class LevelSelector : MonoBehaviour
     public GameObject levelHolder;
     public GameObject levelIcon;
     public GameObject thisCanvas;
-    public int numberOfLevels = 50;
+    public List<LevelDict> levelsToSpawn;
     public Vector2 iconSpacing;
+    private int numberOfLevels;
     private Rect panelDimensions;
     private Rect iconDimensions;
     private int amountPerPage;
@@ -19,6 +20,7 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numberOfLevels = levelsToSpawn.Count;
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         iconDimensions = levelIcon.GetComponent<RectTransform>().rect;
         int maxInARow = Mathf.FloorToInt((panelDimensions.width + iconSpacing.x) / (iconDimensions.width + iconSpacing.x));
@@ -55,14 +57,14 @@ public class LevelSelector : MonoBehaviour
         }
         void LoadIcons(int numberOfIcons, GameObject parentObject)
         {
-            for (int i = 1; i <= numberOfIcons; i++)
+            foreach(LevelDict level in levelsToSpawn)
             {
                 currentLevelCount++;
                 GameObject icon = Instantiate(levelIcon) as GameObject;
                 icon.transform.SetParent(thisCanvas.transform, false);
                 icon.transform.SetParent(parentObject.transform);
-                icon.name = "Level " + i;
-                icon.GetComponentInChildren<TextMeshProUGUI>().SetText("Level " + currentLevelCount);
+                icon.name = level.name;
+                icon.GetComponentInChildren<TextMeshProUGUI>().SetText(level.name);
             }
         }
     }

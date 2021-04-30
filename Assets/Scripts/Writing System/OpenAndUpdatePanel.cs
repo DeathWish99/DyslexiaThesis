@@ -8,6 +8,13 @@ public class OpenAndUpdatePanel : LetterTraceClass
     public List<LetterTrace> lettersDict;
 
     private List<LetterTrace> lettersToSpawn;
+    [SerializeField] private GameObject gameController;
+
+    private void Start()
+    {
+        LoadWord(PlayerPrefs.GetString("ObjName"));
+        gameController.GetComponent<VoiceController>().currObj = gameObject;
+    }
 
     public void SwitchShowHide()
     {
@@ -37,5 +44,10 @@ public class OpenAndUpdatePanel : LetterTraceClass
         
         GetComponent<DrawLine>().currWord = lettersToSpawn;
         GetComponent<DrawLine>().currIndex = 0;
+    }
+
+    public void ShowSuccessScreen(string result)
+    {
+
     }
 }
