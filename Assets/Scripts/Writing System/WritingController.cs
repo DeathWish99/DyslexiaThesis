@@ -12,7 +12,7 @@ public class WritingController : LetterTraceClass
     private List<GameObject> objectsDetectedbyRay = new List<GameObject>();
     
 
-    public List<GameObject> ShootRayToImage()
+    public List<GameObject> ShootRayToImage(GameObject currentLine)
     {
         int overflowCount = 0;
         objectsDetectedbyRay.Clear();
@@ -40,7 +40,7 @@ public class WritingController : LetterTraceClass
         }
         else
         {
-            //remove the line obj they just drew
+            Destroy(currentLine);
             return null;
         }
     }

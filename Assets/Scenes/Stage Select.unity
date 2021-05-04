@@ -223,7 +223,7 @@ MonoBehaviour:
   thisCanvas: {fileID: 1130793124}
   levelsToSpawn:
   - iconImage: {fileID: 0}
-    name: Test
+    name: abcdefghijklmnopqrstuvwxyz
   - iconImage: {fileID: 0}
     name: asd
   - iconImage: {fileID: 0}

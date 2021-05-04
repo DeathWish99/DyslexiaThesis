@@ -79,7 +79,7 @@ public class DrawLine : LetterTraceClass
     private void EndLine()
     {
         uiCam.GetComponent<WritingController>().edgeColliderPoints = edgeCollider.points;
-        List<GameObject> lines = uiCam.GetComponent<WritingController>().ShootRayToImage();
+        List<GameObject> lines = uiCam.GetComponent<WritingController>().ShootRayToImage(currentLine);
 
         if (lines != null)
         {
@@ -135,6 +135,7 @@ public class DrawLine : LetterTraceClass
         else
         {
             Debug.Log("Nothing exists");
+            Destroy(currentLine);
             //Delete line, and tell player to try again
         }
     }
