@@ -14,6 +14,12 @@ public class ServeGraphsPerWord : MonoBehaviour
     public string targetRecord = "akt"; //temporary.
     private string path;
     private string fromJsonString;
+    private bool firstOpen;
+    private RectTransform dashTemplateX;
+    private RectTransform dashTemplateY;
+    private RectTransform labelTemplateX;
+    private RectTransform labelTemplateY;
+    private List<RectTransform> rectXs;
     private JSONNode scoreRecords;
     private List<GameObject> graphObjects;
     private List<UserScore> parsedScoreRecords;
@@ -25,7 +31,12 @@ public class ServeGraphsPerWord : MonoBehaviour
         fromJsonString = File.ReadAllText(path);
         scoreRecords = JSONNode.Parse(fromJsonString);
         graphObjects = new List<GameObject>();
-
+        dashTemplateX = graphContainer.Find("DashTemplateX").GetComponent<RectTransform>();
+        dashTemplateY = graphContainer.Find("DashTemplateY").GetComponent<RectTransform>();
+        labelTemplateX = graphContainer.Find("LabelTemplateX").GetComponent<RectTransform>();
+        labelTemplateY = graphContainer.Find("LabelTemplateY").GetComponent<RectTransform>();
+        firstOpen = false;
+        rectXs = new List<RectTransform>();
         parsedScoreRecords = new List<UserScore>();
         ParseRecordsToList();
         AddDropdownOptions();
@@ -64,11 +75,64 @@ public class ServeGraphsPerWord : MonoBehaviour
             {
                 Destroy(graphObject);
             }
+            graphObjects.Clear();
+        }
+        if(rectXs.Count > 0)
+        {
+            foreach(RectTransform rectX in rectXs)
+            {
+                Destroy(rectX.gameObject);
+            }
+            rectXs.Clear();
         }
         string selectedRecord = ddlRecords.GetComponentInChildren<TMP_Text>().text;
 
         wordToServe = parsedScoreRecords.Where(x => x.objectName == selectedRecord.Trim()).SingleOrDefault();
-        graphObjects = CreateGraph.ShowGraph(wordToServe.scores, graphContainer, circleSprite);
+        graphObjects = CreateGraph.ShowGraph(wordToServe.scores, graphContainer, circleSprite, labelTemplateX, labelTemplateY);
+
+        List<GameObject> points = graphObjects.Where(x => x.name == "circle").ToList();
+
+        for(int i = 0; i < points.Count; i++)
+        {
+            RectTransform labelX = Instantiate(labelTemplateX);
+            labelX.SetParent(graphContainer);
+            labelX.gameObject.SetActive(true);
+            labelX.anchoredPosition = new Vector2(points[i].GetComponent<RectTransform>().anchoredPosition.x, -7f);
+            labelX.GetComponent<TMP_Text>().text = (i + 1).ToString();
+            rectXs.Add(labelX);
+
+            RectTransform dashX = Instantiate(dashTemplateX);
+            dashX.SetParent(graphContainer);
+            dashX.gameObject.SetActive(true);
+            dashX.anchoredPosition = new Vector2(points[i].GetComponent<RectTransform>().anchoredPosition.x, 0f);
+            dashX.sizeDelta = new Vector2(graphContainer.sizeDelta.y, 3);
+            dashX.localScale = new Vector3(1f, 0.3f, 0.3f);
+            rectXs.Add(dashX);
+
+        }
+
+        if (!firstOpen)
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                RectTransform labelY = Instantiate(labelTemplateY);
+                labelY.SetParent(graphContainer);
+                labelY.gameObject.SetActive(true);
+                float normalizedValue = i * 1f / 10;
+                labelY.anchoredPosition = new Vector2(-12f, normalizedValue * graphContainer.sizeDelta.y);
+                labelY.GetComponent<TMP_Text>().text = Mathf.RoundToInt(normalizedValue * 100f).ToString();
+
+                RectTransform dashY = Instantiate(dashTemplateY);
+                dashY.SetParent(graphContainer);
+                dashY.gameObject.SetActive(true);
+                dashY.sizeDelta = new Vector2(graphContainer.sizeDelta.x, 3);
+                dashY.localScale = new Vector3(1f, 0.3f, 0.3f);
+                dashY.anchoredPosition = new Vector2(0, normalizedValue * graphContainer.sizeDelta.y);
+            }
+            firstOpen = true;
+
+        }
+
         Debug.Log(wordToServe.objectName + " " + wordToServe.scores[0]);
     }
 }
