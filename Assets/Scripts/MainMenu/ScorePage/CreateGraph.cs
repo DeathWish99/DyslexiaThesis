@@ -6,24 +6,29 @@ using UnityEngine.UI;
 public static class CreateGraph
 {
 
-    public static void ShowGraph(List<float> valueList, RectTransform graphContainer, Sprite circleSprite)
+    public static List<GameObject> ShowGraph(List<float> valueList, RectTransform graphContainer, Sprite circleSprite)
     {
+        List<GameObject> graphObjects = new List<GameObject>();
         float graphHeight = graphContainer.sizeDelta.y;
         float yMaximum = 100f;
-        float xSize = 50f;
+        float padding = 20f;
+        float xSize = graphContainer.sizeDelta.x / valueList.Count;
 
         GameObject lastCircleObj = null;
         for (int i = 0; i < valueList.Count; i++)
         {
-            float xPosition = xSize + i * xSize;
+            float xPosition = padding + i * xSize;
             float yPosition = (Mathf.Round(valueList[i]) / yMaximum) * graphHeight;
             GameObject circleObj = CreateCircle(new Vector2(xPosition, yPosition), graphContainer, circleSprite);
+            graphObjects.Add(circleObj);
             if(lastCircleObj != null)
             {
-                CreateDotConnection(lastCircleObj.GetComponent<RectTransform>().anchoredPosition, circleObj.GetComponent<RectTransform>().anchoredPosition, graphContainer);
+                graphObjects.Add(CreateDotConnection(lastCircleObj.GetComponent<RectTransform>().anchoredPosition, circleObj.GetComponent<RectTransform>().anchoredPosition, graphContainer));
             }
             lastCircleObj = circleObj;
         }
+
+        return graphObjects;
     }
 
     static GameObject CreateCircle(Vector2 anchoredPosition, RectTransform graphContainer, Sprite circleSprite)
@@ -40,7 +45,7 @@ public static class CreateGraph
         return circle;
     }
 
-    static void CreateDotConnection(Vector2 dotPositionA, Vector2 dotPositionB, RectTransform graphContainer)
+    static GameObject CreateDotConnection(Vector2 dotPositionA, Vector2 dotPositionB, RectTransform graphContainer)
     {
         GameObject dotConnection = new GameObject("dotConnection", typeof(Image));
         dotConnection.transform.SetParent(graphContainer, false);
@@ -53,5 +58,7 @@ public static class CreateGraph
         rect.anchorMax = new Vector2(0, 0);
         rect.anchoredPosition = dotPositionA + dir * distance * .5f;
         rect.localEulerAngles = new Vector3(0, 0, Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg);
+
+        return dotConnection;
     }
 }
