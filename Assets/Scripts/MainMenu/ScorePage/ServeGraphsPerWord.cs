@@ -88,7 +88,7 @@ public class ServeGraphsPerWord : MonoBehaviour
         string selectedRecord = ddlRecords.GetComponentInChildren<TMP_Text>().text;
 
         wordToServe = parsedScoreRecords.Where(x => x.objectName == selectedRecord.Trim()).SingleOrDefault();
-        graphObjects = CreateGraph.ShowGraph(wordToServe.scores, graphContainer, circleSprite, labelTemplateX, labelTemplateY);
+        graphObjects = CreateGraph.ShowGraph(wordToServe.scores, graphContainer, circleSprite);
 
         List<GameObject> points = graphObjects.Where(x => x.name == "circle").ToList();
 

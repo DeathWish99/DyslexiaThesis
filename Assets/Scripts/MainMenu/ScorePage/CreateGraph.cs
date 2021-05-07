@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public static class CreateGraph
 {
 
-    public static List<GameObject> ShowGraph(List<float> valueList, RectTransform graphContainer, Sprite circleSprite, RectTransform labelTemplateX, RectTransform labelTemplateY)
+    public static List<GameObject> ShowGraph(List<float> valueList, RectTransform graphContainer, Sprite circleSprite)
     {
         List<GameObject> graphObjects = new List<GameObject>();
         float graphHeight = graphContainer.sizeDelta.y;
