@@ -16,6 +16,6 @@ public class LoadLevel : MonoBehaviour
     void SetObjectNameAndLoadLevel()
     {
         PlayerPrefs.SetString("ObjName", gameObject.name);
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(2);
     }
 }
