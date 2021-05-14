@@ -23,6 +23,11 @@ public class SceneAndPanels : MonoBehaviour
 
     public void OpenLevelSelect()
     {
+        Invoke("DelayOpenLevelSelect", 0.3f);
+    }
+
+    public void DelayOpenLevelSelect()
+    {
         SceneManager.LoadScene(1);
     }
 
