@@ -27,6 +27,10 @@ public class DrawLine : LetterTraceClass
 
     [SerializeField] private GameObject speakButton;
     private List<LinesCondition> linesInLetter = null;
+
+    Collider m_Collider;
+    Vector3 m_Center;
+    Vector3 m_Size, m_Min, m_Max;
     private void Start()
     {
         speakButton.SetActive(false);
@@ -83,6 +87,19 @@ public class DrawLine : LetterTraceClass
 
         if (lines != null)
         {
+            //Debug.Log("Collider Center : " + m_Center);
+            //Debug.Log("Collider Size : " + m_Size);
+            //Debug.Log("Collider bound Minimum : " + m_Min);
+            //Debug.Log("Collider bound Maximum : " + m_Max);
+
+            ////Fetch the Collider from the GameObject
+            ////Fetch the center of the Collider volume
+            //m_Center = edgeCollider.bounds.center;
+            ////Fetch the size of the Collider volume
+            //m_Size = edgeCollider.bounds.size;
+            ////Fetch the minimum and maximum bounds of the Collider volume
+            //m_Min = edgeCollider.bounds.min;
+            //m_Max = edgeCollider.bounds.max;
             ProcessTraceLines(lines);
 
             if (CheckDrawn())
@@ -99,6 +116,7 @@ public class DrawLine : LetterTraceClass
     private void ProcessTraceLines(List<GameObject> detectedLines)
     {
         float lineScore;
+        bool curved;
         if(linesInLetter == null || linesInLetter.Count == 0)
         {
             GetLinesInLetterObj();
@@ -118,14 +136,50 @@ public class DrawLine : LetterTraceClass
 
         var intendedLine = linesInLetter.OrderByDescending(line => line.tempCount).First();
         var lineIndex = linesInLetter.FindIndex(line => line.lineObj.name == intendedLine.lineObj.name);
+        try
+        {
+            BoxCollider[] boxColliders = intendedLine.lineObj.GetComponents<BoxCollider>();
+            Debug.Log(boxColliders.Length);
 
+            if (boxColliders.Length > 0)
+                curved = true;
+            else
+                curved = false;
+        }
+        catch(Exception e)
+        {
+            curved = false;
+        }
+
+        Debug.Log(curved);
         RectTransform rtLine = (RectTransform)intendedLine.lineObj.transform;
 
         int maxPoints = Convert.ToInt32(rtLine.localScale.y) / 2;
 
+        //edgeCollider.bounds.size;
         lineScore = ((float)intendedLine.tempCount / (float)edgeCollider.points.Count()) * 100f;
 
-        if (lineScore > 60 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null))
+        bool viableLength;
+
+        if (!curved)
+        {
+            float scale = intendedLine.lineObj.transform.localScale.y;
+
+            if(intendedLine.tempCount > scale / 3)
+            {
+                viableLength = true;
+            }
+            else
+            {
+                viableLength = false;
+            }
+        }
+        else
+        {
+            viableLength = false;
+        }
+
+        if (lineScore > 60 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null) && viableLength)
         {
             Debug.Log("Line score: " + lineScore);
             tempLetter.letterScore += lineScore;
@@ -136,7 +190,6 @@ public class DrawLine : LetterTraceClass
         {
             Debug.Log("Nothing exists");
             Destroy(currentLine);
-            //Delete line, and tell player to try again
         }
     }
 

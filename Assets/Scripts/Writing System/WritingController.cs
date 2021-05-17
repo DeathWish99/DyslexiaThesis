@@ -34,7 +34,7 @@ public class WritingController : LetterTraceClass
             }
         }
 
-        if(overflowCount < 100 && objectsDetectedbyRay.Count > 0)
+        if(overflowCount < 10 && objectsDetectedbyRay.Count > 0)
         {
             return objectsDetectedbyRay;
         }

@@ -28,14 +28,14 @@ RectTransform:
   m_GameObject: {fileID: 3823691186850789321}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.3, y: 56.5, z: 1.13}
+  m_LocalScale: {x: 11.3, y: 40, z: 1.13}
   m_Children: []
   m_Father: {fileID: 8513085380948634084}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 60.201, y: 142.52}
+  m_AnchoredPosition: {x: 10, y: 142.52}
   m_SizeDelta: {x: 1.5999999, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2889982968708060359
@@ -57,9 +57,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 3.0792933
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: -3.9258995e-14, y: 0.95401686, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7839830261872279204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.62
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -117,14 +117,14 @@ RectTransform:
   m_GameObject: {fileID: 6415849187569207238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.3, y: 56.5, z: 1.13}
+  m_LocalScale: {x: 11.3, y: 50, z: 1.13}
   m_Children: []
   m_Father: {fileID: 8513085380948634084}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 7.7691, y: -12.521}
+  m_AnchoredPosition: {x: 7.7691, y: 9}
   m_SizeDelta: {x: 1.5999999, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8873681929642752678
@@ -146,9 +146,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 4.1361046
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.43194425, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3990163921769437493
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.84
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0

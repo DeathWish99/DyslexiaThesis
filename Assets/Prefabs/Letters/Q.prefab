@@ -4652,14 +4652,14 @@ RectTransform:
   m_GameObject: {fileID: 2256841279849286465}
   m_LocalRotation: {x: -0, y: -0, z: 0.40427318, w: 0.91463834}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 50, z: 1}
+  m_LocalScale: {x: 10, y: 20, z: 1}
   m_Children: []
   m_Father: {fileID: 8513085380948634084}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 47.691}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 143, y: -121.29376}
+  m_AnchoredPosition: {x: 95, y: -77.6}
   m_SizeDelta: {x: 1.5999999, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1724095702167221911
@@ -4681,9 +4681,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 2.4032774
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: -0.000039567298, y: 1.2983557, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5986927584438964945
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4708,7 +4708,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.48
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
