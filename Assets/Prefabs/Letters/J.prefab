@@ -57,9 +57,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 4.5
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 0.21173385, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5780526043924063986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.91
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
