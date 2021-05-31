@@ -136,9 +136,9 @@ public class DrawLine : LetterTraceClass
 
         var intendedLine = linesInLetter.OrderByDescending(line => line.tempCount).First();
         var lineIndex = linesInLetter.FindIndex(line => line.lineObj.name == intendedLine.lineObj.name);
+        BoxCollider[] boxColliders = intendedLine.lineObj.GetComponents<BoxCollider>();
         try
         {
-            BoxCollider[] boxColliders = intendedLine.lineObj.GetComponents<BoxCollider>();
             Debug.Log(boxColliders.Length);
 
             if (boxColliders.Length > 0)
@@ -165,7 +165,7 @@ public class DrawLine : LetterTraceClass
         {
             float scale = intendedLine.lineObj.transform.localScale.y;
 
-            if(intendedLine.tempCount > scale / 3)
+            if((float)edgeCollider.points.Length * 2 * 1.2 /*Range between 1 and 2 as multiplier for accuracy*/ > scale)
             {
                 viableLength = true;
             }
@@ -176,7 +176,11 @@ public class DrawLine : LetterTraceClass
         }
         else
         {
-            viableLength = false;
+            if(boxColliders.Length > 50)
+            {
+
+            }
+            viableLength = true;
         }
 
         if (lineScore > 60 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null) && viableLength)
