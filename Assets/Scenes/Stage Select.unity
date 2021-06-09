@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -533,7 +533,8 @@ MonoBehaviour:
     type: 3}
   thisCanvas: {fileID: 1130793124}
   levelsToSpawn:
-  - iconImage: {fileID: 0}
+  - iconImage: {fileID: 2164047825517206380, guid: eced9350f82f72b47a8c4c47f7bc0f30,
+      type: 3}
     name: abcdefghijklmnopqrstuvwxyz
   - iconImage: {fileID: 0}
     name: asd

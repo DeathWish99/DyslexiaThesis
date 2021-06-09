@@ -6,7 +6,7 @@ using UnityEngine.UI;
 [System.Serializable]
 public class LevelDict
 {
-    public Image iconImage;
+    public Sprite iconImage;
     public string name;
     
 }

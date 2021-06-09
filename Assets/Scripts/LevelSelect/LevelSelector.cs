@@ -63,6 +63,7 @@ public class LevelSelector : MonoBehaviour
                 GameObject icon = Instantiate(levelIcon) as GameObject;
                 icon.transform.SetParent(thisCanvas.transform, false);
                 icon.transform.SetParent(parentObject.transform);
+                icon.GetComponent<Image>().sprite = level.iconImage;
                 icon.name = level.name;
                 icon.GetComponentInChildren<TextMeshProUGUI>().SetText(level.name);
             }
