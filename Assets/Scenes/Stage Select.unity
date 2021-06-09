@@ -533,8 +533,7 @@ MonoBehaviour:
     type: 3}
   thisCanvas: {fileID: 1130793124}
   levelsToSpawn:
-  - iconImage: {fileID: 2164047825517206380, guid: eced9350f82f72b47a8c4c47f7bc0f30,
-      type: 3}
+  - iconImage: {fileID: 21300000, guid: 742c5431b1aa3644fbc33e5196629eb0, type: 3}
     name: abcdefghijklmnopqrstuvwxyz
   - iconImage: {fileID: 0}
     name: asd
