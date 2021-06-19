@@ -1136,7 +1136,6 @@ GameObject:
   - component: {fileID: 8873681929642752678}
   - component: {fileID: 8708422177862048332}
   - component: {fileID: 3990163921769437493}
-  - component: {fileID: 2045017073800530193}
   m_Layer: 5
   m_Name: Line1
   m_TagString: Untagged
@@ -1214,19 +1213,6 @@ MonoBehaviour:
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!65 &2045017073800530193
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6415849187569207238}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.61363643, y: 0.5630607, z: 1}
-  m_Center: {x: -1.0416507, y: 4.894454, z: 0}
 --- !u!1 &8677140088101108320
 GameObject:
   m_ObjectHideFlags: 0
