@@ -6,14 +6,13 @@ public class OpenAndUpdatePanel : LetterTraceClass
 {
     public bool active;
     public List<LetterTrace> lettersDict;
+    public GameObject gameController;
 
     private List<LetterTrace> lettersToSpawn;
-    [SerializeField] private GameObject gameController;
 
     private void Start()
     {
         LoadWord(PlayerPrefs.GetString("ObjName"));
-        gameController.GetComponent<VoiceController>().currObj = gameObject;
     }
 
     public void SwitchShowHide()
@@ -41,7 +40,10 @@ public class OpenAndUpdatePanel : LetterTraceClass
         GameObject instance = Instantiate(lettersToSpawn[0].letterObj, gameObject.transform, false);
         instance.SetActive(true);
         instance.tag = "Current Letter";
-        
+
+        gameController.GetComponent<VoiceController>().currObjName = receivedWord.ToLower();
+
+
         GetComponent<DrawLine>().currWord = lettersToSpawn;
         GetComponent<DrawLine>().currIndex = 0;
     }

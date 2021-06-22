@@ -4,13 +4,14 @@ using TextSpeech;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Android;
+using UnityEngine.SceneManagement;
 
 public class VoiceController : MonoBehaviour
 {
     const string LANG_CODE = "id-ID";
 
     //Object that is to be spawned
-    public GameObject currObj;
+    public string currObjName;
     [SerializeField] Text uiText;
 
     private void Start()
@@ -76,14 +77,29 @@ public class VoiceController : MonoBehaviour
     void OnFinalSpeechResult(string result)
     {
         uiText.text = result;
-        currObj.GetComponent<OpenAndUpdatePanel>().ShowSuccessScreen(result);
+        if (currObjName.Equals(result.ToLower()))
+        {
+            PlayerPrefs.SetString("ObjectResult", result);
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            //Play voice over, try again
+        }
     }
 
     void OnPartialSpeechResult(string result)
     {
         uiText.text = result;
-
-        currObj.GetComponent<OpenAndUpdatePanel>().ShowSuccessScreen(result);
+        if (currObjName.Equals(result.ToLower()))
+        {
+            PlayerPrefs.SetString("ObjectResult", result);
+            SceneManager.LoadScene(3);
+        }
+        else
+        {
+            //Play voice over, try again
+        }
     }
     void Setup(string code)
     {

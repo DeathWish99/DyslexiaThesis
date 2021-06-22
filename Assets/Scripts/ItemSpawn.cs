@@ -12,6 +12,13 @@ public class ItemSpawn : MonoBehaviour
     };
 
     public List<Items> spawnableItems;
+    public Transform spawnLocation;
+
+    private void Start()
+    {
+        //PlayerPrefs.SetString("ObjectResult", "cincin");
+        SpawnItem(PlayerPrefs.GetString("ObjectResult"), spawnLocation.position);
+    }
 
     public bool SpawnItem(string itemName, Vector3 pos)
     {
@@ -19,6 +26,7 @@ public class ItemSpawn : MonoBehaviour
         if(itemIndex > -1)
         {
             Items spawnThis = spawnableItems[itemIndex];
+            spawnThis.obj.transform.localScale = new Vector3(2000, 2000, 2000);
             Instantiate(spawnThis.obj, pos, Quaternion.identity);
             return true;
         }
