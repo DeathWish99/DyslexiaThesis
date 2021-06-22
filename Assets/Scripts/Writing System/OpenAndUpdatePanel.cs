@@ -23,10 +23,13 @@ public class OpenAndUpdatePanel : LetterTraceClass
     //Loads an array containing letters of the intended word, and loads it into hierarchy
     public void LoadWord(string receivedWord)
     {
+        string editedWord = receivedWord[0].ToString().ToUpper();
+        editedWord = editedWord + receivedWord.Substring(1, receivedWord.Length - 1).ToLower();
+
         lettersToSpawn = new List<LetterTrace>();
-        foreach (char letter in receivedWord.ToLower())
+        foreach (char letter in editedWord)
         {
-            int itemIndex = lettersDict.FindIndex(x => x.letter == letter);
+            int itemIndex = lettersDict.FindIndex(x => x.letterName == letter);
             if (itemIndex > -1)
             {
                 lettersToSpawn.Add(lettersDict[itemIndex]);

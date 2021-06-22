@@ -8,7 +8,7 @@ public abstract class LetterTraceClass : MonoBehaviour
     public struct LetterTrace
     {
         public GameObject letterObj;
-        public char letter;
+        public char letterName;
         public float letterScore;
     };
 

@@ -264,7 +264,7 @@ public class DrawLine : LetterTraceClass
             string word = "";
             for (int i = 0; i < currWord.Count; i++)
             {
-                word += currWord[i].letter.ToString();
+                word += currWord[i].letterName.ToString();
             }
             
             List<UserScore> userScores = new List<UserScore>();

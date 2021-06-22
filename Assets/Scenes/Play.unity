@@ -587,105 +587,213 @@ MonoBehaviour:
   lettersDict:
   - letterObj: {fileID: 8677140088101108320, guid: 20409e8b61a538c418acd5a5b55e5725,
       type: 3}
-    letter: 97
+    letterName: 65
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 40e2c38ee9d098e4888f2cb8adaa8dbe,
       type: 3}
-    letter: 98
+    letterName: 66
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 94206c3d8c732a242ac47d824bfc373a,
       type: 3}
-    letter: 99
+    letterName: 67
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 405aca5d9c01e0e4faad612b4a504cae,
       type: 3}
-    letter: 100
+    letterName: 68
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: d609a5b88bb6f9743b9ee487dab6941e,
       type: 3}
-    letter: 101
+    letterName: 69
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: fe3b4b1c90a2fdb47b0ffbc1bcb7366f,
       type: 3}
-    letter: 102
+    letterName: 70
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 1294504bbec0c054b892e259d8adfac9,
       type: 3}
-    letter: 103
+    letterName: 71
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 2399e0a2763bba442a07082dd62df33e,
       type: 3}
-    letter: 104
+    letterName: 72
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 34d2037f0ffe6a1448fce7a7e4b26ac1,
       type: 3}
-    letter: 106
+    letterName: 74
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 811e4ff574515f442bfbf4dda07b2399,
       type: 3}
-    letter: 107
+    letterName: 75
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: a8b89baa1372db248aba72b20369c99a,
       type: 3}
-    letter: 108
+    letterName: 76
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 34fc2c581bd305b478fbd24d99d87243,
       type: 3}
-    letter: 109
+    letterName: 77
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: afd1e81907ea29649b34137fd6422627,
       type: 3}
-    letter: 110
+    letterName: 78
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 39bdd6926a4456a4d9529eb7df57b949,
       type: 3}
-    letter: 111
+    letterName: 79
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: c9a5a0640f5d45542b31bbc7b846c844,
       type: 3}
-    letter: 112
+    letterName: 80
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: f0e74744e5f406c49908b8e2e5253fbe,
       type: 3}
-    letter: 113
+    letterName: 81
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: d79dee910c32dbe4a99509ec981ee5ac,
       type: 3}
-    letter: 114
+    letterName: 82
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 4b446e485f5ce7340a93b322fb1fce20,
       type: 3}
-    letter: 115
+    letterName: 83
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 875f2d1297f65ce409d8bcc3db7d008c,
       type: 3}
-    letter: 116
+    letterName: 84
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 5f1b90dd97c79904994eefe3ae453d6d,
       type: 3}
-    letter: 117
+    letterName: 85
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: a3e2af8fa16adb847bec7ae2b3f9b6b4,
       type: 3}
-    letter: 118
+    letterName: 86
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 87612ca500ff80f478241de02dd19079,
       type: 3}
-    letter: 119
+    letterName: 87
     letterScore: 0
-  - letterObj: {fileID: 8677140088101108320, guid: c32121e7c3b8f9c448e6f1004efeeab6,
+  - letterObj: {fileID: 8677140088101108320, guid: dce6cd53ea6ba454bb70509324d8c478,
       type: 3}
-    letter: 120
+    letterName: 88
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: f9a5d0c7bf18d6e46946ad05885c2f3b,
       type: 3}
-    letter: 121
+    letterName: 89
     letterScore: 0
   - letterObj: {fileID: 8677140088101108320, guid: 58281d44e315d3d48b89e188e2e1051b,
       type: 3}
-    letter: 122
+    letterName: 90
     letterScore: 0
-  gameController: {fileID: 0}
+  - letterObj: {fileID: 8677140088101108320, guid: e2b7a0535727c784db6830bf286a683a,
+      type: 3}
+    letterName: 73
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: f27f5029cb943e849ad85285fbf13a3f,
+      type: 3}
+    letterName: 97
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 8feddcfc121530c489856353670d1a76,
+      type: 3}
+    letterName: 98
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 26ecefbbdd0580241b186adc9dee1259,
+      type: 3}
+    letterName: 99
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 2f62ceead02fadc43a705b94e8117f41,
+      type: 3}
+    letterName: 100
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 588b7fb0479579444a9a21ff96c01db3,
+      type: 3}
+    letterName: 101
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: fe3b4b1c90a2fdb47b0ffbc1bcb7366f,
+      type: 3}
+    letterName: 102
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 0bad750d885fdce4c87c435cf193333f,
+      type: 3}
+    letterName: 103
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 7d31b42da0c28654eb4e79e9481527b7,
+      type: 3}
+    letterName: 104
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: c6c113b43ca9f694e8200d8467bee720,
+      type: 3}
+    letterName: 105
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 4608b5c2b14015b4e887c97cf7a671e9,
+      type: 3}
+    letterName: 106
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: d739612bbc6844f4fb473d20866f250a,
+      type: 3}
+    letterName: 107
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: d53363a8a7de627469f8b8619904fa64,
+      type: 3}
+    letterName: 108
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: de3b9cd79bf622c4aa27a8dd30bb6c95,
+      type: 3}
+    letterName: 109
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 84de13e9d90868b4f9c1c28aa9620efb,
+      type: 3}
+    letterName: 110
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 44bde0e02427b934db765e7dfbd8ca7b,
+      type: 3}
+    letterName: 111
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: da934572c1337a444a264da032bb81a5,
+      type: 3}
+    letterName: 112
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 1ffd7eac8a4e4f94e9dad0446bf4714b,
+      type: 3}
+    letterName: 113
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 473a910421f23b74aa0b1401c9466c02,
+      type: 3}
+    letterName: 114
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 831cdda9297512343833e2b632439b3d,
+      type: 3}
+    letterName: 115
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 7a08357c8edd60e4987c29b200f9b592,
+      type: 3}
+    letterName: 116
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 236270f9d99af8b41a06a052e7584f54,
+      type: 3}
+    letterName: 117
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 4ad5c59978b09fb4983b574a61bce6b7,
+      type: 3}
+    letterName: 118
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 26f623bfcc7c7f84fa0512bdb678a0fd,
+      type: 3}
+    letterName: 119
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: c32121e7c3b8f9c448e6f1004efeeab6,
+      type: 3}
+    letterName: 120
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: e738a3b0ab14d1145ac9d03d4be864ae,
+      type: 3}
+    letterName: 121
+    letterScore: 0
+  - letterObj: {fileID: 8677140088101108320, guid: 994b8654925496243b91af4e2d340f5a,
+      type: 3}
+    letterName: 122
+    letterScore: 0
+  gameController: {fileID: 811105484}
 --- !u!114 &595244285
 MonoBehaviour:
   m_ObjectHideFlags: 0
