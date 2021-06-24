@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4613432274650295695}
   - component: {fileID: 7839818619813511727}
-  - component: {fileID: 1201464570220958758}
   - component: {fileID: 4571800989529147964}
+  - component: {fileID: 5699977922312827764}
   m_Layer: 5
   m_Name: Line2
   m_TagString: Untagged
@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.384}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 16.3, y: 49.217}
-  m_SizeDelta: {x: 1.5999999, y: 5}
+  m_AnchoredPosition: {x: 16.3, y: 103.68}
+  m_SizeDelta: {x: 1.5999999, y: 0.6585593}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7839818619813511727
 CanvasRenderer:
@@ -46,20 +46,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 172101702052455692}
   m_CullTransparentMesh: 0
---- !u!136 &1201464570220958758
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172101702052455692}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.8
-  m_Height: 0.6300332
-  m_Direction: 1
-  m_Center: {x: -2.5489634e-14, y: 2.1849792, z: 0}
 --- !u!114 &4571800989529147964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,11 +70,24 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.126
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!65 &5699977922312827764
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 172101702052455692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5957997, y: 0.6571795, z: 1}
+  m_Center: {x: -0.0139968945, y: 0.0055328896, z: 0}
 --- !u!1 &6415849187569207238
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,8 +369,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.18491212, y: 3.8427892, z: 1}
-  m_Center: {x: 0.67924005, y: 0.6682623, z: 0}
+  m_Size: {x: 0.18491207, y: 3.73211, z: 1}
+  m_Center: {x: 0.67924005, y: 0.61292285, z: 0}
 --- !u!65 &3314872237209721511
 BoxCollider:
   m_ObjectHideFlags: 0
