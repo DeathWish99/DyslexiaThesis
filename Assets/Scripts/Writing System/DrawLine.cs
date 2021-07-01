@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SimpleJSON;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DrawLine : LetterTraceClass
 {
     public GameObject linePrefab;
@@ -19,6 +19,8 @@ public class DrawLine : LetterTraceClass
     public List<Vector2> fingerPositions;
 
     public List<LetterTrace> currWord;
+
+    public Text shownWord;
     LetterTrace tempLetter;
     public int currIndex;
     private float wordScore;
@@ -27,15 +29,12 @@ public class DrawLine : LetterTraceClass
 
     [SerializeField] private GameObject speakButton;
     private List<LinesCondition> linesInLetter = null;
-
-    Collider m_Collider;
-    Vector3 m_Center;
-    Vector3 m_Size, m_Min, m_Max;
     private void Start()
     {
         speakButton.SetActive(false);
         path = Application.dataPath + "/ScoreRecords.json";
         tempLetter = currWord[currIndex];
+        shownWord.text = "";
     }
     void Update()
     {
@@ -242,6 +241,7 @@ public class DrawLine : LetterTraceClass
         }
         if (currIndex < currWord.Count - 1)
         {
+            shownWord.text += tempLetter.letterName;
             currIndex += 1;
             tempLetter = currWord[currIndex];
             GameObject nextLetter = Instantiate(currWord[currIndex].letterObj, gameObject.transform, false);
@@ -334,6 +334,7 @@ public class DrawLine : LetterTraceClass
             //{
             //    Debug.Log(score);
             //}
+            shownWord.text += tempLetter.letterName;
             speakButton.SetActive(true);
             Destroy(currLetter);
         }

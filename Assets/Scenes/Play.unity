@@ -814,6 +814,7 @@ MonoBehaviour:
   edgeCollider: {fileID: 0}
   fingerPositions: []
   currWord: []
+  shownWord: {fileID: 789443785}
   currIndex: 0
   speakButton: {fileID: 1778089610}
 --- !u!1 &713839860
