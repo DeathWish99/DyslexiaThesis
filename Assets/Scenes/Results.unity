@@ -160,7 +160,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000091552734, y: 0.00022888184}
+  m_AnchoredPosition: {x: 0.00012207031, y: 0.00024414062}
   m_SizeDelta: {x: -0.00018310547, y: -687.7197}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &177739268
@@ -253,7 +253,13 @@ MonoBehaviour:
     name: vas
   - obj: {fileID: 919132149155446097, guid: 8ccb7395835d0754d8a8914a39bd54ee, type: 3}
     name: yoyo
+  stars:
+  - {fileID: 6326231466481203021, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
+  - {fileID: -6859001260349468157, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
+  - {fileID: -1177934027866655137, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
+  - {fileID: -1689290244019267309, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
   spawnLocation: {fileID: 1338138773}
+  starContainer: {fileID: 753125853}
 --- !u!1 &267878523
 GameObject:
   m_ObjectHideFlags: 0
