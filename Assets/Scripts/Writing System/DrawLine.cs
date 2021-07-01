@@ -335,6 +335,7 @@ public class DrawLine : LetterTraceClass
             //    Debug.Log(score);
             //}
             shownWord.text += tempLetter.letterName;
+            PlayerPrefs.SetFloat("WordScore", wordScore);
             speakButton.SetActive(true);
             Destroy(currLetter);
         }

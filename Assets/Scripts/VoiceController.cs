@@ -12,6 +12,7 @@ public class VoiceController : MonoBehaviour
 
     //Object that is to be spawned
     public string currObjName;
+    public float score;
     [SerializeField] Text uiText;
 
     private void Start()
@@ -76,7 +77,7 @@ public class VoiceController : MonoBehaviour
 
     void OnFinalSpeechResult(string result)
     {
-        uiText.text = result;
+        //uiText.text = result;
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
@@ -90,7 +91,7 @@ public class VoiceController : MonoBehaviour
 
     void OnPartialSpeechResult(string result)
     {
-        uiText.text = result;
+        //uiText.text = result;
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
