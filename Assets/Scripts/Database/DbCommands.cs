@@ -7,17 +7,6 @@ using System;
 public static class DbCommands
 {
     static string connectionString = "URI=file:" + Application.persistentDataPath + "/Database/score.db";
-    //private void Start()
-    //{
-    //    Debug.Log(connectionString);
-    //    CreateDbAndTable();
-
-    //    //InsertScore("abc", "76.123124");
-    //    //InsertScore("test", "88.5515");
-    //    //InsertScore("abc", "98.123124");
-    //    Debug.Log(GetScoresJson());
-    //}
-
     //Create new table
     public static void CreateDbAndTable()
     {
@@ -66,7 +55,7 @@ public static class DbCommands
 
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "SELECT * FROM MsScore ORDER BY WORD;";
+                command.CommandText = "SELECT * FROM MsScore ORDER BY Word, InputDatetime;";
                 
                 using (IDataReader reader = command.ExecuteReader())
                 {
