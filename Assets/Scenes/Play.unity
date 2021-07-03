@@ -758,6 +758,7 @@ MonoBehaviour:
   currWord: []
   shownWord: {fileID: 789443785}
   currIndex: 0
+  lineAccuracy: 1.87
   speakButton: {fileID: 1778089610}
 --- !u!1 &789443784
 GameObject:

@@ -23,6 +23,8 @@ public class DrawLine : LetterTraceClass
     public Text shownWord;
     LetterTrace tempLetter;
     public int currIndex;
+    public float lineAccuracy;
+
     private float wordScore;
 
     //private string path;
@@ -164,9 +166,7 @@ public class DrawLine : LetterTraceClass
         {
             float scale = intendedLine.lineObj.transform.localScale.y;
 
-            Debug.Log((float)edgeCollider.points.Length * 2 * 1.1);
-
-            if((float)edgeCollider.points.Length * 2 * 1.8 /*Range between 1 and 2 as multiplier for accuracy*/ > scale)
+            if((float)edgeCollider.points.Length * 2 * lineAccuracy /*Range between 1 and 2 as multiplier for accuracy*/ > scale)
             {
                 viableLength = true;
             }
