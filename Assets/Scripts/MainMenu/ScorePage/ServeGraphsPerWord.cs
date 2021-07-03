@@ -12,7 +12,7 @@ public class ServeGraphsPerWord : MonoBehaviour
     public RectTransform graphContainer;
     public TMP_Dropdown ddlRecords;
     public string targetRecord = "akt"; //temporary.
-    private string path;
+    //private string path;
     private string fromJsonString;
     private bool firstOpen;
     private RectTransform dashTemplateX;
@@ -27,9 +27,11 @@ public class ServeGraphsPerWord : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        path = Application.dataPath + "/ScoreRecords.json";
-        fromJsonString = File.ReadAllText(path);
+        //path = Application.dataPath + "/ScoreRecords.json";
+        fromJsonString = DbCommands.GetScoresJson();
         scoreRecords = JSONNode.Parse(fromJsonString);
+        Debug.Log(fromJsonString);
+        Debug.Log(scoreRecords);
         graphObjects = new List<GameObject>();
         dashTemplateX = graphContainer.Find("DashTemplateX").GetComponent<RectTransform>();
         dashTemplateY = graphContainer.Find("DashTemplateY").GetComponent<RectTransform>();

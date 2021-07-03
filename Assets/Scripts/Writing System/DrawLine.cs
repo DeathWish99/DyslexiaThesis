@@ -25,14 +25,14 @@ public class DrawLine : LetterTraceClass
     public int currIndex;
     private float wordScore;
 
-    private string path;
+    //private string path;
 
     [SerializeField] private GameObject speakButton;
     private List<LinesCondition> linesInLetter = null;
     private void Start()
     {
         speakButton.SetActive(false);
-        path = Application.dataPath + "/ScoreRecords.json";
+        //path = Application.dataPath + "/ScoreRecords.json";
         tempLetter = currWord[currIndex];
         shownWord.text = "";
     }
@@ -138,7 +138,7 @@ public class DrawLine : LetterTraceClass
         BoxCollider[] boxColliders = intendedLine.lineObj.GetComponents<BoxCollider>();
         try
         {
-            Debug.Log(boxColliders.Length);
+            //Debug.Log(boxColliders.Length);
 
             if (boxColliders.Length > 0)
                 curved = true;
@@ -150,7 +150,7 @@ public class DrawLine : LetterTraceClass
             curved = false;
         }
 
-        Debug.Log(curved);
+        //Debug.Log(curved);
         RectTransform rtLine = (RectTransform)intendedLine.lineObj.transform;
 
         int maxPoints = Convert.ToInt32(rtLine.localScale.y) / 2;
@@ -164,7 +164,9 @@ public class DrawLine : LetterTraceClass
         {
             float scale = intendedLine.lineObj.transform.localScale.y;
 
-            if((float)edgeCollider.points.Length * 2 * 1.2 /*Range between 1 and 2 as multiplier for accuracy*/ > scale)
+            Debug.Log((float)edgeCollider.points.Length * 2 * 1.1);
+
+            if((float)edgeCollider.points.Length * 2 * 1.8 /*Range between 1 and 2 as multiplier for accuracy*/ > scale)
             {
                 viableLength = true;
             }
@@ -266,74 +268,65 @@ public class DrawLine : LetterTraceClass
             {
                 word += currWord[i].letterName.ToString();
             }
-            
-            List<UserScore> userScores = new List<UserScore>();
-            List<float> newScore = new List<float>();
-            newScore.Add(wordScore);
-            string fromJsonString = "";
-            if (File.Exists(path))
-            {
-                fromJsonString = File.ReadAllText(path);
-            }
 
-            if (fromJsonString != "")
-            {
-                var data = JSONNode.Parse(fromJsonString);
-                foreach (JSONNode node in data)
+            //Old JSON Code. Unused now
+
+            /*
+                List<UserScore> userScores = new List<UserScore>();
+                List<float> newScore = new List<float>();
+                newScore.Add(wordScore);
+                string fromJsonString = "";
+                if (File.Exists(path))
                 {
-                    userScores.Add(JsonUtility.FromJson<UserScore>(node.ToString()));
+                    fromJsonString = File.ReadAllText(path);
                 }
-                
-                bool keyExist = false;
 
-                foreach (UserScore scoreObj in userScores)
+                if (fromJsonString != "")
                 {
-                    if (scoreObj.objectName.Equals(word))
+                    var data = JSONNode.Parse(fromJsonString);
+                    foreach (JSONNode node in data)
                     {
-                        scoreObj.scores.Add(wordScore);
-                        keyExist = true;
-                        break;
+                        userScores.Add(JsonUtility.FromJson<UserScore>(node.ToString()));
+                    }
+
+                    bool keyExist = false;
+
+                    foreach (UserScore scoreObj in userScores)
+                    {
+                        if (scoreObj.objectName.Equals(word))
+                        {
+                            scoreObj.scores.Add(wordScore);
+                            keyExist = true;
+                            break;
+                        }
+                    }
+
+                    if (!keyExist)
+                    {
+                        userScores.Add(new UserScore(word, newScore));
                     }
                 }
-
-                if (!keyExist)
+                else
                 {
                     userScores.Add(new UserScore(word, newScore));
                 }
-            }
-            else
-            {
-                userScores.Add(new UserScore(word, newScore));
-            }
 
-            string toJsonString = "{\"Records\":";
-            foreach (UserScore userScore in userScores)
-            {
-                toJsonString += JsonUtility.ToJson(userScore) + ",";
-            }
-            toJsonString = toJsonString.Trim(',');
-            toJsonString += "}";
-            
-            File.WriteAllText(path, toJsonString);
+                string toJsonString = "{\"Records\":";
+                foreach (UserScore userScore in userScores)
+                {
+                    toJsonString += JsonUtility.ToJson(userScore) + ",";
+                }
+                toJsonString = toJsonString.Trim(',');
+                toJsonString += "}";
 
-            Debug.Log(toJsonString);
+                File.WriteAllText(path, toJsonString);
 
-            //List<float> wordScores = PlayerPrefsX.GetFloatArray(word).ToList();
+                Debug.Log(toJsonString);
+            */
 
-            //if(wordScores.Count > 10)
-            //{
-            //    wordScores = wordScores.Skip(1).ToList();
-            //}
-
-            //wordScores.Add(wordScore);
-
-            //PlayerPrefsX.SetFloatArray(word, wordScores.ToArray());
-            //Debug.Log("Current Word: "+word +" Word score: " + wordScore);
-
-            //foreach(float score in PlayerPrefsX.GetFloatArray(word))
-            //{
-            //    Debug.Log(score);
-            //}
+            //Insert to DB and create if not created yet
+            DbCommands.CreateDbAndTable();
+            DbCommands.InsertScore(word, wordScore.ToString());
             shownWord.text += tempLetter.letterName;
             PlayerPrefs.SetFloat("WordScore", wordScore);
             speakButton.SetActive(true);
