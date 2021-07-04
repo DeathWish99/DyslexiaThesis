@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class ClickButton : MonoBehaviour
 {
-    private Animator an;
+    public Animator an;
+    public bool playButton;
     void Start()
     {
+        if(!playButton)
         an = GetComponent<Animator>();
     }
 

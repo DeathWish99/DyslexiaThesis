@@ -10,6 +10,7 @@ public class SceneAndPanels : MonoBehaviour
     public GameObject optionsPage;
     public GameObject creditsPage;
     public Button playButton;
+    public Button playButton2;
     public Button scoreButton;
     public Button optionsButton;
     public Button quitScore;
@@ -21,6 +22,7 @@ public class SceneAndPanels : MonoBehaviour
     private void Start()
     {
         playButton.onClick.AddListener(OpenLevelSelect);
+        playButton2.onClick.AddListener(OpenLevelSelect);
         scoreButton.onClick.AddListener(OpenScorePage);
         optionsButton.onClick.AddListener(OpenOptionsPage);
         quitScore.onClick.AddListener(QuitScore);
