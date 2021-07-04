@@ -31,7 +31,7 @@ public class SceneAndPanels : MonoBehaviour
 
     public void OpenLevelSelect()
     {
-        Invoke("DelayOpenLevelSelect", 0.3f);
+        Invoke("DelayOpenLevelSelect", 2f);
     }
 
     public void DelayOpenLevelSelect()
