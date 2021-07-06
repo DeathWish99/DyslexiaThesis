@@ -11,7 +11,6 @@ public class ServeGraphsPerWord : MonoBehaviour
     public Sprite circleSprite;
     public RectTransform graphContainer;
     public TMP_Dropdown ddlRecords;
-    public string targetRecord = "akt"; //temporary.
     //private string path;
     private string fromJsonString;
     private bool firstOpen;

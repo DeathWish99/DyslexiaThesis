@@ -81,8 +81,6 @@ public static class DbCommands
                         {
                             returnText += reader["Score"] + ",";
                         }
-                        Debug.Log(currWord);
-                        Debug.Log(reader["Word"]);
                     }
                 }
             }
