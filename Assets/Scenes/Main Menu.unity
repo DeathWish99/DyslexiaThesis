@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2339,6 +2339,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503962114}
   m_CullTransparentMesh: 0
+--- !u!1 &558570950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 558570952}
+  - component: {fileID: 558570951}
+  m_Layer: 0
+  m_Name: MusicContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &558570951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558570950}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16632146c505e364fb8583a1dcab7fa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainMenuMusic: {fileID: 1115967708963245714, guid: 022ce686829a6d741877bd7023da4226,
+    type: 3}
+  playMusic: {fileID: 0}
+  soundEffects:
+  - sfxName: bintang_1
+    sfxClip: {fileID: 4064170786502566690, guid: 10b45379d89b3b24080d7a3553958300,
+      type: 3}
+  - sfxName: bintang_2
+    sfxClip: {fileID: 5736508663524218772, guid: c7dee1e3ceee3d743977f272bb522546,
+      type: 3}
+  - sfxName: bintang_3
+    sfxClip: {fileID: 776784094155169756, guid: 9706cee2547bbcf4780690b431f3c577,
+      type: 3}
+  - sfxName: correct
+    sfxClip: {fileID: 4195831830926822262, guid: 1a58652809ff1b24ca04eeb43e923db1,
+      type: 3}
+  - sfxName: door_open
+    sfxClip: {fileID: 3466670042630394104, guid: 39a2b582fd314ae4694c58cff10443e6,
+      type: 3}
+  - sfxName: wrong
+    sfxClip: {fileID: 8956830772064240512, guid: 2f006d7c45b258e41b45fc4ef796536b,
+      type: 3}
+--- !u!4 &558570952
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 558570950}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1279.9999, y: 705.2266, z: 0.41533336}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &606370734
 GameObject:
   m_ObjectHideFlags: 0
