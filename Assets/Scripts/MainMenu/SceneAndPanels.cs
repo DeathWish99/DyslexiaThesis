@@ -9,6 +9,7 @@ public class SceneAndPanels : MonoBehaviour
     public GameObject scorePage;
     public GameObject optionsPage;
     public GameObject creditsPage;
+    public GameObject Maskot;
     public Button playButton;
     public Button playButton2;
     public Button scoreButton;
@@ -33,6 +34,7 @@ public class SceneAndPanels : MonoBehaviour
 
     public void OpenLevelSelect()
     {
+        Maskot.SetActive(false);
         Invoke("DelayOpenLevelSelect", 2f);
     }
 
