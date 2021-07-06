@@ -1,0 +1,734 @@
+fileFormatVersion: 2
+guid: c9a096a7e3af0af42a58c7b4661dbad1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1040581628583757600
+    second: Maskot_0
+  - first:
+      213: -834903618103902395
+    second: Maskot_1
+  - first:
+      213: -5877551715558936709
+    second: Maskot_2
+  - first:
+      213: 3049882410520375183
+    second: Maskot_3
+  - first:
+      213: -9063813321446712447
+    second: Maskot_4
+  - first:
+      213: 2094476523701439838
+    second: Maskot_5
+  - first:
+      213: -5795119792364433216
+    second: Maskot_6
+  - first:
+      213: 7004848133890677715
+    second: Maskot_7
+  - first:
+      213: 3971139428871817505
+    second: Maskot_8
+  - first:
+      213: -7249074174842454457
+    second: Maskot_9
+  - first:
+      213: -1584427090654651784
+    second: Maskot_10
+  - first:
+      213: 8736437068051228757
+    second: Maskot_11
+  - first:
+      213: -1669559048031320305
+    second: Maskot_12
+  - first:
+      213: 1109037427503181234
+    second: Maskot_13
+  - first:
+      213: 7687611743776604805
+    second: Maskot_14
+  - first:
+      213: -6476158191023457701
+    second: Maskot_15
+  - first:
+      213: 5364618716480723486
+    second: Maskot_16
+  - first:
+      213: -2668159458834305582
+    second: Maskot_17
+  - first:
+      213: 719712026133532285
+    second: Maskot_18
+  - first:
+      213: 8404238180876839117
+    second: Maskot_19
+  - first:
+      213: 5532839612396007522
+    second: Maskot_20
+  - first:
+      213: -999416164508717067
+    second: Maskot_21
+  - first:
+      213: 6940274808986776840
+    second: Maskot_22
+  - first:
+      213: -5335078932229608608
+    second: Maskot_23
+  - first:
+      213: -5241654104839803845
+    second: Maskot_24
+  - first:
+      213: -8856079576199741213
+    second: Maskot_25
+  - first:
+      213: 2525020149086808871
+    second: Maskot_26
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Maskot_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 638
+        width: 567
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e8b774a58c1f81f0800000000000000
+      internalID: -1040581628583757600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_1
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 986
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54f7a353593d964f0800000000000000
+      internalID: -834903618103902395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_2
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 986
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f2f15faddbe6ea0800000000000000
+      internalID: -5877551715558936709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_3
+      rect:
+        serializedVersion: 2
+        x: 670
+        y: 885
+        width: 148
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8f67c5b4eb535a20800000000000000
+      internalID: 3049882410520375183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_4
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 884
+        width: 148
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18b17b86ecdd63280800000000000000
+      internalID: -9063813321446712447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_5
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 851
+        width: 88
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d8e912d43111d10800000000000000
+      internalID: 2094476523701439838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_6
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 702
+        width: 130
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c05841b049939fa0800000000000000
+      internalID: -5795119792364433216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_7
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 705
+        width: 130
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3db9c16b348363160800000000000000
+      internalID: 7004848133890677715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_8
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 623
+        width: 123
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 129c37345425c1730800000000000000
+      internalID: 3971139428871817505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_9
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 626
+        width: 123
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74ebe0af17d166b90800000000000000
+      internalID: -7249074174842454457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_11
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 475
+        width: 164
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558afbbc93f0e3970800000000000000
+      internalID: 8736437068051228757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_12
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 474
+        width: 164
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07cd8a34e884d8e0800000000000000
+      internalID: -1669559048031320305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_13
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 567
+        width: 123
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bda0f41aa7146f00800000000000000
+      internalID: 1109037427503181234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_14
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 567
+        width: 123
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5820de67622efaa60800000000000000
+      internalID: 7687611743776604805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_15
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 498
+        width: 123
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5a7fcaff601026a0800000000000000
+      internalID: -6476158191023457701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_16
+      rect:
+        serializedVersion: 2
+        x: 910
+        y: 495
+        width: 123
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ade37bc44f27a40800000000000000
+      internalID: 5364618716480723486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_17
+      rect:
+        serializedVersion: 2
+        x: 196
+        y: 350
+        width: 80
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dd2514db1bc8fad0800000000000000
+      internalID: -2668159458834305582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_18
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 350
+        width: 80
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7e044a464eecf900800000000000000
+      internalID: 719712026133532285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_19
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 390
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc860f2191ad1a470800000000000000
+      internalID: 8404238180876839117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_20
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 390
+        width: 44
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260f210305898cc40800000000000000
+      internalID: 5532839612396007522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_21
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 16
+        width: 347
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ffaca32b4c5122f0800000000000000
+      internalID: -999416164508717067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_22
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 303
+        width: 148
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 805bf39ea2fc05060800000000000000
+      internalID: 6940274808986776840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_23
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 304
+        width: 148
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06ba8c34afdf5f5b0800000000000000
+      internalID: -5335078932229608608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_25
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 236
+        width: 88
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e0c5060c82e81580800000000000000
+      internalID: -8856079576199741213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maskot_26
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 131
+        width: 76
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72be50d827caa0320800000000000000
+      internalID: 2525020149086808871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
