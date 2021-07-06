@@ -2368,8 +2368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16632146c505e364fb8583a1dcab7fa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuMusic: {fileID: 1115967708963245714, guid: 022ce686829a6d741877bd7023da4226,
-    type: 3}
+  mainMenuMusic: {fileID: 8300000, guid: 6b0508d6b3ac059469ca74c6fa6fd36f, type: 3}
   playMusic: {fileID: 0}
   soundEffects:
   - sfxName: bintang_1
