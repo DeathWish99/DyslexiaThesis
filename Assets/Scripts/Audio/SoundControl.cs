@@ -48,11 +48,8 @@ public class SoundControl : MonoBehaviour
     {
 
     }
+    
 
-    /// <summary>
-    /// Plays the music designed for the menus
-    /// This method is static so that it can be called from anywhere in the code.
-    /// </summary>
     static public void PlayMenuMusic()
     {
         if (instance != null)
@@ -70,11 +67,7 @@ public class SoundControl : MonoBehaviour
             Debug.LogError("Unavailable MusicPlayer component");
         }
     }
-
-    /// <summary>
-    /// Plays the music designed for outside menus
-    /// This method is static so that it can be called from anywhere in the code.
-    /// </summary>
+    
     static public void PlayGameMusic()
     {
         if (instance != null)
@@ -94,37 +87,103 @@ public class SoundControl : MonoBehaviour
 
     static public void PlayOneStar()
     {
-        var sfx = instance.soundEffects.Find(x => x.sfxName == "bintang_1").sfxClip;
-        sfx.PlayOneShot(sfx.clip);
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "bintang_1").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx.clip);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 
     static public void PlayTwoStar()
     {
-        var sfx = instance.soundEffects.Find(x => x.sfxName == "bintang_2").sfxClip;
-        sfx.PlayOneShot(sfx.clip);
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "bintang_2").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx.clip);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 
     static public void PlayThreeStar()
     {
-        var sfx = instance.soundEffects.Find(x => x.sfxName == "bintang_3").sfxClip;
-        sfx.PlayOneShot(sfx.clip);
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "bintang_3").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx.clip);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 
     static public void PlayCorrect()
     {
-        var sfx = instance.soundEffects.Find(x => x.sfxName == "correct").sfxClip;
-        sfx.PlayOneShot(sfx.clip);
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "correct").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx.clip);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 
     static public void PlayWrong()
     {
-        var sfx = instance.soundEffects.Find(x => x.sfxName == "wrong").sfxClip;
-        sfx.PlayOneShot(sfx.clip);
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "wrong").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx.clip);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 
     static public void PlayDoorOpen()
     {
-        var sfx = instance.soundEffects.Find(x => x.sfxName == "door_open").sfxClip;
-        sfx.PlayOneShot(sfx.clip);
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "door_open").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx.clip);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 }
