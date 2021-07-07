@@ -27,21 +27,25 @@ public class ServeGraphsPerWord : MonoBehaviour
     void Start()
     {
         //path = Application.dataPath + "/ScoreRecords.json";
+        DbCommands.CreateDbAndTable();
         fromJsonString = DbCommands.GetScoresJson();
-        scoreRecords = JSONNode.Parse(fromJsonString);
         Debug.Log(fromJsonString);
-        Debug.Log(scoreRecords);
-        graphObjects = new List<GameObject>();
-        dashTemplateX = graphContainer.Find("DashTemplateX").GetComponent<RectTransform>();
-        dashTemplateY = graphContainer.Find("DashTemplateY").GetComponent<RectTransform>();
-        labelTemplateX = graphContainer.Find("LabelTemplateX").GetComponent<RectTransform>();
-        labelTemplateY = graphContainer.Find("LabelTemplateY").GetComponent<RectTransform>();
-        firstOpen = false;
-        rectXs = new List<RectTransform>();
-        parsedScoreRecords = new List<UserScore>();
-        ParseRecordsToList();
-        AddDropdownOptions();
-        CreateGraphByWord();
+        if (!fromJsonString.Equals(""))
+        {
+            scoreRecords = JSONNode.Parse(fromJsonString);
+            Debug.Log(scoreRecords);
+            graphObjects = new List<GameObject>();
+            dashTemplateX = graphContainer.Find("DashTemplateX").GetComponent<RectTransform>();
+            dashTemplateY = graphContainer.Find("DashTemplateY").GetComponent<RectTransform>();
+            labelTemplateX = graphContainer.Find("LabelTemplateX").GetComponent<RectTransform>();
+            labelTemplateY = graphContainer.Find("LabelTemplateY").GetComponent<RectTransform>();
+            firstOpen = false;
+            rectXs = new List<RectTransform>();
+            parsedScoreRecords = new List<UserScore>();
+            ParseRecordsToList();
+            AddDropdownOptions();
+            CreateGraphByWord();
+        }
     }
 
     void AddDropdownOptions()

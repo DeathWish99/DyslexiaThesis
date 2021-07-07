@@ -90,6 +90,10 @@ public static class DbCommands
             connection.Close();
         }
 
+        if (first)
+        {
+            return "";
+        }
         return returnText;
     }
 }
