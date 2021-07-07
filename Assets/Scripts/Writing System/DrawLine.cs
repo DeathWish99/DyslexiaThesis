@@ -275,7 +275,7 @@ public class DrawLine : LetterTraceClass
             }
 
             //Insert to DB and create if not created yet
-            //DbCommands.CreateDbAndTable();
+            DbCommands.CreateDbAndTable();
             //DbCommands.InsertScore(word, wordScore.ToString());
             shownWord.text += tempLetter.letterName;
             PlayerPrefs.SetFloat("WordScore", wordScore);

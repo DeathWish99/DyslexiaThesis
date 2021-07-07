@@ -3,6 +3,7 @@ using UnityEngine;
 using Mono.Data.Sqlite;
 using System.IO;
 using System;
+using UnityEngine.Networking;
 
 public static class DbCommands
 {
@@ -10,13 +11,32 @@ public static class DbCommands
     //Create new table
     public static void CreateDbAndTable()
     {
+        if (!File.Exists(connectionString))
+
+        {
+            UnityWebRequest loadDB = new UnityWebRequest("jar:file://" + Application.dataPath + "!/assets/score.db");  // this is the path to your StreamingAssets in android
+
+            DateTime start = DateTime.Now;
+            while (!loadDB.isDone || DateTime.Now.Subtract(start).Seconds > 15) {}  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+
+            if(DateTime.Now.Subtract(start).Seconds > 15)
+            {
+                throw new Exception("Db Connection Timed Out");
+            }
+
+            // then save to Application.persistentDataPath
+
+            File.WriteAllBytes(connectionString, loadDB.downloadHandler.data);
+
+        }
+        Debug.Log(connectionString);
         using (var connection = new SqliteConnection(connectionString))
         {
             connection.Open();
 
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = "CREATE TABLE IF NOT EXISTS MsScore(Id INTEGER PRIMARY KEY AUTOINCREMENT, Word VARCHAR(100) NOT NULL, Score DOUBLE NOT NULL, InputDatetime DATETIME NOT NULL);";
+                command.CommandText = "CREATE TABLE IF NOT EXISTS MsScore(Id INTEGER PRIMARY KEY AUTOINCREMENT, Word VARCHAR(100), Score DOUBLE, InputDatetime DATETIME);";
                 command.ExecuteNonQuery();
             }
 
