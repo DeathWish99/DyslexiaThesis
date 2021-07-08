@@ -3,23 +3,11 @@
     "m_SelectedPackage": {
         "deviceId": "273a417839017ece",
         "name": "com.DefaultCompany.SkripsiPrototype",
-        "processId": 30022,
+        "processId": 23624,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
-        {
-            "deviceId": "273a417839017ece",
-            "name": "bbc.mobile.news.ww",
-            "processId": 23424,
-            "exited": true
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 23346,
-            "exited": true
-        },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
@@ -36,6 +24,60 @@
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
             "processId": 30022,
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 30794,
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 1459,
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 32272,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 15917,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 17317,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 18582,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 22108,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 22971,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 23624,
             "exited": false
         }
     ],

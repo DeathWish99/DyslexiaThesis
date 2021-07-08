@@ -8,25 +8,41 @@ using UnityEngine.Networking;
 public static class DbCommands
 {
     static string connectionString = "URI=file:" + Application.persistentDataPath + "/Database/score.db";
+    static string pathToPersistentDb = Application.persistentDataPath + "/Database";
+    static string streamingAssetsPath;
     //Create new table
     public static void CreateDbAndTable()
     {
-        if (!File.Exists(connectionString))
+#if UNITY_ANDROID
+        streamingAssetsPath = "jar:file://" + Application.dataPath + "!/assets";
+#elif UNITY_EDITOR
+        streamingAssetsPath = Application.dataPath + "/StreamingAssets";
+#endif
+        if (File.Exists(streamingAssetsPath + "/score.db"))
+        {
+            Debug.Log("File Exists");
+        }
+        else
+        {
+            Debug.Log("File Does not Exist");
+        }
+        if (!File.Exists(pathToPersistentDb + "/score.db"))
 
         {
-            UnityWebRequest loadDB = new UnityWebRequest("jar:file://" + Application.dataPath + "!/assets/score.db");  // this is the path to your StreamingAssets in android
+            System.IO.Directory.CreateDirectory(pathToPersistentDb);
+            WWW loadDB = new WWW(streamingAssetsPath + "/score.db");
 
             DateTime start = DateTime.Now;
-            while (!loadDB.isDone || DateTime.Now.Subtract(start).Seconds > 15) {}  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
+            while (!loadDB.isDone && DateTime.Now.Subtract(start).Seconds < 6) {}  // CAREFUL here, for safety reasons you shouldn't let this while loop unattended, place a timer and error check
 
-            if(DateTime.Now.Subtract(start).Seconds > 15)
+            if(DateTime.Now.Subtract(start).Seconds >= 6)
             {
                 throw new Exception("Db Connection Timed Out");
             }
 
             // then save to Application.persistentDataPath
 
-            File.WriteAllBytes(connectionString, loadDB.downloadHandler.data);
+            File.WriteAllBytes(pathToPersistentDb + "/score.db", loadDB.bytes);
 
         }
         Debug.Log(connectionString);
@@ -112,7 +128,7 @@ public static class DbCommands
 
         if (first)
         {
-            return "";
+            return "{}";
         }
         return returnText;
     }

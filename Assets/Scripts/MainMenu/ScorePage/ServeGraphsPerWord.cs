@@ -27,7 +27,7 @@ public class ServeGraphsPerWord : MonoBehaviour
     void Start()
     {
         //path = Application.dataPath + "/ScoreRecords.json";
-        DbCommands.CreateDbAndTable();
+        //DbCommands.CreateDbAndTable();
         fromJsonString = DbCommands.GetScoresJson();
         Debug.Log(fromJsonString);
         if (!fromJsonString.Equals(""))
