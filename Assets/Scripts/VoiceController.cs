@@ -75,13 +75,14 @@ public class VoiceController : MonoBehaviour
         SpeechToText.instance.StopRecording();
     }
 
-    void OnFinalSpeechResult(string result)
+    void OnFinalSpeechResult(string result = "")
     {
-        //uiText.text = result;
+        uiText.text = result;
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
+            StopListening();
         }
         else
         {
@@ -89,13 +90,14 @@ public class VoiceController : MonoBehaviour
         }
     }
 
-    void OnPartialSpeechResult(string result)
+    void OnPartialSpeechResult(string result = "")
     {
-        //uiText.text = result;
+        uiText.text = result;
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
+            StopListening();
         }
         else
         {

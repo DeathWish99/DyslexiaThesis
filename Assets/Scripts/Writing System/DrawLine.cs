@@ -26,6 +26,7 @@ public class DrawLine : LetterTraceClass
     public float lineAccuracy;
 
     private float wordScore;
+    private bool finishedDrawing;
 
     //private string path;
 
@@ -33,6 +34,7 @@ public class DrawLine : LetterTraceClass
     private List<LinesCondition> linesInLetter = null;
     private void Start()
     {
+        finishedDrawing = false;
         speakButton.SetActive(false);
         //path = Application.dataPath + "/ScoreRecords.json";
         tempLetter = currWord[currIndex];
@@ -40,21 +42,24 @@ public class DrawLine : LetterTraceClass
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!finishedDrawing)
         {
-            CreateLine();
-        }
-        if (Input.GetMouseButton(0))
-        {
-            Vector2 tempFingerPos = uiCam.ScreenToWorldPoint(Input.mousePosition);
-            if(Vector2.Distance(tempFingerPos, fingerPositions[fingerPositions.Count - 1]) > .1f)
+            if (Input.GetMouseButtonDown(0))
             {
-                UpdateLine(tempFingerPos);
+                CreateLine();
             }
-        }
-        if (Input.GetMouseButtonUp(0))
-        {
-            EndLine();
+            if (Input.GetMouseButton(0))
+            {
+                Vector2 tempFingerPos = uiCam.ScreenToWorldPoint(Input.mousePosition);
+                if (Vector2.Distance(tempFingerPos, fingerPositions[fingerPositions.Count - 1]) > .1f)
+                {
+                    UpdateLine(tempFingerPos);
+                }
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                EndLine();
+            }
         }
     }
 
@@ -269,68 +274,14 @@ public class DrawLine : LetterTraceClass
                 word += currWord[i].letterName.ToString();
             }
 
-            //Old JSON Code. Unused now
-
-            /*
-                List<UserScore> userScores = new List<UserScore>();
-                List<float> newScore = new List<float>();
-                newScore.Add(wordScore);
-                string fromJsonString = "";
-                if (File.Exists(path))
-                {
-                    fromJsonString = File.ReadAllText(path);
-                }
-
-                if (fromJsonString != "")
-                {
-                    var data = JSONNode.Parse(fromJsonString);
-                    foreach (JSONNode node in data)
-                    {
-                        userScores.Add(JsonUtility.FromJson<UserScore>(node.ToString()));
-                    }
-
-                    bool keyExist = false;
-
-                    foreach (UserScore scoreObj in userScores)
-                    {
-                        if (scoreObj.objectName.Equals(word))
-                        {
-                            scoreObj.scores.Add(wordScore);
-                            keyExist = true;
-                            break;
-                        }
-                    }
-
-                    if (!keyExist)
-                    {
-                        userScores.Add(new UserScore(word, newScore));
-                    }
-                }
-                else
-                {
-                    userScores.Add(new UserScore(word, newScore));
-                }
-
-                string toJsonString = "{\"Records\":";
-                foreach (UserScore userScore in userScores)
-                {
-                    toJsonString += JsonUtility.ToJson(userScore) + ",";
-                }
-                toJsonString = toJsonString.Trim(',');
-                toJsonString += "}";
-
-                File.WriteAllText(path, toJsonString);
-
-                Debug.Log(toJsonString);
-            */
-
             //Insert to DB and create if not created yet
-            DbCommands.CreateDbAndTable();
+            //DbCommands.CreateDbAndTable();
             DbCommands.InsertScore(word, wordScore.ToString());
             shownWord.text += tempLetter.letterName;
             PlayerPrefs.SetFloat("WordScore", wordScore);
             speakButton.SetActive(true);
             Destroy(currLetter);
+            finishedDrawing = true;
         }
     }
 }

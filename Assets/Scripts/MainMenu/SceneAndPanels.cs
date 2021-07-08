@@ -30,6 +30,7 @@ public class SceneAndPanels : MonoBehaviour
         quitOption.onClick.AddListener(QuitOption);
         quitCredits.onClick.AddListener(QuitCredits);
         creditsButton.onClick.AddListener(OpenCredits);
+        DbCommands.CreateDbAndTable();
     }
 
     public void OpenLevelSelect()
