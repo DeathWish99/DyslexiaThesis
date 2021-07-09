@@ -12,13 +12,11 @@ public class ClickHandle : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("Down");
         downEvent?.Invoke();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        Debug.Log("Up");
         upEvent?.Invoke();
     }
 }

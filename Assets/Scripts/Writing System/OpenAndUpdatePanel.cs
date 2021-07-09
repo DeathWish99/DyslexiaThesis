@@ -45,13 +45,9 @@ public class OpenAndUpdatePanel : LetterTraceClass
         instance.tag = "Current Letter";
 
         gameController.GetComponent<VoiceController>().currObjName = receivedWord.ToLower();
+        gameController.GetComponent<VoiceController>().currLetterObjs = lettersToSpawn;
 
         GetComponent<DrawLine>().currWord = lettersToSpawn;
         GetComponent<DrawLine>().currIndex = 0;
-    }
-
-    public void ShowSuccessScreen(string result)
-    {
-
     }
 }

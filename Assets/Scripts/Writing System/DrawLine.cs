@@ -25,13 +25,38 @@ public class DrawLine : LetterTraceClass
     public int currIndex;
     public float lineAccuracy;
 
+    
     private float wordScore;
     private bool finishedDrawing;
 
     //private string path;
 
+    static private DrawLine instance; 
+
     [SerializeField] private GameObject speakButton;
     private List<LinesCondition> linesInLetter = null;
+
+    public static void TriggerNextLetter()
+    {
+        instance.speakButton.SetActive(false);
+        instance.NextLetterOrSpeak();
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            // Register as singleton if first
+            instance = this;
+        }
+        else
+        {
+            // Self-destruct if another instance exists
+            Destroy(this);
+            return;
+        }
+    }
+
     private void Start()
     {
         finishedDrawing = false;
@@ -93,24 +118,11 @@ public class DrawLine : LetterTraceClass
 
         if (lines != null)
         {
-            //Debug.Log("Collider Center : " + m_Center);
-            //Debug.Log("Collider Size : " + m_Size);
-            //Debug.Log("Collider bound Minimum : " + m_Min);
-            //Debug.Log("Collider bound Maximum : " + m_Max);
-
-            ////Fetch the Collider from the GameObject
-            ////Fetch the center of the Collider volume
-            //m_Center = edgeCollider.bounds.center;
-            ////Fetch the size of the Collider volume
-            //m_Size = edgeCollider.bounds.size;
-            ////Fetch the minimum and maximum bounds of the Collider volume
-            //m_Min = edgeCollider.bounds.min;
-            //m_Max = edgeCollider.bounds.max;
             ProcessTraceLines(lines);
 
             if (CheckDrawn())
             {
-                NextLetterOrSpeak();
+                speakButton.SetActive(true);
             }
         }
         else
@@ -240,7 +252,6 @@ public class DrawLine : LetterTraceClass
         tempLetter.letterScore /= linesInLetter.Count;
         currWord[currIndex] = tempLetter;
         Debug.Log("Letter Score: " + currWord[currIndex].letterScore);
-
 
         foreach (GameObject drawnLine in drawnLines)
         {
