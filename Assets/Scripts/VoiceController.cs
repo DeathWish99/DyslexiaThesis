@@ -75,6 +75,7 @@ public class VoiceController : MonoBehaviour
         else
         {
             //Play voice over, try again
+            SoundControl.PlayWrong();
         }
     }
 

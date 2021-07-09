@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2455,11 +2455,13 @@ MonoBehaviour:
   - sfxName: bintang_3
     sfxClip: {fileID: 8300000, guid: 48354e64ec8450c4f94340b8994ed90f, type: 3}
   - sfxName: correct
-    sfxClip: {fileID: 8300000, guid: 335e76eecccafbb4d92048e6fcfd8b6f, type: 3}
+    sfxClip: {fileID: 8300000, guid: 100f727142e27f14db1cc24a3d60e486, type: 3}
   - sfxName: door_open
-    sfxClip: {fileID: 8300000, guid: abdfb56d4392855498188889d8977ba0, type: 3}
+    sfxClip: {fileID: 8300000, guid: 3caec374cdd23944c84fa630018e0e66, type: 3}
   - sfxName: wrong
     sfxClip: {fileID: 8300000, guid: c710feb563989c74da8899a1f1f9dbae, type: 3}
+  - sfxName: correct_voice
+    sfxClip: {fileID: 8300000, guid: 335e76eecccafbb4d92048e6fcfd8b6f, type: 3}
   musicSource: {fileID: 558570954}
   sfxSource: {fileID: 558570953}
 --- !u!4 &558570952

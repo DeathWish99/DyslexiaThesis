@@ -38,6 +38,7 @@ public class DrawLine : LetterTraceClass
 
     public static void TriggerNextLetter()
     {
+        SoundControl.PlayCorrectVoice();
         instance.speakButton.SetActive(false);
         instance.NextLetterOrSpeak();
     }
@@ -207,11 +208,13 @@ public class DrawLine : LetterTraceClass
             tempLetter.letterScore += lineScore;
             intendedLine.drawn = true;
             linesInLetter[lineIndex] = intendedLine;
+            SoundControl.PlayCorrect();
         }
         else
         {
             Debug.Log("Nothing exists");
             Destroy(currentLine);
+            SoundControl.PlayWrong();
         }
     }
 

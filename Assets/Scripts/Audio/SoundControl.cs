@@ -153,6 +153,23 @@ public class SoundControl : MonoBehaviour
         }
     }
 
+    static public void PlayCorrectVoice()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "correct_voice").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
     static public void PlayWrong()
     {
         if (instance != null)
