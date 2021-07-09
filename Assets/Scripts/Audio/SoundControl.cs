@@ -10,7 +10,7 @@ public class SoundControl : MonoBehaviour
     [System.Serializable]
     public struct SoundEffect{
         public string sfxName;
-        public AudioSource sfxClip;
+        public AudioClip sfxClip;
     };
 
     public List<SoundEffect> soundEffects;
@@ -94,7 +94,7 @@ public class SoundControl : MonoBehaviour
             {
                 instance.sfxSource.Stop();
             }
-            instance.sfxSource.PlayOneShot(sfx.clip);
+            instance.sfxSource.PlayOneShot(sfx);
         }
         else
         {
@@ -111,7 +111,7 @@ public class SoundControl : MonoBehaviour
             {
                 instance.sfxSource.Stop();
             }
-            instance.sfxSource.PlayOneShot(sfx.clip);
+            instance.sfxSource.PlayOneShot(sfx);
         }
         else
         {
@@ -128,7 +128,7 @@ public class SoundControl : MonoBehaviour
             {
                 instance.sfxSource.Stop();
             }
-            instance.sfxSource.PlayOneShot(sfx.clip);
+            instance.sfxSource.PlayOneShot(sfx);
         }
         else
         {
@@ -145,7 +145,7 @@ public class SoundControl : MonoBehaviour
             {
                 instance.sfxSource.Stop();
             }
-            instance.sfxSource.PlayOneShot(sfx.clip);
+            instance.sfxSource.PlayOneShot(sfx);
         }
         else
         {
@@ -162,7 +162,7 @@ public class SoundControl : MonoBehaviour
             {
                 instance.sfxSource.Stop();
             }
-            instance.sfxSource.PlayOneShot(sfx.clip);
+            instance.sfxSource.PlayOneShot(sfx);
         }
         else
         {
@@ -179,7 +179,7 @@ public class SoundControl : MonoBehaviour
             {
                 instance.sfxSource.Stop();
             }
-            instance.sfxSource.PlayOneShot(sfx.clip);
+            instance.sfxSource.PlayOneShot(sfx);
         }
         else
         {
