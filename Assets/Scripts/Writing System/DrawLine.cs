@@ -25,42 +25,17 @@ public class DrawLine : LetterTraceClass
     public int currIndex;
     public float lineAccuracy;
 
-    
+    public GameObject speakButton;
+
+
     private float wordScore;
-    private bool finishedDrawing;
 
     //private string path;
-
-    static private DrawLine instance; 
-
-    [SerializeField] private GameObject speakButton;
+    
     private List<LinesCondition> linesInLetter = null;
-
-    public static void TriggerNextLetter()
-    {
-        SoundControl.PlayCorrectVoice();
-        instance.speakButton.SetActive(false);
-        instance.NextLetterOrSpeak();
-    }
-
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            // Register as singleton if first
-            instance = this;
-        }
-        else
-        {
-            // Self-destruct if another instance exists
-            Destroy(this);
-            return;
-        }
-    }
 
     private void Start()
     {
-        finishedDrawing = false;
         speakButton.SetActive(false);
         //path = Application.dataPath + "/ScoreRecords.json";
         tempLetter = currWord[currIndex];
@@ -68,7 +43,7 @@ public class DrawLine : LetterTraceClass
     }
     void Update()
     {
-        if (!finishedDrawing)
+        if (!speakButton.activeSelf)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -124,6 +99,7 @@ public class DrawLine : LetterTraceClass
             if (CheckDrawn())
             {
                 speakButton.SetActive(true);
+                //NextLetterOrSpeak();
             }
         }
         else
@@ -246,7 +222,7 @@ public class DrawLine : LetterTraceClass
         }
     }
 
-    private void NextLetterOrSpeak()
+    public void NextLetterOrSpeak()
     {
         GameObject currLetter = GameObject.FindGameObjectWithTag("Current Letter");
 
@@ -255,6 +231,7 @@ public class DrawLine : LetterTraceClass
         tempLetter.letterScore /= linesInLetter.Count;
         currWord[currIndex] = tempLetter;
         Debug.Log("Letter Score: " + currWord[currIndex].letterScore);
+        Debug.Log(currWord.Count);
 
         foreach (GameObject drawnLine in drawnLines)
         {
@@ -293,9 +270,9 @@ public class DrawLine : LetterTraceClass
             DbCommands.InsertScore(word, wordScore.ToString());
             shownWord.text += tempLetter.letterName;
             PlayerPrefs.SetFloat("WordScore", wordScore);
+            Debug.Log(wordScore);
             speakButton.SetActive(true);
             Destroy(currLetter);
-            finishedDrawing = true;
         }
     }
 }

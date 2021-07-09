@@ -15,6 +15,8 @@ public class VoiceController : MonoBehaviour
     public string currObjName;
     public List<LetterTrace> currLetterObjs;
     public float score;
+
+    public GameObject gamePanel;
     [SerializeField] Text uiText;
 
     private void Start()
@@ -28,7 +30,7 @@ public class VoiceController : MonoBehaviour
 
 
 #if UNITY_ANDROID
-        SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
+        //SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
 #endif
 
         SpeechToText.instance.onResultCallback = OnFinalSpeechResult;
@@ -62,6 +64,8 @@ public class VoiceController : MonoBehaviour
         uiText.text = result;
 
         var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
+
+        Debug.Log(spokenLetter);
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
@@ -70,27 +74,43 @@ public class VoiceController : MonoBehaviour
         }
         else if(spokenLetter != null)
         {
-            DrawLine.TriggerNextLetter();
+            SoundControl.PlayCorrectVoice();
+            gamePanel.GetComponent<DrawLine>().speakButton.SetActive(false);
+            gamePanel.GetComponent<DrawLine>().NextLetterOrSpeak();
+            StopListening();
         }
         else
         {
             //Play voice over, try again
             SoundControl.PlayWrong();
+            StopListening();
         }
     }
 
     void OnPartialSpeechResult(string result = "")
     {
         uiText.text = result;
+
+        var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
+        Debug.Log(spokenLetter);
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
             StopListening();
         }
+        else if (spokenLetter != null)
+        {
+            SoundControl.PlayCorrectVoice();
+            gamePanel.GetComponent<DrawLine>().speakButton.SetActive(false);
+            gamePanel.GetComponent<DrawLine>().NextLetterOrSpeak();
+            StopListening();
+        }
         else
         {
             //Play voice over, try again
+            SoundControl.PlayWrong();
+            StopListening();
         }
     }
     void Setup(string code)

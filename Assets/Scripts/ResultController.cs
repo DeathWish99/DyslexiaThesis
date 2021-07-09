@@ -20,8 +20,8 @@ public class ResultController : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.SetString("ObjectResult", "cincin");
-        //PlayerPrefs.SetFloat("WordScore", 79);
+        PlayerPrefs.SetString("ObjectResult", "cincin");
+        PlayerPrefs.SetFloat("WordScore", 79);
         SpawnItem(PlayerPrefs.GetString("ObjectResult"), spawnLocation.position);
         SetStars();
     }
@@ -54,14 +54,17 @@ public class ResultController : MonoBehaviour
         else if (score >= 60 && score < 79)
         {
             starContainer.sprite = stars[1];
+            SoundControl.PlayOneStar();
         }
         else if (score >= 79 && score < 87)
         {
             starContainer.sprite = stars[2];
+            SoundControl.PlayTwoStar();
         }
         else if (score >= 87 && score <= 100)
         {
             starContainer.sprite = stars[3];
+            SoundControl.PlayThreeStar();
         }
     }
 }

@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "273a417839017ece",
         "name": "com.DefaultCompany.SkripsiPrototype",
-        "processId": 16152,
+        "processId": 29738,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,79 +11,67 @@
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 21989,
+            "processId": 12824,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 22875,
+            "processId": 17100,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 30022,
+            "processId": 19057,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 30794,
+            "processId": 24124,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 1459,
+            "processId": 21905,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 32272,
+            "processId": 24680,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 15917,
+            "processId": 25284,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 17317,
+            "processId": 25918,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 18582,
+            "processId": 27170,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 22108,
+            "processId": 28146,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 22971,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 23624,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 16152,
+            "processId": 29738,
             "exited": false
         }
     ],
