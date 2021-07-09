@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Android;
 using UnityEngine.SceneManagement;
+using static LetterTraceClass;
 
 public class VoiceController : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class VoiceController : MonoBehaviour
 
     //Object that is to be spawned
     public string currObjName;
+    public List<LetterTrace> currLetterObjs;
     public float score;
     [SerializeField] Text uiText;
 
@@ -45,26 +47,6 @@ public class VoiceController : MonoBehaviour
 #endif
     }
 
-    //public void StartSpeaking(string message)
-    //{
-    //    TextToSpeech.instance.StartSpeak(message);
-    //}
-
-    //public void StopSpeaking()
-    //{
-    //    TextToSpeech.instance.StopSpeak();
-    //}
-
-    //void OnSpeakStart()
-    //{
-    //    Debug.Log("Speak Start");
-    //}
-
-    //void OnSpeakStop()
-    //{
-    //    Debug.Log("Speak Stop");
-    //}
-
     public void StartListening()
     {
         SpeechToText.instance.StartRecording("Start Speaking");
@@ -78,11 +60,17 @@ public class VoiceController : MonoBehaviour
     void OnFinalSpeechResult(string result = "")
     {
         uiText.text = result;
+
+        var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
         if (currObjName.Equals(result.ToLower()))
         {
             PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
             StopListening();
+        }
+        else if(spokenLetter != null)
+        {
+            DrawLine.TriggerNextLetter();
         }
         else
         {

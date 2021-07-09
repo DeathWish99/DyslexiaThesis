@@ -2449,23 +2449,17 @@ MonoBehaviour:
   playMusic: {fileID: 0}
   soundEffects:
   - sfxName: bintang_1
-    sfxClip: {fileID: 4064170786502566690, guid: 10b45379d89b3b24080d7a3553958300,
-      type: 3}
+    sfxClip: {fileID: 8300000, guid: 395b8a96d0178164a8a8e4c502c768c0, type: 3}
   - sfxName: bintang_2
-    sfxClip: {fileID: 5736508663524218772, guid: c7dee1e3ceee3d743977f272bb522546,
-      type: 3}
+    sfxClip: {fileID: 8300000, guid: e83e5571602e2754ca21f69a8b2f39d2, type: 3}
   - sfxName: bintang_3
-    sfxClip: {fileID: 776784094155169756, guid: 9706cee2547bbcf4780690b431f3c577,
-      type: 3}
+    sfxClip: {fileID: 8300000, guid: 48354e64ec8450c4f94340b8994ed90f, type: 3}
   - sfxName: correct
-    sfxClip: {fileID: 4195831830926822262, guid: 1a58652809ff1b24ca04eeb43e923db1,
-      type: 3}
+    sfxClip: {fileID: 8300000, guid: 335e76eecccafbb4d92048e6fcfd8b6f, type: 3}
   - sfxName: door_open
-    sfxClip: {fileID: 3466670042630394104, guid: 39a2b582fd314ae4694c58cff10443e6,
-      type: 3}
+    sfxClip: {fileID: 8300000, guid: abdfb56d4392855498188889d8977ba0, type: 3}
   - sfxName: wrong
-    sfxClip: {fileID: 8956830772064240512, guid: 2f006d7c45b258e41b45fc4ef796536b,
-      type: 3}
+    sfxClip: {fileID: 8300000, guid: c710feb563989c74da8899a1f1f9dbae, type: 3}
   musicSource: {fileID: 558570954}
   sfxSource: {fileID: 558570953}
 --- !u!4 &558570952

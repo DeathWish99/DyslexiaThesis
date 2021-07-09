@@ -15,5 +15,6 @@ public class ClickButton : MonoBehaviour
     public void OnClick()
     {
         an.SetTrigger("Click");
+        SoundControl.PlayDoorOpen();
     }
 }
