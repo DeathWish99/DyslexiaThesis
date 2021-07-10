@@ -23,7 +23,7 @@ public class DbInit : MonoBehaviour
         });
 
         DbCommands.CreateDbAndTable();
-        await DbCommands.InsertDataToFirebase();
+        //await DbCommands.InsertDataToFirebase();
     }
 
     [Serializable]

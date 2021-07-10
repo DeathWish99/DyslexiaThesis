@@ -171,11 +171,11 @@ public static class DbCommands
 
         if(userScores == "{}") { return false; }
         var splittedUserScore = userScores.Split(new[] { ':' }, 2);
-        string combinedData = splittedUserScore[0] + ":["+ splittedUserScore[1].Substring(0, splittedUserScore[1].Length - 1) + "], \"User\": \"" + userId + "\"}";
+        string combinedData = splittedUserScore[0] + ":["+ splittedUserScore[1].Substring(0, splittedUserScore[1].Length - 1) + "]}";
 
         Debug.Log(combinedData);
 
-        await _db.GetReference("UserData").SetRawJsonValueAsync(combinedData);
+        await _db.GetReference(userId).SetRawJsonValueAsync(combinedData);
 
         return true;
     }
