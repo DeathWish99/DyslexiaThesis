@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "273a417839017ece",
         "name": "com.DefaultCompany.SkripsiPrototype",
-        "processId": 29738,
+        "processId": 31126,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -72,6 +72,12 @@
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
             "processId": 29738,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.DefaultCompany.SkripsiPrototype",
+            "processId": 31126,
             "exited": false
         }
     ],

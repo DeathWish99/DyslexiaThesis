@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "65811181755",
+    "firebase_url": "https://name-me-ed046-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "name-me-ed046",
+    "storage_bucket": "name-me-ed046.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:65811181755:android:4df809f01e7f79f6fcb99e",
+        "android_client_info": {
+          "package_name": "com.BinusGat.NameMe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "65811181755-o2612pp3utf9vnjljivapqtuvc6uk554.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCU9VQXOfrtLRzbWTb6brUAkd_ZU9YqbUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "65811181755-o2612pp3utf9vnjljivapqtuvc6uk554.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
