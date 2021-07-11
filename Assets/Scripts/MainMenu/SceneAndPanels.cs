@@ -10,6 +10,7 @@ public class SceneAndPanels : MonoBehaviour
     public GameObject optionsPage;
     public GameObject creditsPage;
     public GameObject Maskot;
+    public GameObject cloudPage;
     public Button playButton;
     public Button playButton2;
     public Button scoreButton;
@@ -18,15 +19,19 @@ public class SceneAndPanels : MonoBehaviour
     public Button quitOption;
     public Button quitCredits;
     public Button creditsButton;
-    
+    public Button cloudButton;
+    public Button quitCloud;
+
 
     private void Start()
     {
         playButton.onClick.AddListener(OpenLevelSelect);
         playButton2.onClick.AddListener(OpenLevelSelect);
         scoreButton.onClick.AddListener(OpenScorePage);
+        cloudButton.onClick.AddListener(OpenCloudPage);
         optionsButton.onClick.AddListener(OpenOptionsPage);
         quitScore.onClick.AddListener(QuitScore);
+        quitCloud.onClick.AddListener(QuitCloud);
         quitOption.onClick.AddListener(QuitOption);
         quitCredits.onClick.AddListener(QuitCredits);
         creditsButton.onClick.AddListener(OpenCredits);
@@ -47,6 +52,10 @@ public class SceneAndPanels : MonoBehaviour
     {
         scorePage.SetActive(true);
     }
+    public void OpenCloudPage()
+    {
+        cloudPage.SetActive(true);
+    }
     public void OpenOptionsPage()
     {
         Invoke("DelayOpenOptionsPage", 0.3f);
@@ -62,6 +71,14 @@ public class SceneAndPanels : MonoBehaviour
     public void DelayQuitScore()
     {
         scorePage.SetActive(false);
+    }
+    public void QuitCloud()
+    {
+        Invoke("DelayQuitCloud", 0.3f);
+    }
+    public void DelayQuitCloud()
+    {
+        cloudPage.SetActive(false);
     }
     public void QuitOption()
     {
