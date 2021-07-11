@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class SceneAndPanels : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class SceneAndPanels : MonoBehaviour
     public Button cloudButton;
     public Button quitCloud;
     public Button sendCloud;
+    public TMP_Text cloudText;
 
 
     private void Start()
@@ -33,73 +35,92 @@ public class SceneAndPanels : MonoBehaviour
         optionsButton.onClick.AddListener(OpenOptionsPage);
         quitScore.onClick.AddListener(QuitScore);
         quitCloud.onClick.AddListener(QuitCloud);
-        sendCloud.onClick.AddListener(QuitCloud);
+        sendCloud.onClick.AddListener(SendDataToServer);
         quitOption.onClick.AddListener(QuitOption);
         quitCredits.onClick.AddListener(QuitCredits);
         creditsButton.onClick.AddListener(OpenCredits);
     }
 
-    public void OpenLevelSelect()
+    private void OpenLevelSelect()
     {
         Maskot.SetActive(false);
         Invoke("DelayOpenLevelSelect", 2f);
     }
 
-    public void DelayOpenLevelSelect()
+    private void DelayOpenLevelSelect()
     {
         SceneManager.LoadScene(1);
     }
 
-    public void OpenScorePage()
+    private void OpenScorePage()
     {
         scorePage.SetActive(true);
     }
-    public void OpenCloudPage()
+    private void OpenCloudPage()
     {
+        cloudText.text = "Kirim data ke server?";
+        quitCloud.GetComponentInChildren<TMP_Text>().text = "Tidak";
+        sendCloud.gameObject.SetActive(true);
         cloudPage.SetActive(true);
     }
-    public void OpenOptionsPage()
+    private void OpenOptionsPage()
     {
         Invoke("DelayOpenOptionsPage", 0.3f);
     }
-    public void DelayOpenOptionsPage()
+    private void DelayOpenOptionsPage()
     {
         optionsPage.SetActive(true);
     }
-    public void QuitScore()
+    private void QuitScore()
     {
         Invoke("DelayQuitScore", 0.3f);
     }
-    public void DelayQuitScore()
+    private void DelayQuitScore()
     {
         scorePage.SetActive(false);
     }
-    public void QuitCloud()
+    private void QuitCloud()
     {
         Invoke("DelayQuitCloud", 0.3f);
     }
-    public void DelayQuitCloud()
+    private void DelayQuitCloud()
     {
         cloudPage.SetActive(false);
     }
-    public void QuitOption()
+    private void QuitOption()
     {
         Invoke("DelayQuitOption", 0.3f);
     }
-    public void DelayQuitOption()
+    private void DelayQuitOption()
     {
         optionsPage.SetActive(false);
     }
-    public void OpenCredits()
+    private void OpenCredits()
     {
         creditsPage.SetActive(true);
     }
-    public void QuitCredits()
+    private void QuitCredits()
     {
         Invoke("DelayQuitCredits", 0.3f);
     }
-    public void DelayQuitCredits()
+    private void DelayQuitCredits()
     {
         creditsPage.SetActive(false);
+    }
+    private async void SendDataToServer()
+    {
+        bool test = false;
+        if(await DbCommands.InsertUpdateDataToFirebase())
+        //if (test)
+        {
+            cloudText.text = "Terima kasih sudah mengikuti riset kami!";
+        }
+        else
+        {
+            cloudText.text = "Gagal mengirim data. Tolong bermain game terlebih dahulu.";
+        }
+        quitCloud.GetComponentInChildren<TMP_Text>().text = "Tutup";
+        sendCloud.gameObject.SetActive(false);
+
     }
 }

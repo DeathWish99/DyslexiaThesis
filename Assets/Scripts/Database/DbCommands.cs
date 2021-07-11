@@ -144,32 +144,40 @@ public static class DbCommands
     //Insert or update data to cloud Firebase storage.
     public static async Task<bool> InsertUpdateDataToFirebase()
     {
-        _db = FirebaseDatabase.DefaultInstance;
-
-        string userScores = GetScoresJson();
-
-        string userId = "";
-
-        using (var connection = new SqliteConnection(connectionString))
+        try
         {
-            connection.Open();
+            _db = FirebaseDatabase.DefaultInstance;
 
-            using (var command = connection.CreateCommand())
+            string userScores = GetScoresJson();
+
+            string userId = "";
+
+            using (var connection = new SqliteConnection(connectionString))
             {
-                command.CommandText = "SELECT UserId FROM User LIMIT 1";
+                connection.Open();
 
-                userId = command.ExecuteScalar().ToString();
+                using (var command = connection.CreateCommand())
+                {
+                    command.CommandText = "SELECT UserId FROM User LIMIT 1";
+
+                    userId = command.ExecuteScalar().ToString();
+                }
             }
+
+            if (userScores == "{}") { return false; }
+            var splittedUserScore = userScores.Split(new[] { ':' }, 2);
+            string combinedData = splittedUserScore[0] + ":[" + splittedUserScore[1].Substring(0, splittedUserScore[1].Length - 1) + "]}";
+
+            Debug.Log(combinedData);
+
+            await _db.GetReference(userId).SetRawJsonValueAsync(combinedData);
+
+            return true;
         }
-
-        if(userScores == "{}") { return false; }
-        var splittedUserScore = userScores.Split(new[] { ':' }, 2);
-        string combinedData = splittedUserScore[0] + ":["+ splittedUserScore[1].Substring(0, splittedUserScore[1].Length - 1) + "]}";
-
-        Debug.Log(combinedData);
-
-        await _db.GetReference(userId).SetRawJsonValueAsync(combinedData);
-
-        return true;
+        catch(Exception e)
+        {
+            return false;
+        }
+        
     }
 }

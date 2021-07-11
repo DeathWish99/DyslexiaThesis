@@ -462,20 +462,6 @@ MonoBehaviour:
     name: nanas
   - obj: {fileID: 919132149155446097, guid: 6bc05f72f9c5cfb40b4cdecc4dc61255, type: 3}
     name: obeng
-  - obj: {fileID: 919132149155446097, guid: 9e695c160955b1a4e8e6b7ddc8af648e, type: 3}
-    name: pohon
-  - obj: {fileID: 919132149155446097, guid: 95076975a35e2e84aa896216857eacf3, type: 3}
-    name: ransel
-  - obj: {fileID: 919132149155446097, guid: b4698a2c86a95184fa37b2f8fd188d69, type: 3}
-    name: sepatu
-  - obj: {fileID: 919132149155446097, guid: 963d0c9bd3ae7804bb5386087fb2c9d7, type: 3}
-    name: televisi
-  - obj: {fileID: 919132149155446097, guid: 833445d8bfe473446b8ea9bfd2b85e39, type: 3}
-    name: udang
-  - obj: {fileID: 919132149155446097, guid: f8c5a8237420ac449b52222f5f7deedd, type: 3}
-    name: vas
-  - obj: {fileID: 919132149155446097, guid: 8ccb7395835d0754d8a8914a39bd54ee, type: 3}
-    name: yoyo
   stars:
   - {fileID: 6326231466481203021, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
   - {fileID: -6859001260349468157, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
