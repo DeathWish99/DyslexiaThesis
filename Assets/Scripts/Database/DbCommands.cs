@@ -4,12 +4,16 @@ using Mono.Data.Sqlite;
 using System.IO;
 using System;
 using UnityEngine.Networking;
+using Firebase;
+using Firebase.Database;
+using System.Threading.Tasks;
 
 public static class DbCommands
 {
     static string connectionString = "URI=file:" + Application.persistentDataPath + "/Database/score.db";
     static string pathToPersistentDb = Application.persistentDataPath + "/Database";
     static string streamingAssetsPath;
+    static FirebaseDatabase _db;
     //Create new table
     public static void CreateDbAndTable()
     {
@@ -27,7 +31,6 @@ public static class DbCommands
             Debug.Log("File Does not Exist");
         }
         if (!File.Exists(pathToPersistentDb + "/score.db"))
-
         {
             System.IO.Directory.CreateDirectory(pathToPersistentDb);
             WWW loadDB = new WWW(streamingAssetsPath + "/score.db");
@@ -45,7 +48,7 @@ public static class DbCommands
             File.WriteAllBytes(pathToPersistentDb + "/score.db", loadDB.bytes);
 
         }
-        Debug.Log(connectionString);
+        string uniqueUserId = Guid.NewGuid().ToString();
         using (var connection = new SqliteConnection(connectionString))
         {
             connection.Open();
@@ -54,6 +57,18 @@ public static class DbCommands
             {
                 command.CommandText = "CREATE TABLE IF NOT EXISTS MsScore(Id INTEGER PRIMARY KEY AUTOINCREMENT, Word VARCHAR(100), Score DOUBLE, InputDatetime DATETIME);";
                 command.ExecuteNonQuery();
+                command.CommandText = "CREATE TABLE IF NOT EXISTS User(UserId VARCHAR(50));";
+                command.ExecuteNonQuery();
+
+                command.CommandText = "SELECT COUNT(*) FROM User;";
+
+                int rowCount = Convert.ToInt32(command.ExecuteScalar());
+                if (rowCount == 0)
+                {
+                    Debug.Log("IM IN BABY");
+                    command.CommandText = "INSERT INTO User (UserId) VALUES ('"+uniqueUserId+"')";
+                    command.ExecuteNonQuery();
+                }
             }
 
             connection.Close();
@@ -131,5 +146,37 @@ public static class DbCommands
             return "{}";
         }
         return returnText;
+    }
+
+    //Insert or update data to cloud Firebase storage.
+    public static async Task<bool> InsertUpdateDataToFirebase()
+    {
+        _db = FirebaseDatabase.DefaultInstance;
+
+        string userScores = GetScoresJson();
+
+        string userId = "";
+
+        using (var connection = new SqliteConnection(connectionString))
+        {
+            connection.Open();
+
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT UserId FROM User LIMIT 1";
+
+                userId = command.ExecuteScalar().ToString();
+            }
+        }
+
+        if(userScores == "{}") { return false; }
+        var splittedUserScore = userScores.Split(new[] { ':' }, 2);
+        string combinedData = splittedUserScore[0] + ":["+ splittedUserScore[1].Substring(0, splittedUserScore[1].Length - 1) + "]}";
+
+        Debug.Log(combinedData);
+
+        await _db.GetReference(userId).SetRawJsonValueAsync(combinedData);
+
+        return true;
     }
 }
