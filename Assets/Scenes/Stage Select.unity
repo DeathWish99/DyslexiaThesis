@@ -2065,8 +2065,6 @@ MonoBehaviour:
     name: Lemari
   - iconImage: {fileID: 21300000, guid: 85ebbdd699eda204e8e6e6c68259ca1b, type: 3}
     name: Meja
-  - iconImage: {fileID: 21300000, guid: 742c5431b1aa3644fbc33e5196629eb0, type: 3}
-    name: Papan
   - iconImage: {fileID: 21300000, guid: c0b76c81dfd1c914ca7d6a5a2b1ef625, type: 3}
     name: Piala
   - iconImage: {fileID: 21300000, guid: ca07c4b3be3f48142bfd9254229db5ac, type: 3}
