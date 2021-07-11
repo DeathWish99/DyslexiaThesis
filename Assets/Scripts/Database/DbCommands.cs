@@ -148,8 +148,8 @@ public static class DbCommands
         return returnText;
     }
 
-    //Insert data to cloud Firebase storage.
-    public static async Task<bool> InsertDataToFirebase()
+    //Insert or update data to cloud Firebase storage.
+    public static async Task<bool> InsertUpdateDataToFirebase()
     {
         _db = FirebaseDatabase.DefaultInstance;
 
