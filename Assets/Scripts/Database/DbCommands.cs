@@ -14,7 +14,8 @@ public static class DbCommands
     static string pathToPersistentDb = Application.persistentDataPath + "/Database";
     static string streamingAssetsPath;
     static FirebaseDatabase _db;
-    //Create new table
+
+    //Create new table and db. Db copies from StreamingAssets folder
     public static void CreateDbAndTable()
     {
 #if UNITY_ANDROID
@@ -22,14 +23,6 @@ public static class DbCommands
 #elif UNITY_EDITOR
         streamingAssetsPath = Application.dataPath + "/StreamingAssets";
 #endif
-        if (File.Exists(streamingAssetsPath + "/score.db"))
-        {
-            Debug.Log("File Exists");
-        }
-        else
-        {
-            Debug.Log("File Does not Exist");
-        }
         if (!File.Exists(pathToPersistentDb + "/score.db"))
         {
             System.IO.Directory.CreateDirectory(pathToPersistentDb);
@@ -65,7 +58,6 @@ public static class DbCommands
                 int rowCount = Convert.ToInt32(command.ExecuteScalar());
                 if (rowCount == 0)
                 {
-                    Debug.Log("IM IN BABY");
                     command.CommandText = "INSERT INTO User (UserId) VALUES ('"+uniqueUserId+"')";
                     command.ExecuteNonQuery();
                 }
@@ -95,6 +87,7 @@ public static class DbCommands
     /*
      * Gets all data and converts them into JSON. Format is like so:
      * {"Records":{"objectName":"abc","scores:"[76.123124,98.123124]},{"objectName":"test","scores:"[90.123124,90.123124,88.5515]}}
+     * Format conforms with JSONNode plugin parser
      */
     public static string GetScoresJson()
     {

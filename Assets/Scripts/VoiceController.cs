@@ -72,13 +72,6 @@ public class VoiceController : MonoBehaviour
             SceneManager.LoadScene(3);
             StopListening();
         }
-        else if(spokenLetter != null)
-        {
-            SoundControl.PlayCorrectVoice();
-            gamePanel.GetComponent<DrawLine>().speakButton.SetActive(false);
-            gamePanel.GetComponent<DrawLine>().NextLetterOrSpeak();
-            StopListening();
-        }
         else
         {
             //Play voice over, try again
@@ -97,13 +90,6 @@ public class VoiceController : MonoBehaviour
         {
             PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
-            StopListening();
-        }
-        else if (spokenLetter != null)
-        {
-            SoundControl.PlayCorrectVoice();
-            gamePanel.GetComponent<DrawLine>().speakButton.SetActive(false);
-            gamePanel.GetComponent<DrawLine>().NextLetterOrSpeak();
             StopListening();
         }
         else

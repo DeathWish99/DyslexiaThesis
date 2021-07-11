@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2481,6 +2481,88 @@ MonoBehaviour:
     sfxClip: {fileID: 8300000, guid: c710feb563989c74da8899a1f1f9dbae, type: 3}
   - sfxName: correct_voice
     sfxClip: {fileID: 8300000, guid: 335e76eecccafbb4d92048e6fcfd8b6f, type: 3}
+  - sfxName: touch_button
+    sfxClip: {fileID: 8300000, guid: 386efcff407afea47b07b5817006a8d8, type: 3}
+  letterSoundEffects:
+  - sfxName: a
+    sfxClip: {fileID: 8300000, guid: c2da2e9454f13074eaa5675b89e9f38d, type: 3}
+  - sfxName: b
+    sfxClip: {fileID: 8300000, guid: 1c1892de2396787489af0b57827f98eb, type: 3}
+  - sfxName: c
+    sfxClip: {fileID: 8300000, guid: 44ac05d544d161643b820ea33eecfd7b, type: 3}
+  - sfxName: d
+    sfxClip: {fileID: 8300000, guid: a352eea64e9ab37439cef8af8a02b380, type: 3}
+  - sfxName: e
+    sfxClip: {fileID: 8300000, guid: 673b554fa0633374c8985d5bbe6633b8, type: 3}
+  - sfxName: f
+    sfxClip: {fileID: 8300000, guid: 27549f4dc889ff347959d22573fa7edf, type: 3}
+  - sfxName: g
+    sfxClip: {fileID: 8300000, guid: 117d52a5ec2cf1d45a015eb11204262a, type: 3}
+  - sfxName: h
+    sfxClip: {fileID: 8300000, guid: 2e8e131fb4ade9149a33b7c0bb668d87, type: 3}
+  - sfxName: i
+    sfxClip: {fileID: 8300000, guid: 0811e0e5640244544971cdf45e0a6bbc, type: 3}
+  - sfxName: j
+    sfxClip: {fileID: 8300000, guid: d0dde10896dcade41bd4e08f8316d6d8, type: 3}
+  - sfxName: k
+    sfxClip: {fileID: 8300000, guid: 670c105cedb7dd94aa0019e8490534af, type: 3}
+  - sfxName: l
+    sfxClip: {fileID: 8300000, guid: 72df052c75aa02a40a10c7e25c443f5b, type: 3}
+  - sfxName: m
+    sfxClip: {fileID: 8300000, guid: 51ef64fcc52dd7b4583318f937059168, type: 3}
+  - sfxName: n
+    sfxClip: {fileID: 8300000, guid: fc29a0a21713d5840b9e66db6fb89132, type: 3}
+  - sfxName: o
+    sfxClip: {fileID: 8300000, guid: bb84190e3f0444140b010d825c8b42b4, type: 3}
+  - sfxName: p
+    sfxClip: {fileID: 8300000, guid: d57bc6937896fc7429ba4e4af63eba1f, type: 3}
+  - sfxName: q
+    sfxClip: {fileID: 8300000, guid: ed2c6f3e236fd6e45900e4177a0a4b72, type: 3}
+  - sfxName: r
+    sfxClip: {fileID: 8300000, guid: 9996857ac5b594b46ab3e9401c403f5b, type: 3}
+  - sfxName: s
+    sfxClip: {fileID: 8300000, guid: 87df9e1a2d9fe084686b1d3e4e276d9d, type: 3}
+  - sfxName: t
+    sfxClip: {fileID: 8300000, guid: 3a93fa93c2fc1c643936266469fc385e, type: 3}
+  - sfxName: u
+    sfxClip: {fileID: 8300000, guid: dd51dd1797bb76a4fbe9132c5fa6a38e, type: 3}
+  - sfxName: v
+    sfxClip: {fileID: 8300000, guid: 03470029075440a4f9419759414aa8de, type: 3}
+  - sfxName: w
+    sfxClip: {fileID: 8300000, guid: c1e0f5acd9a05ba4e8dd8224325a8ef7, type: 3}
+  - sfxName: x
+    sfxClip: {fileID: 8300000, guid: 91552df0e7e069a4385257c8bb929fd8, type: 3}
+  - sfxName: y
+    sfxClip: {fileID: 8300000, guid: 924122ff52beec5498d670fa8a836ee3, type: 3}
+  - sfxName: z
+    sfxClip: {fileID: 8300000, guid: 472032a4052f84242912c21bb1e81c97, type: 3}
+  wordSoundEffects:
+  - sfxName: Bendera
+    sfxClip: {fileID: 8300000, guid: 52679d7e65d2dbe41b1b75e28f1ea24f, type: 3}
+  - sfxName: Bolpen
+    sfxClip: {fileID: 8300000, guid: ac49cc5d39b8ce445a2c4e96eec7cda7, type: 3}
+  - sfxName: Buku
+    sfxClip: {fileID: 8300000, guid: bf6d3347847fe9d4185809661792a255, type: 3}
+  - sfxName: Foto
+    sfxClip: {fileID: 8300000, guid: 6e4d2278a6e8c94449131acedce74943, type: 3}
+  - sfxName: Globe
+    sfxClip: {fileID: 8300000, guid: caa8ba60725f77540bf308752e1ede1d, type: 3}
+  - sfxName: Jendela
+    sfxClip: {fileID: 8300000, guid: 7da92b3d0fa551140a267e639ce828ff, type: 3}
+  - sfxName: Kelas
+    sfxClip: {fileID: 8300000, guid: 7666b25d7532cb54392e16a87bd6f57f, type: 3}
+  - sfxName: Kursi
+    sfxClip: {fileID: 8300000, guid: 54e8bd4e2d041f84e8969972be6efb11, type: 3}
+  - sfxName: Lemari
+    sfxClip: {fileID: 8300000, guid: 26cfc9a2c4059bb448745f1ba92799d6, type: 3}
+  - sfxName: Meja
+    sfxClip: {fileID: 8300000, guid: 4cdb1bd1cd35c8d448509b42553f1ca5, type: 3}
+  - sfxName: Papan
+    sfxClip: {fileID: 8300000, guid: fc918622dfe17e84e92b692456b4a766, type: 3}
+  - sfxName: Piala
+    sfxClip: {fileID: 8300000, guid: 8e0e06acfac1dc04cb9ed4c4bfaffcfc, type: 3}
+  - sfxName: Pintu
+    sfxClip: {fileID: 8300000, guid: 029fa74dafcec6d41aed282d7a1a8e89, type: 3}
   musicSource: {fileID: 558570954}
   sfxSource: {fileID: 558570953}
 --- !u!4 &558570952

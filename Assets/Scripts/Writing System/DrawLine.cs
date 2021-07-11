@@ -98,8 +98,8 @@ public class DrawLine : LetterTraceClass
 
             if (CheckDrawn())
             {
-                speakButton.SetActive(true);
-                //NextLetterOrSpeak();
+                //speakButton.SetActive(true);
+                NextLetterOrSpeak();
             }
         }
         else
@@ -231,7 +231,6 @@ public class DrawLine : LetterTraceClass
         tempLetter.letterScore /= linesInLetter.Count;
         currWord[currIndex] = tempLetter;
         Debug.Log("Letter Score: " + currWord[currIndex].letterScore);
-        Debug.Log(currWord.Count);
 
         foreach (GameObject drawnLine in drawnLines)
         {
@@ -239,6 +238,7 @@ public class DrawLine : LetterTraceClass
         }
         if (currIndex < currWord.Count - 1)
         {
+            SoundControl.PlayLetterSound(Convert.ToChar(tempLetter.letterName.ToString().ToLower()));
             shownWord.text += tempLetter.letterName;
             currIndex += 1;
             tempLetter = currWord[currIndex];
@@ -271,6 +271,7 @@ public class DrawLine : LetterTraceClass
             shownWord.text += tempLetter.letterName;
             PlayerPrefs.SetFloat("WordScore", wordScore);
             Debug.Log(wordScore);
+            SoundControl.PlayWordSound(shownWord.text);
             speakButton.SetActive(true);
             Destroy(currLetter);
         }

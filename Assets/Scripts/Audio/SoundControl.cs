@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,8 @@ public class SoundControl : MonoBehaviour
     };
 
     public List<SoundEffect> soundEffects;
+    public List<SoundEffect> letterSoundEffects;
+    public List<SoundEffect> wordSoundEffects;
 
     [SerializeField]
     private AudioSource musicSource;
@@ -41,12 +44,6 @@ public class SoundControl : MonoBehaviour
     private void Start()
     {
         PlayMenuMusic();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
     
 
@@ -195,6 +192,57 @@ public class SoundControl : MonoBehaviour
             if (instance.sfxSource != null)
             {
                 instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayTouchButton()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "touch_button").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayLetterSound(char letter)
+    {
+        if (instance != null)
+        {
+            var sfx = instance.letterSoundEffects.Find(x => Convert.ToChar(x.sfxName) == letter).sfxClip;
+            if (instance.sfxSource != null)
+            {
+                //instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayWordSound(string word)
+    {
+        if (instance != null)
+        {
+            var sfx = instance.letterSoundEffects.Find(x => x.sfxName == word).sfxClip;
+            if (instance.sfxSource != null)
+            {
+                //instance.sfxSource.Stop();
             }
             instance.sfxSource.PlayOneShot(sfx);
         }
