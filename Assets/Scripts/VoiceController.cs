@@ -68,7 +68,6 @@ public class VoiceController : MonoBehaviour
         Debug.Log(spokenLetter);
         if (currObjName.Equals(result.ToLower()))
         {
-            PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
             StopListening();
         }
@@ -88,7 +87,6 @@ public class VoiceController : MonoBehaviour
         Debug.Log(spokenLetter);
         if (currObjName.Equals(result.ToLower()))
         {
-            PlayerPrefs.SetString("ObjectResult", result);
             SceneManager.LoadScene(3);
             StopListening();
         }

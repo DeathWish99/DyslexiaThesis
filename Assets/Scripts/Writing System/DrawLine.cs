@@ -271,6 +271,7 @@ public class DrawLine : LetterTraceClass
             shownWord.text += tempLetter.letterName;
             PlayerPrefs.SetFloat("WordScore", wordScore);
             Debug.Log(wordScore);
+            Debug.Log(shownWord.text);
             SoundControl.PlayWordSound(shownWord.text);
             speakButton.SetActive(true);
             Destroy(currLetter);

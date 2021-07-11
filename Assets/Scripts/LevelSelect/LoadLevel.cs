@@ -17,5 +17,6 @@ public class LoadLevel : MonoBehaviour
     {
         PlayerPrefs.SetString("ObjName", gameObject.name);
         UnityEngine.SceneManagement.SceneManager.LoadScene(2);
+        SoundControl.PlayTouchButton();
     }
 }

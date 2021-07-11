@@ -2637,6 +2637,8 @@ MonoBehaviour:
     sfxClip: {fileID: 8300000, guid: 8e0e06acfac1dc04cb9ed4c4bfaffcfc, type: 3}
   - sfxName: Pintu
     sfxClip: {fileID: 8300000, guid: 029fa74dafcec6d41aed282d7a1a8e89, type: 3}
+  musicSlider: {fileID: 1415086672}
+  sfxSlider: {fileID: 1963705955}
   musicSource: {fileID: 558570954}
   sfxSource: {fileID: 558570953}
 --- !u!4 &558570952
@@ -3288,7 +3290,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6015,8 +6017,8 @@ RectTransform:
   m_Father: {fileID: 963191210}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.56095606, y: 0}
+  m_AnchorMax: {x: 0.56095606, y: 1}
   m_AnchoredPosition: {x: 37.22, y: 0}
   m_SizeDelta: {x: 94, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6958,7 +6960,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 0.56095606, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -7557,8 +7559,8 @@ RectTransform:
   m_Father: {fileID: 1848657037}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 36.8, y: 0}
   m_SizeDelta: {x: 94, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -9627,7 +9629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2086150258
 RectTransform:
   m_ObjectHideFlags: 0

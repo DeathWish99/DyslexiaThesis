@@ -20,9 +20,9 @@ public class ResultController : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetString("ObjectResult", "cincin");
+        //PlayerPrefs.SetString("ObjectResult", "cincin");
         PlayerPrefs.SetFloat("WordScore", 79);
-        SpawnItem(PlayerPrefs.GetString("ObjectResult"), spawnLocation.position);
+        SpawnItem(PlayerPrefs.GetString("ObjName"), spawnLocation.position);
         SetStars();
     }
 

@@ -246,7 +246,7 @@ public class SoundControl : MonoBehaviour
     {
         if (instance != null)
         {
-            var sfx = instance.letterSoundEffects.Find(x => x.sfxName == word).sfxClip;
+            var sfx = instance.wordSoundEffects.Find(x => x.sfxName == word).sfxClip;
             if (instance.sfxSource != null)
             {
                 //instance.sfxSource.Stop();
