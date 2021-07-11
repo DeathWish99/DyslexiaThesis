@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2049,16 +2049,10 @@ MonoBehaviour:
     name: Bendera
   - iconImage: {fileID: 21300000, guid: d2f55787708f9b64780a68776bc305bc, type: 3}
     name: Bolpen
-  - iconImage: {fileID: 21300000, guid: d14742480633db246911ee36a1a8167a, type: 3}
-    name: Buku
   - iconImage: {fileID: 21300000, guid: 333d25e72f9e38749b827d34cc1aae3f, type: 3}
     name: Foto
   - iconImage: {fileID: 21300000, guid: 5e4c08aa9f20de64a9cab1dd65b19f86, type: 3}
     name: Globe
-  - iconImage: {fileID: 21300000, guid: 38c4ca3086035b84580c37c15fc63109, type: 3}
-    name: Jendela
-  - iconImage: {fileID: 21300000, guid: da16d1184894ae24890af03f75fdbfdc, type: 3}
-    name: Kelas
   - iconImage: {fileID: 21300000, guid: 00f8e75f06b78454fbfa9abc9a3538bd, type: 3}
     name: Kursi
   - iconImage: {fileID: 21300000, guid: 4455b9687e0e8c4419e63cab34ce264a, type: 3}

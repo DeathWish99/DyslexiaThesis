@@ -436,32 +436,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnableItems:
-  - obj: {fileID: 919132149155446097, guid: b134d2ed0bd3dd547b990d2f77a73f2f, type: 3}
-    name: apel
-  - obj: {fileID: 919132149155446097, guid: fba9ff4f6506f12479041fc725c5bc47, type: 3}
-    name: batu
-  - obj: {fileID: 919132149155446097, guid: 5948e0b509bfd5643bc7d9bb5d1c26cb, type: 3}
-    name: cincin
-  - obj: {fileID: 919132149155446097, guid: cc77056b96de0a045915d51e1476b521, type: 3}
-    name: donat
-  - obj: {fileID: 919132149155446097, guid: 371d45de97926d242bba8011c3955cb6, type: 3}
-    name: ember
-  - obj: {fileID: 919132149155446097, guid: e9b1fbbfc5aad134085eb57fe5840f62, type: 3}
-    name: foto
-  - obj: {fileID: 919132149155446097, guid: 5ad33a06bdba3d043b89c058dac7ae80, type: 3}
-    name: hati
-  - obj: {fileID: 919132149155446097, guid: 3b869a49ce125144cb4c5c1652640716, type: 3}
-    name: ikan
-  - obj: {fileID: 919132149155446097, guid: b31d96e7f22a04e43b6705b6249e1087, type: 3}
-    name: jembatan
-  - obj: {fileID: 919132149155446097, guid: e9bca7519849f0a49bbd84ba0411250b, type: 3}
-    name: lemari
-  - obj: {fileID: 919132149155446097, guid: 75637edb5bd7b8f47b5019e921a749ca, type: 3}
-    name: meja
-  - obj: {fileID: 919132149155446097, guid: 29dc0c275817f0b4d9e111cfe2d7be8c, type: 3}
-    name: nanas
-  - obj: {fileID: 919132149155446097, guid: 6bc05f72f9c5cfb40b4cdecc4dc61255, type: 3}
-    name: obeng
+  - obj: {fileID: 7061070279084115452, guid: 03b18d535365d6f408d982f1d5f5149e, type: 3}
+    name: Bendera
+  - obj: {fileID: 8158429733671523345, guid: 8d16378ade9080e45a4541138c954812, type: 3}
+    name: Bolpen
+  - obj: {fileID: 8265560244295292458, guid: 404f381260300b54089984dda7c67a2e, type: 3}
+    name: Buku
+  - obj: {fileID: 3627634321368947277, guid: 63504f5391f1bb74c9d64895b1e65206, type: 3}
+    name: Foto
+  - obj: {fileID: 1563464722957253780, guid: e9f70253d6cec3144a331d3d90e70c9e, type: 3}
+    name: Globe
+  - obj: {fileID: 643797877491875426, guid: 7f731c6c78c0d0a4586b29e33572cb5f, type: 3}
+    name: Jendela
+  - obj: {fileID: 5782744356948217221, guid: 03756fa5a2746bf43aa0e85fe324e0cc, type: 3}
+    name: Kursi
+  - obj: {fileID: 4451382422791503432, guid: 2d001dc7a5274794c80046114b89e1ce, type: 3}
+    name: Lemari
+  - obj: {fileID: 1837396840074863863, guid: 8eaf9b49128367d4b833c31fa1720969, type: 3}
+    name: Meja
+  - obj: {fileID: 7310419810253545971, guid: da36dba8fd3879940a6966ea9b6f8496, type: 3}
+    name: Papan
+  - obj: {fileID: 5339958167379491242, guid: 6b87df053dc60134c86e566f4db32253, type: 3}
+    name: Piala
+  - obj: {fileID: 8777614125565611457, guid: 4346b1af14340dd4fbad9c4da4032223, type: 3}
+    name: Pintu
   stars:
   - {fileID: 6326231466481203021, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
   - {fileID: -6859001260349468157, guid: 11ef11a9dd0e7a140ba2ba0c36dfdfcd, type: 3}
@@ -752,7 +750,7 @@ Canvas:
   m_GameObject: {fileID: 315800278}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1176857890}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1045,7 +1043,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -324.9, y: -38}
+  m_AnchoredPosition: {x: -324.90002, y: -38}
   m_SizeDelta: {x: 317.04932, y: 148.35535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &542298232
@@ -1552,7 +1550,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -315, y: 100}
+  m_AnchoredPosition: {x: -257.1, y: 93.1}
   m_SizeDelta: {x: 231.5036, y: 231.5036}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1475306828

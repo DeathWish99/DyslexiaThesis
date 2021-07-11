@@ -65,7 +65,7 @@ public class LevelSelector : MonoBehaviour
                 icon.transform.SetParent(parentObject.transform);
                 icon.GetComponent<Image>().sprite = level.iconImage;
                 icon.name = level.name;
-                icon.GetComponentInChildren<TextMeshProUGUI>().SetText(level.name);
+                //icon.GetComponentInChildren<TextMeshProUGUI>().SetText(level.name);
             }
         }
     }

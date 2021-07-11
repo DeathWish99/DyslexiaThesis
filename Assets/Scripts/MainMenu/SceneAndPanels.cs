@@ -109,7 +109,7 @@ public class SceneAndPanels : MonoBehaviour
     }
     private async void SendDataToServer()
     {
-        bool test = false;
+        //bool test = false;
         if(await DbCommands.InsertUpdateDataToFirebase())
         //if (test)
         {

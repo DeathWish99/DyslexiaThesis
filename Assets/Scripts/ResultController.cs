@@ -20,20 +20,22 @@ public class ResultController : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.SetString("ObjectResult", "cincin");
+        PlayerPrefs.SetString("ObjName", "Globe");
         PlayerPrefs.SetFloat("WordScore", 79);
-        SpawnItem(PlayerPrefs.GetString("ObjName"), spawnLocation.position);
+        SpawnItem(PlayerPrefs.GetString("ObjName"), new Vector3(spawnLocation.position.x, spawnLocation.position.y, spawnLocation.position.z - 15));
         SetStars();
     }
 
     public bool SpawnItem(string itemName, Vector3 pos)
     {
-        int itemIndex = spawnableItems.FindIndex(x => x.name == itemName.ToLower().Trim());
+        Debug.Log(itemName);
+        int itemIndex = spawnableItems.FindIndex(x => x.name == itemName.Trim());
+        Debug.Log(itemIndex);
         if(itemIndex > -1)
         {
             Items spawnThis = spawnableItems[itemIndex];
-            spawnThis.obj.transform.localScale = new Vector3(2000, 2000, 2000);
-            Instantiate(spawnThis.obj, pos, Quaternion.identity);
+            Debug.Log(spawnThis.name);
+            Instantiate(spawnThis.obj, pos, spawnThis.obj.transform.rotation);
             return true;
         }
         else
