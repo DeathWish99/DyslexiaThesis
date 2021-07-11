@@ -3,6 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 public class SoundControl : MonoBehaviour
 {
     public AudioClip mainMenuMusic;
@@ -17,6 +19,9 @@ public class SoundControl : MonoBehaviour
     public List<SoundEffect> soundEffects;
     public List<SoundEffect> letterSoundEffects;
     public List<SoundEffect> wordSoundEffects;
+
+    public Slider musicSlider;
+    public Slider sfxSlider;
 
     [SerializeField]
     private AudioSource musicSource;
@@ -43,6 +48,8 @@ public class SoundControl : MonoBehaviour
 
     private void Start()
     {
+        musicSlider.value = musicSource.volume;
+        sfxSlider.value = sfxSource.volume;
         PlayMenuMusic();
     }
     
