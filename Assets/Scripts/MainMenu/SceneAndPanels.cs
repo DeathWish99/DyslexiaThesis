@@ -21,6 +21,7 @@ public class SceneAndPanels : MonoBehaviour
     public Button creditsButton;
     public Button cloudButton;
     public Button quitCloud;
+    public Button sendCloud;
 
 
     private void Start()
@@ -32,6 +33,7 @@ public class SceneAndPanels : MonoBehaviour
         optionsButton.onClick.AddListener(OpenOptionsPage);
         quitScore.onClick.AddListener(QuitScore);
         quitCloud.onClick.AddListener(QuitCloud);
+        sendCloud.onClick.AddListener(QuitCloud);
         quitOption.onClick.AddListener(QuitOption);
         quitCredits.onClick.AddListener(QuitCredits);
         creditsButton.onClick.AddListener(OpenCredits);
