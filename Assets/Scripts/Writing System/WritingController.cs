@@ -22,7 +22,7 @@ public class WritingController : LetterTraceClass
         
         foreach (Vector2 point in edgeColliderPoints)
         {
-            if (Physics.SphereCast(new Vector3(point.x, point.y, transform.position.z), 0.08f, fwd, out hit))
+            if (Physics.SphereCast(new Vector3(point.x, point.y, transform.position.z), 0.1f, fwd, out hit))
             {
                 Debug.Log(hit.collider.gameObject.name);
                 objectsDetectedbyRay.Add(hit.collider.gameObject);

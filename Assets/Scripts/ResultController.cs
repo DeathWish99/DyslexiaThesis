@@ -20,8 +20,8 @@ public class ResultController : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetString("ObjName", "Globe");
-        PlayerPrefs.SetFloat("WordScore", 79);
+        //PlayerPrefs.SetString("ObjName", "Glob");
+        //PlayerPrefs.SetFloat("WordScore", 79);
         SpawnItem(PlayerPrefs.GetString("ObjName"), new Vector3(spawnLocation.position.x, spawnLocation.position.y, spawnLocation.position.z - 15));
         SetStars();
     }
