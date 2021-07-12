@@ -258,4 +258,10 @@ public class SoundControl : MonoBehaviour
             Debug.LogError("Unavailable MusicPlayer component");
         }
     }
+
+    static public void SetSliderValues(Slider musicSlider, Slider sfxSlider)
+    {
+        musicSlider.value = instance.musicSource.volume;
+        sfxSlider.value = instance.sfxSource.volume;
+    }
 }
