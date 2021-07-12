@@ -2,8 +2,8 @@
     "m_SelectedDeviceId": "273a417839017ece",
     "m_SelectedPackage": {
         "deviceId": "273a417839017ece",
-        "name": "com.DefaultCompany.SkripsiPrototype",
-        "processId": 31126,
+        "name": "com.BinusGat.NameMe",
+        "processId": 3297,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -78,6 +78,18 @@
             "deviceId": "273a417839017ece",
             "name": "com.DefaultCompany.SkripsiPrototype",
             "processId": 31126,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 29879,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 3297,
             "exited": false
         }
     ],
