@@ -51,6 +51,7 @@ public class SoundControl : MonoBehaviour
         musicSlider.value = musicSource.volume;
         sfxSlider.value = sfxSource.volume;
         PlayMenuMusic();
+        PlayMainMenu();
     }
     
 
@@ -259,9 +260,58 @@ public class SoundControl : MonoBehaviour
         }
     }
 
-    static public void SetSliderValues(Slider musicSlider, Slider sfxSlider)
+    static public void PlayMainMenu()
     {
-        musicSlider.value = instance.musicSource.volume;
-        sfxSlider.value = instance.sfxSource.volume;
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "main_menu").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+    IEnumerator DelayStageSelect()
+    {
+        yield return new WaitForSeconds(1.2f);
+
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "stage_select").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                //instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+    static public void PlayStageSelect()
+    {
+        instance.StartCoroutine("DelayStageSelect");
+    }
+    static public void PlaySoundPlay()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "play").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
     }
 }

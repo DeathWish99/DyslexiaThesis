@@ -13,6 +13,7 @@ public class OpenAndUpdatePanel : LetterTraceClass
     private void Start()
     {
         LoadWord(PlayerPrefs.GetString("ObjName"));
+        SoundControl.PlaySoundPlay();
     }
 
     public void SwitchShowHide()

@@ -20,6 +20,7 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        SoundControl.PlayStageSelect();
         numberOfLevels = levelsToSpawn.Count;
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
         iconDimensions = levelIcon.GetComponent<RectTransform>().rect;

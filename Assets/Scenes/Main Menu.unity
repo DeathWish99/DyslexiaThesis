@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3060,7 +3060,7 @@ GameObject:
   - component: {fileID: 558570954}
   - component: {fileID: 558570953}
   m_Layer: 0
-  m_Name: MusicContainer
+  m_Name: AudioContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3097,6 +3097,12 @@ MonoBehaviour:
     sfxClip: {fileID: 8300000, guid: 335e76eecccafbb4d92048e6fcfd8b6f, type: 3}
   - sfxName: touch_button
     sfxClip: {fileID: 8300000, guid: 386efcff407afea47b07b5817006a8d8, type: 3}
+  - sfxName: main_menu
+    sfxClip: {fileID: 8300000, guid: 4eb84c489f073f840b985d0de2a96ae2, type: 3}
+  - sfxName: stage_select
+    sfxClip: {fileID: 8300000, guid: d45d7372de02a5c4d8bcc931caf4a093, type: 3}
+  - sfxName: play
+    sfxClip: {fileID: 8300000, guid: 8c85979aa4d9db74eac157fda542b110, type: 3}
   letterSoundEffects:
   - sfxName: a
     sfxClip: {fileID: 8300000, guid: c2da2e9454f13074eaa5675b89e9f38d, type: 3}
@@ -3305,7 +3311,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 0.532
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8354,6 +8360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 66b78afc91f8b824ba9bfd727b6a9ea5, type: 2}
+  slider: {fileID: 1415086672}
 --- !u!1 &1464842698
 GameObject:
   m_ObjectHideFlags: 0
@@ -10533,6 +10540,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: b6ae679961c94f441af996eb428169c5, type: 2}
+  slider: {fileID: 1963705955}
 --- !u!1 &2011247097
 GameObject:
   m_ObjectHideFlags: 0
@@ -10939,6 +10947,7 @@ GameObject:
   - component: {fileID: 2086150260}
   - component: {fileID: 2086150259}
   - component: {fileID: 2086150261}
+  - component: {fileID: 2086150262}
   m_Layer: 5
   m_Name: Options
   m_TagString: Options
@@ -11029,6 +11038,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2086150262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2086150257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16671cddfbfa0df4da4eba1d891d03d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSlider: {fileID: 1415086672}
+  sfxSlider: {fileID: 1963705955}
 --- !u!1 &2091628034
 GameObject:
   m_ObjectHideFlags: 0
