@@ -759,7 +759,7 @@ MonoBehaviour:
   currWord: []
   shownWord: {fileID: 789443785}
   currIndex: 0
-  lineAccuracy: 2
+  lineAccuracy: 1
   speakButton: {fileID: 1778089610}
 --- !u!1 &789443784
 GameObject:
@@ -1532,6 +1532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98436c2ede2113c4ca89fedee9149640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShowPopupAndroid: 1
 --- !u!4 &2124295863
 Transform:
   m_ObjectHideFlags: 0

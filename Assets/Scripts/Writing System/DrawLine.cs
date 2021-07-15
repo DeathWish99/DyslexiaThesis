@@ -134,8 +134,6 @@ public class DrawLine : LetterTraceClass
         BoxCollider[] boxColliders = intendedLine.lineObj.GetComponents<BoxCollider>();
         try
         {
-            //Debug.Log(boxColliders.Length);
-
             if (boxColliders.Length > 0)
                 curved = true;
             else
@@ -178,7 +176,7 @@ public class DrawLine : LetterTraceClass
             viableLength = true;
         }
 
-        if (lineScore > 60 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null) && viableLength)
+        if (!intendedLine.drawn && !linesInLetter[lineIndex].Equals(null) && viableLength)
         {
             Debug.Log("Line score: " + lineScore);
             tempLetter.letterScore += lineScore;

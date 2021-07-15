@@ -20,6 +20,7 @@ public class LevelSelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        levelsToSpawn.Sort((a, b) => a.name.Length.CompareTo(b.name.Length));
         SoundControl.PlayStageSelect();
         numberOfLevels = levelsToSpawn.Count;
         panelDimensions = levelHolder.GetComponent<RectTransform>().rect;
@@ -29,45 +30,46 @@ public class LevelSelector : MonoBehaviour
         amountPerPage = maxInARow * maxInACol;
         int totalPages = Mathf.CeilToInt((float)numberOfLevels / amountPerPage);
         LoadPanels(totalPages);
+    }
 
-        void LoadPanels(int numberOfPanels)
-        {
-            GameObject panelClone = Instantiate(levelHolder) as GameObject;
-            PageSwiper swiper = levelHolder.AddComponent<PageSwiper>();
-            swiper.totalPages = numberOfPanels;
 
-            for (int i = 1; i <= numberOfPanels; i++)
-            {
-                GameObject panel = Instantiate(panelClone) as GameObject;
-                panel.transform.SetParent(thisCanvas.transform, false);
-                panel.transform.SetParent(levelHolder.transform);
-                panel.name = "Page-" + i;
-                panel.GetComponent<RectTransform>().localPosition = new Vector2(panelDimensions.width * (i - 1), 0);
-                SetUpGrid(panel);
-                int numberOfIcons = i == numberOfPanels ? numberOfLevels - currentLevelCount : amountPerPage;
-                LoadIcons(numberOfIcons, panel);
-            }
-            Destroy(panelClone);
-        }
-        void SetUpGrid(GameObject panel)
+    void LoadPanels(int numberOfPanels)
+    {
+        GameObject panelClone = Instantiate(levelHolder) as GameObject;
+        PageSwiper swiper = levelHolder.AddComponent<PageSwiper>();
+        swiper.totalPages = numberOfPanels;
+
+        for (int i = 1; i <= numberOfPanels; i++)
         {
-            GridLayoutGroup grid = panel.AddComponent<GridLayoutGroup>();
-            grid.cellSize = new Vector2(iconDimensions.width, iconDimensions.height);
-            grid.childAlignment = TextAnchor.MiddleCenter;
-            grid.spacing = iconSpacing;
+            GameObject panel = Instantiate(panelClone) as GameObject;
+            panel.transform.SetParent(thisCanvas.transform, false);
+            panel.transform.SetParent(levelHolder.transform);
+            panel.name = "Page-" + i;
+            panel.GetComponent<RectTransform>().localPosition = new Vector2(panelDimensions.width * (i - 1), 0);
+            SetUpGrid(panel);
+            int numberOfIcons = i == numberOfPanels ? numberOfLevels - currentLevelCount : amountPerPage;
+            LoadIcons(numberOfIcons, panel);
         }
-        void LoadIcons(int numberOfIcons, GameObject parentObject)
+        Destroy(panelClone);
+    }
+    void SetUpGrid(GameObject panel)
+    {
+        GridLayoutGroup grid = panel.AddComponent<GridLayoutGroup>();
+        grid.cellSize = new Vector2(iconDimensions.width, iconDimensions.height);
+        grid.childAlignment = TextAnchor.MiddleCenter;
+        grid.spacing = iconSpacing;
+    }
+    void LoadIcons(int numberOfIcons, GameObject parentObject)
+    {
+        foreach (LevelDict level in levelsToSpawn)
         {
-            foreach(LevelDict level in levelsToSpawn)
-            {
-                currentLevelCount++;
-                GameObject icon = Instantiate(levelIcon) as GameObject;
-                icon.transform.SetParent(thisCanvas.transform, false);
-                icon.transform.SetParent(parentObject.transform);
-                icon.GetComponent<Image>().sprite = level.iconImage;
-                icon.name = level.name;
-                //icon.GetComponentInChildren<TextMeshProUGUI>().SetText(level.name);
-            }
+            currentLevelCount++;
+            GameObject icon = Instantiate(levelIcon) as GameObject;
+            icon.transform.SetParent(thisCanvas.transform, false);
+            icon.transform.SetParent(parentObject.transform);
+            icon.GetComponent<Image>().sprite = level.iconImage;
+            icon.name = level.name;
+            //icon.GetComponentInChildren<TextMeshProUGUI>().SetText(level.name);
         }
     }
 }

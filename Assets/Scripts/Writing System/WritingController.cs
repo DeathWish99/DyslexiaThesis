@@ -25,6 +25,7 @@ public class WritingController : LetterTraceClass
             if (Physics.SphereCast(new Vector3(point.x, point.y, transform.position.z), 0.1f, fwd, out hit))
             {
                 Debug.Log(hit.collider.gameObject.name);
+                //Debug.Log(hit.point);
                 objectsDetectedbyRay.Add(hit.collider.gameObject);
             }
             else
@@ -44,4 +45,13 @@ public class WritingController : LetterTraceClass
             return null;
         }
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("IM COLLIDING BABY");
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            Debug.DrawLine(contact.point, contact.normal, Color.white);
+        }
+    }
+
 }

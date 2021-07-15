@@ -3311,7 +3311,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.603
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -8360,7 +8360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 66b78afc91f8b824ba9bfd727b6a9ea5, type: 2}
-  slider: {fileID: 1415086672}
 --- !u!1 &1464842698
 GameObject:
   m_ObjectHideFlags: 0
@@ -10540,7 +10539,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: b6ae679961c94f441af996eb428169c5, type: 2}
-  slider: {fileID: 1963705955}
 --- !u!1 &2011247097
 GameObject:
   m_ObjectHideFlags: 0
