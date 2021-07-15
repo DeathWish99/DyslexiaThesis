@@ -45,13 +45,5 @@ public class WritingController : LetterTraceClass
             return null;
         }
     }
-    void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("IM COLLIDING BABY");
-        foreach (ContactPoint contact in collision.contacts)
-        {
-            Debug.DrawLine(contact.point, contact.normal, Color.white);
-        }
-    }
 
 }

@@ -314,4 +314,89 @@ public class SoundControl : MonoBehaviour
             Debug.LogError("Unavailable MusicPlayer component");
         }
     }
+
+    static public void PlayCobaLagi()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "coba_lagi").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayJanganMenyerah()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "jangan_menyerah").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayKamuHebat()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "kamu_hebat").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayKamuLuarBiasa()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "kamu_luar_biasa").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+    static public void PlayKamuPintar()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "kamu_pintar").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class ResultController : MonoBehaviour
 {
@@ -15,14 +16,18 @@ public class ResultController : MonoBehaviour
     public List<Items> spawnableItems;
     public List<Sprite> stars;
     public Transform spawnLocation;
+    public TMP_Text congratsText;
+    public TMP_Text objNameText;
+
 
     [SerializeField]private Image starContainer;
 
     private void Start()
     {
-        //PlayerPrefs.SetString("ObjName", "Glob");
-        //PlayerPrefs.SetFloat("WordScore", 79);
+        PlayerPrefs.SetString("ObjName", "Bendera");
+        PlayerPrefs.SetFloat("WordScore", 57);
         SpawnItem(PlayerPrefs.GetString("ObjName"), new Vector3(spawnLocation.position.x, spawnLocation.position.y, spawnLocation.position.z - 15));
+        objNameText.text = PlayerPrefs.GetString("ObjName");
         SetStars();
     }
 
@@ -49,24 +54,39 @@ public class ResultController : MonoBehaviour
         float score = PlayerPrefs.GetFloat("WordScore");
 
         //Nanti masukin play sound di tiap tempat
-        if(score < 60)
+        if(score < 55)
         {
+            congratsText.text = "Dicoba Lagi!";
             starContainer.sprite = stars[0];
+            SoundControl.PlayCobaLagi();
         }
-        else if (score >= 60 && score < 79)
+        else if (score >= 55 && score < 74)
         {
+            congratsText.text = "Jangan Menyerah!";
             starContainer.sprite = stars[1];
-            SoundControl.PlayOneStar();
+            SoundControl.PlayJanganMenyerah();
         }
-        else if (score >= 79 && score < 87)
+        else if (score >= 74 && score < 82)
         {
+            congratsText.text = "Kamu Hebat!";
             starContainer.sprite = stars[2];
-            SoundControl.PlayTwoStar();
+            SoundControl.PlayKamuHebat();
         }
-        else if (score >= 87 && score <= 100)
+        else if (score >= 82 && score <= 100)
         {
+            int rand = Random.Range(0, 2);
+
+            if(rand == 0)
+            {
+                congratsText.text = "Kamu Luar Biasa!";
+                SoundControl.PlayKamuLuarBiasa();
+            }
+            else
+            {
+                congratsText.text = "Kamu Pintar!";
+                SoundControl.PlayKamuPintar();
+            }
             starContainer.sprite = stars[3];
-            SoundControl.PlayThreeStar();
         }
     }
 }

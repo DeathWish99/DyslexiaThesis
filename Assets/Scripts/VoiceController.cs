@@ -30,7 +30,7 @@ public class VoiceController : MonoBehaviour
 
 
 #if UNITY_ANDROID
-        //SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
+        SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
 #endif
 
         SpeechToText.instance.onResultCallback = OnFinalSpeechResult;
@@ -64,10 +64,9 @@ public class VoiceController : MonoBehaviour
         uiText.text = result;
 
         var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
-
-        Debug.Log(spokenLetter);
         if (currObjName.Equals(result.ToLower()))
         {
+            DbCommands.InsertScore(result, PlayerPrefs.GetFloat("WordScore").ToString());
             SceneManager.LoadScene(3);
             StopListening();
         }
@@ -84,9 +83,9 @@ public class VoiceController : MonoBehaviour
         uiText.text = result;
 
         var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
-        Debug.Log(spokenLetter);
         if (currObjName.Equals(result.ToLower()))
         {
+            DbCommands.InsertScore(result, PlayerPrefs.GetFloat("WordScore").ToString());
             SceneManager.LoadScene(3);
             StopListening();
         }

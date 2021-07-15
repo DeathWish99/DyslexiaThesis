@@ -3103,6 +3103,16 @@ MonoBehaviour:
     sfxClip: {fileID: 8300000, guid: d45d7372de02a5c4d8bcc931caf4a093, type: 3}
   - sfxName: play
     sfxClip: {fileID: 8300000, guid: 8c85979aa4d9db74eac157fda542b110, type: 3}
+  - sfxName: coba_lagi
+    sfxClip: {fileID: 8300000, guid: 31037ad506cf7a648abfe6c93c8b9ead, type: 3}
+  - sfxName: jangan_menyerah
+    sfxClip: {fileID: 8300000, guid: 4a2f8525cec8d7946a64fbf0606b9a19, type: 3}
+  - sfxName: kamu_hebat
+    sfxClip: {fileID: 8300000, guid: 77ee15fc0f51a5f45a67b690f088c557, type: 3}
+  - sfxName: kamu_luar_biasa
+    sfxClip: {fileID: 8300000, guid: 8b89e9a8ece98ae4a9a8d1e6862c6d52, type: 3}
+  - sfxName: kamu_pintar
+    sfxClip: {fileID: 8300000, guid: 031e7c8f40d37394a8cb070138a4c1cc, type: 3}
   letterSoundEffects:
   - sfxName: a
     sfxClip: {fileID: 8300000, guid: c2da2e9454f13074eaa5675b89e9f38d, type: 3}

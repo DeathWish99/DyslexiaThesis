@@ -265,8 +265,10 @@ public class DrawLine : LetterTraceClass
 
             //Insert to DB and create if not created yet
             //DbCommands.CreateDbAndTable();
-            DbCommands.InsertScore(word, wordScore.ToString());
             shownWord.text += tempLetter.letterName;
+            shownWord.GetComponent<RectTransform>().position = gameObject.transform.position;
+            shownWord.color = Color.black;
+            shownWord.GetComponent<RectTransform>().localScale = new Vector3(2.5f, 2.5f);
             PlayerPrefs.SetFloat("WordScore", wordScore);
             Debug.Log(wordScore);
             Debug.Log(shownWord.text);
