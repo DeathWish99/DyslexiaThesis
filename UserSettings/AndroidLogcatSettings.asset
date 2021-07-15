@@ -3,93 +3,57 @@
     "m_SelectedPackage": {
         "deviceId": "273a417839017ece",
         "name": "com.BinusGat.NameMe",
-        "processId": 3297,
+        "processId": 400,
         "exited": false
     },
     "m_SelectedPriority": 0,
     "m_KnownPackagesForSerialization": [
         {
             "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 12824,
+            "name": "com.BinusGat.NameMe",
+            "processId": 23744,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 17100,
+            "name": "com.BinusGat.NameMe",
+            "processId": 27120,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 19057,
+            "name": "com.BinusGat.NameMe",
+            "processId": 29048,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 24124,
+            "name": "com.BinusGat.NameMe",
+            "processId": 30107,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 21905,
+            "name": "com.BinusGat.NameMe",
+            "processId": 30798,
             "exited": true
         },
         {
             "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 24680,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 25284,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 25918,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 27170,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 28146,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 29738,
-            "exited": false
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.DefaultCompany.SkripsiPrototype",
-            "processId": 31126,
+            "name": "com.sec.android.app.launcher",
+            "processId": 10193,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.BinusGat.NameMe",
-            "processId": 29879,
+            "processId": 31833,
             "exited": false
         },
         {
             "deviceId": "273a417839017ece",
             "name": "com.BinusGat.NameMe",
-            "processId": 3297,
+            "processId": 400,
             "exited": false
         }
     ],

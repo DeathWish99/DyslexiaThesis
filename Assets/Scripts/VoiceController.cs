@@ -17,7 +17,6 @@ public class VoiceController : MonoBehaviour
     public float score;
 
     public GameObject gamePanel;
-    [SerializeField] Text uiText;
 
     private void Start()
     {
@@ -33,7 +32,7 @@ public class VoiceController : MonoBehaviour
         SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
 #endif
 
-        SpeechToText.instance.onResultCallback = OnFinalSpeechResult;
+        //SpeechToText.instance.onResultCallback = OnFinalSpeechResult;
         //TextToSpeech.instance.onStartCallBack = OnSpeakStart;
         //TextToSpeech.instance.onDoneCallback = OnSpeakStop;
         CheckPermission(); 
@@ -61,8 +60,6 @@ public class VoiceController : MonoBehaviour
 
     void OnFinalSpeechResult(string result = "")
     {
-        uiText.text = result;
-
         var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
         if (currObjName.Equals(result.ToLower()))
         {
@@ -80,8 +77,6 @@ public class VoiceController : MonoBehaviour
 
     void OnPartialSpeechResult(string result = "")
     {
-        uiText.text = result;
-
         var spokenLetter = currLetterObjs.Find(x => x.letterName.ToString() == result).letterName.ToString();
         if (currObjName.Equals(result.ToLower()))
         {
@@ -92,7 +87,7 @@ public class VoiceController : MonoBehaviour
         else
         {
             //Play voice over, try again
-            SoundControl.PlayWrong();
+            //SoundControl.PlayWrong();
             StopListening();
         }
     }

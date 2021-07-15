@@ -12,7 +12,7 @@ public class ResultController : MonoBehaviour
         public GameObject obj;
         public string name;
     };
-
+    
     public List<Items> spawnableItems;
     public List<Sprite> stars;
     public Transform spawnLocation;
@@ -24,8 +24,8 @@ public class ResultController : MonoBehaviour
 
     private void Start()
     {
-        PlayerPrefs.SetString("ObjName", "Bendera");
-        PlayerPrefs.SetFloat("WordScore", 57);
+        //PlayerPrefs.SetString("ObjName", "Bendera");
+        //PlayerPrefs.SetFloat("WordScore", 57);
         SpawnItem(PlayerPrefs.GetString("ObjName"), new Vector3(spawnLocation.position.x, spawnLocation.position.y, spawnLocation.position.z - 15));
         objNameText.text = PlayerPrefs.GetString("ObjName");
         SetStars();
