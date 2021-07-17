@@ -242,9 +242,10 @@ public class SoundControl : MonoBehaviour
             Debug.LogError("Unavailable MusicPlayer component");
         }
     }
-
-    static public void PlayWordSound(string word)
+    IEnumerator DelayWord(string word)
     {
+        yield return new WaitForSeconds(1f);
+
         if (instance != null)
         {
             var sfx = instance.wordSoundEffects.Find(x => x.sfxName == word).sfxClip;
@@ -258,6 +259,11 @@ public class SoundControl : MonoBehaviour
         {
             Debug.LogError("Unavailable MusicPlayer component");
         }
+    }
+
+    static public void PlayWordSound(string word)
+    {
+        instance.StartCoroutine("DelayWord", word);
     }
 
     static public void PlayMainMenu()

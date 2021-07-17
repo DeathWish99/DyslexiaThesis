@@ -208,7 +208,7 @@ GameObject:
   - component: {fileID: 286104931}
   - component: {fileID: 286104930}
   m_Layer: 8
-  m_Name: Debug Listener
+  m_Name: Speech
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -758,7 +758,7 @@ MonoBehaviour:
   currWord: []
   shownWord: {fileID: 789443785}
   currIndex: 0
-  lineAccuracy: 1.86
+  lineAccuracy: 2.2
   speakButton: {fileID: 1778089610}
 --- !u!1 &789443784
 GameObject:
@@ -871,7 +871,6 @@ MonoBehaviour:
   currLetterObjs: []
   score: 0
   gamePanel: {fileID: 595244279}
-  uiText: {fileID: 0}
 --- !u!4 &811105486
 Transform:
   m_ObjectHideFlags: 0

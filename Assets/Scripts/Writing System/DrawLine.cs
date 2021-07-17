@@ -250,7 +250,8 @@ public class DrawLine : LetterTraceClass
         }
         else
         {
-            foreach(LetterTrace letter in currWord)
+            SoundControl.PlayLetterSound(Convert.ToChar(tempLetter.letterName.ToString().ToLower()));
+            foreach (LetterTrace letter in currWord)
             {
                 wordScore += letter.letterScore;
             }

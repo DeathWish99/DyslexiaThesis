@@ -3602,14 +3602,14 @@ RectTransform:
   m_GameObject: {fileID: 5368963639639359649}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 50, z: 1}
+  m_LocalScale: {x: 10, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 8513085380948634084}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 140.6, y: -24.6}
+  m_AnchoredPosition: {x: 52, y: -24.6}
   m_SizeDelta: {x: 1.5999999, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5257917856153142681
@@ -3631,9 +3631,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 1.5396761
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: -6.271973e-14, y: 1.7301611, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8878636558934642650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3658,7 +3658,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.3
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0
@@ -3691,14 +3691,14 @@ RectTransform:
   m_GameObject: {fileID: 6080169969409734987}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 50, z: 1}
+  m_LocalScale: {x: 10, y: 15, z: 1}
   m_Children: []
   m_Father: {fileID: 8513085380948634084}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 82.1, y: -157.2}
+  m_AnchoredPosition: {x: 82.1, y: -68.4}
   m_SizeDelta: {x: 1.5999999, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1398881043533582754
@@ -3720,9 +3720,9 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.8
-  m_Height: 1.6627477
+  m_Height: 5
   m_Direction: 1
-  m_Center: {x: 0, y: 1.7555044, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &346540550832172081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3747,7 +3747,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 1
-  m_FillAmount: 0.32
+  m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 1
   m_UseSpriteMesh: 0

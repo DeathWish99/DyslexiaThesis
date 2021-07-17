@@ -3,7 +3,7 @@
     "m_SelectedPackage": {
         "deviceId": "273a417839017ece",
         "name": "com.BinusGat.NameMe",
-        "processId": 400,
+        "processId": 23053,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -54,6 +54,18 @@
             "deviceId": "273a417839017ece",
             "name": "com.BinusGat.NameMe",
             "processId": 400,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 21131,
+            "exited": false
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 23053,
             "exited": false
         }
     ],
