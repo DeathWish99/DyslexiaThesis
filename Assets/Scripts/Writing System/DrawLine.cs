@@ -26,6 +26,7 @@ public class DrawLine : LetterTraceClass
     public float lineAccuracy;
 
     public GameObject speakButton;
+    public Image wordImage;
 
 
     private float wordScore;
@@ -37,6 +38,9 @@ public class DrawLine : LetterTraceClass
     private void Start()
     {
         speakButton.SetActive(false);
+        wordImage.sprite = GameObject.FindGameObjectWithTag("ImageHolder").GetComponent<SpriteRenderer>().sprite;
+        Destroy(GameObject.FindGameObjectWithTag("ImageHolder"));
+        wordImage.gameObject.SetActive(false);
         //path = Application.dataPath + "/ScoreRecords.json";
         tempLetter = currWord[currIndex];
         shownWord.text = "";
@@ -275,6 +279,7 @@ public class DrawLine : LetterTraceClass
             Debug.Log(shownWord.text);
             SoundControl.PlayWordSound(shownWord.text);
             speakButton.SetActive(true);
+            wordImage.gameObject.SetActive(true);
             Destroy(currLetter);
         }
     }
