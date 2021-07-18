@@ -758,7 +758,7 @@ MonoBehaviour:
   currWord: []
   shownWord: {fileID: 789443785}
   currIndex: 0
-  lineAccuracy: 2.2
+  lineAccuracy: 1.45
   speakButton: {fileID: 1778089610}
   wordImage: {fileID: 1915137264}
 --- !u!1 &789443784

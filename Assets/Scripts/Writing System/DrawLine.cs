@@ -180,7 +180,7 @@ public class DrawLine : LetterTraceClass
             viableLength = true;
         }
 
-        if (!intendedLine.drawn && !linesInLetter[lineIndex].Equals(null) && viableLength)
+        if (lineScore > 30 && !intendedLine.drawn && !linesInLetter[lineIndex].Equals(null) && viableLength)
         {
             Debug.Log("Line score: " + lineScore);
             tempLetter.letterScore += lineScore;
