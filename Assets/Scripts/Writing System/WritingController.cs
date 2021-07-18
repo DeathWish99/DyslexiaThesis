@@ -41,6 +41,7 @@ public class WritingController : LetterTraceClass
         }
         else
         {
+            SoundControl.PlayWrong();
             Destroy(currentLine);
             return null;
         }
