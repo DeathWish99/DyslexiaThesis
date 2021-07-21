@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Idle
+  m_Name: ClickHome
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,7 +20,7 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: -7954067543556317345, guid: f6991808f3f9a1441a029f51c1faa2a9,
+      value: {fileID: 2610411372238899384, guid: 50ddb4d31c81b7e45bcf700d94897ebd,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -41,7 +41,7 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: -7954067543556317345, guid: f6991808f3f9a1441a029f51c1faa2a9, type: 3}
+    - {fileID: 2610411372238899384, guid: 50ddb4d31c81b7e45bcf700d94897ebd, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
