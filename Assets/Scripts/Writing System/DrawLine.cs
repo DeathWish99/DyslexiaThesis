@@ -17,8 +17,8 @@ public class DrawLine : LetterTraceClass
     public EdgeCollider2D edgeCollider;
 
     public List<Vector2> fingerPositions;
-
     public List<LetterTrace> currWord;
+
 
     public Text shownWord;
     LetterTrace tempLetter;
@@ -28,8 +28,10 @@ public class DrawLine : LetterTraceClass
     public GameObject speakButton;
     public Image wordImage;
 
+    public Button undoButton;
 
     private float wordScore;
+    private List<GameObject> listOfLines;
 
     //private string path;
     
@@ -37,6 +39,7 @@ public class DrawLine : LetterTraceClass
 
     private void Start()
     {
+        undoButton.onClick.AddListener(UndoLetter);
         speakButton.SetActive(false);
         wordImage.sprite = GameObject.FindGameObjectWithTag("ImageHolder").GetComponent<SpriteRenderer>().sprite;
         Destroy(GameObject.FindGameObjectWithTag("ImageHolder"));
@@ -123,7 +126,7 @@ public class DrawLine : LetterTraceClass
 
         for(int i = 0; i < linesInLetter.Count; i++)
         {
-            LinesCondition temp;
+            LinesCondition temp = new LinesCondition();
             var detectedLinesList = detectedLines.FindAll(x => x.gameObject.name == linesInLetter[i].lineObj.name);
 
             temp.lineObj = linesInLetter[i].lineObj;
@@ -249,7 +252,7 @@ public class DrawLine : LetterTraceClass
             nextLetter.tag = "Current Letter";
             Destroy(currLetter);
 
-            //insert into playerprefs
+            //set null for next letter
             linesInLetter = null;
         }
         else
@@ -276,11 +279,27 @@ public class DrawLine : LetterTraceClass
             shownWord.GetComponent<RectTransform>().localScale = new Vector3(2.5f, 2.5f);
             PlayerPrefs.SetFloat("WordScore", wordScore);
             Debug.Log(wordScore);
-            Debug.Log(shownWord.text);
             SoundControl.PlayWordSound(shownWord.text);
+            undoButton.gameObject.SetActive(false);
             speakButton.SetActive(true);
             wordImage.gameObject.SetActive(true);
             Destroy(currLetter);
         }
+    }
+
+    private void UndoLetter()
+    {
+        SoundControl.PlayTouchButton();
+        GameObject[] drawnLines = GameObject.FindGameObjectsWithTag("Line");
+        foreach (LinesCondition line in linesInLetter)
+        {
+            line.drawn = false;
+        }
+        foreach (GameObject drawnLine in drawnLines)
+        {
+            Destroy(drawnLine);
+        }
+
+        tempLetter.letterScore = 0;
     }
 }

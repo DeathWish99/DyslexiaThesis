@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "273a417839017ece",
     "m_SelectedPackage": {
-        "deviceId": "273a417839017ece",
-        "name": "com.BinusGat.NameMe",
-        "processId": 29962,
+        "deviceId": "",
+        "name": "",
+        "processId": 0,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -11,38 +11,32 @@
         {
             "deviceId": "273a417839017ece",
             "name": "com.BinusGat.NameMe",
-            "processId": 31833,
-            "exited": true
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.BinusGat.NameMe",
-            "processId": 400,
-            "exited": true
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.BinusGat.NameMe",
-            "processId": 21131,
-            "exited": true
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.BinusGat.NameMe",
-            "processId": 23053,
-            "exited": true
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.BinusGat.NameMe",
-            "processId": 1381,
-            "exited": true
-        },
-        {
-            "deviceId": "273a417839017ece",
-            "name": "com.BinusGat.NameMe",
             "processId": 29962,
-            "exited": false
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 3224,
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 21482,
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 22471,
+            "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 23700,
+            "exited": true
         }
     ],
     "m_Tags": {

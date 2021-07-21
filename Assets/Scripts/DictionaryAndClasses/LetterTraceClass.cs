@@ -12,10 +12,11 @@ public abstract class LetterTraceClass : MonoBehaviour
         public float letterScore;
     };
 
-    protected struct LinesCondition
-    {
-        public GameObject lineObj;
-        public int tempCount;
-        public bool drawn;
-    }
+}
+
+public class LinesCondition
+{
+    public GameObject lineObj;
+    public int tempCount;
+    public bool drawn;
 }
