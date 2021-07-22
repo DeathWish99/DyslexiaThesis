@@ -1455,6 +1455,7 @@ GameObject:
   - component: {fileID: 1778089611}
   - component: {fileID: 1778089615}
   - component: {fileID: 1778089614}
+  - component: {fileID: 1778089612}
   - component: {fileID: 1778089613}
   m_Layer: 8
   m_Name: SpeechButton
@@ -1482,6 +1483,35 @@ RectTransform:
   m_AnchoredPosition: {x: -208.6521, y: -380.32437}
   m_SizeDelta: {x: 150, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1778089612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1778089610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbbc418fd06482b45a3ca14dd3a72bf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  upEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  downEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 811105485}
+        m_MethodName: StartListening
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1778089613
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1524,7 +1554,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1778089614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 811105485}
+        m_MethodName: StopListening
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1778089614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1733,6 +1774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98436c2ede2113c4ca89fedee9149640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isShowPopupAndroid: 0
 --- !u!4 &2124295863
 Transform:
   m_ObjectHideFlags: 0

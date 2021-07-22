@@ -5,12 +5,14 @@ using System.IO;
 using SimpleJSON;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class ServeGraphsPerWord : MonoBehaviour
 {
     public Sprite circleSprite;
     public RectTransform graphContainer;
     public TMP_Dropdown ddlRecords;
+    public Image ddlBg;
     //private string path;
     private string fromJsonString;
     private bool firstOpen;
@@ -48,6 +50,17 @@ public class ServeGraphsPerWord : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if(ddlRecords.gameObject.transform.childCount > 2)
+        {
+            ddlBg.gameObject.SetActive(true);
+        }
+        else
+        {
+            ddlBg.gameObject.SetActive(false);
+        }
+    }
     void AddDropdownOptions()
     {
         List<string> recordNames = new List<string>();

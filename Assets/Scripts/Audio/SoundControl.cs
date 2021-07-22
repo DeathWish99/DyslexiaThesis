@@ -300,6 +300,7 @@ public class SoundControl : MonoBehaviour
             Debug.LogError("Unavailable MusicPlayer component");
         }
     }
+
     static public void PlayStageSelect()
     {
         instance.StartCoroutine("DelayStageSelect");
@@ -404,5 +405,51 @@ public class SoundControl : MonoBehaviour
         {
             Debug.LogError("Unavailable MusicPlayer component");
         }
+    }
+
+    static public void PlayUndo()
+    {
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "undo").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+
+
+    IEnumerator DelayPlayRead()
+    {
+        yield return new WaitForSeconds(2.1f);
+
+        if (instance != null)
+        {
+            var sfx = instance.soundEffects.Find(x => x.sfxName == "read").sfxClip;
+            if (instance.sfxSource != null)
+            {
+                instance.sfxSource.Stop();
+            }
+            instance.sfxSource.PlayOneShot(sfx);
+        }
+        else
+        {
+            Debug.LogError("Unavailable MusicPlayer component");
+        }
+    }
+    static public void PlayRead()
+    {
+        instance.StartCoroutine("DelayPlayRead");
+    }
+
+    static public void StopSfx()
+    {
+        instance.sfxSource.Stop();
     }
 }

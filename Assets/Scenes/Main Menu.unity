@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -771,7 +771,7 @@ RectTransform:
   m_GameObject: {fileID: 91571681}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 1}
+  m_LocalScale: {x: 1.31, y: 2.92, z: 1}
   m_Children:
   - {fileID: 718405187}
   m_Father: {fileID: 2146660165}
@@ -781,7 +781,7 @@ RectTransform:
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &91571683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1935,6 +1935,7 @@ MonoBehaviour:
   circleSprite: {fileID: 21300000, guid: ea01b5f5c6b0e3749ab9613d99ec4939, type: 3}
   graphContainer: {fileID: 655248004}
   ddlRecords: {fileID: 2102556076}
+  ddlBg: {fileID: 1463831848}
 --- !u!114 &277028452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3099,11 +3100,11 @@ MonoBehaviour:
   - sfxName: touch_button
     sfxClip: {fileID: 8300000, guid: 386efcff407afea47b07b5817006a8d8, type: 3}
   - sfxName: main_menu
-    sfxClip: {fileID: 8300000, guid: 4eb84c489f073f840b985d0de2a96ae2, type: 3}
+    sfxClip: {fileID: 8300000, guid: 9726b472d7cf5c94497fb1a46b114f30, type: 3}
   - sfxName: stage_select
-    sfxClip: {fileID: 8300000, guid: d45d7372de02a5c4d8bcc931caf4a093, type: 3}
+    sfxClip: {fileID: 8300000, guid: 48064cfca13a17645b767a53a34f0f1f, type: 3}
   - sfxName: play
-    sfxClip: {fileID: 8300000, guid: 8c85979aa4d9db74eac157fda542b110, type: 3}
+    sfxClip: {fileID: 8300000, guid: ecf64440ea7bdef44ad2c238fe7067c2, type: 3}
   - sfxName: coba_lagi
     sfxClip: {fileID: 8300000, guid: 31037ad506cf7a648abfe6c93c8b9ead, type: 3}
   - sfxName: jangan_menyerah
@@ -3114,6 +3115,10 @@ MonoBehaviour:
     sfxClip: {fileID: 8300000, guid: 8b89e9a8ece98ae4a9a8d1e6862c6d52, type: 3}
   - sfxName: kamu_pintar
     sfxClip: {fileID: 8300000, guid: 031e7c8f40d37394a8cb070138a4c1cc, type: 3}
+  - sfxName: undo
+    sfxClip: {fileID: 8300000, guid: 77aa8c309360f5d4f99a86304ba6e5e9, type: 3}
+  - sfxName: read
+    sfxClip: {fileID: 8300000, guid: 93af9995dd143224d8e34f5a7015f1e5, type: 3}
   letterSoundEffects:
   - sfxName: a
     sfxClip: {fileID: 8300000, guid: c2da2e9454f13074eaa5675b89e9f38d, type: 3}
@@ -4179,7 +4184,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 2011247099}
-  toggleTransition: 1
+  toggleTransition: 0
   graphic: {fileID: 972705069}
   m_Group: {fileID: 0}
   onValueChanged:
@@ -4412,7 +4417,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.000011444092}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &736617363
@@ -8359,14 +8364,14 @@ RectTransform:
   m_GameObject: {fileID: 1463831845}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6858802, y: 0.7704141, z: 0.72756994}
+  m_LocalScale: {x: 0.6858802, y: 1, z: 0.72756994}
   m_Children: []
   m_Father: {fileID: 2043003635}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.44737113, y: 29.023216}
+  m_AnchoredPosition: {x: 0.44737113, y: 4.3}
   m_SizeDelta: {x: 536.9416, y: 415.65308}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1463831847
@@ -10460,7 +10465,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960260162}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -10472,7 +10477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fb2f0b8933067e041874c295605cd68d, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11315,7 +11320,7 @@ MonoBehaviour:
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
+    m_FadeDuration: 0
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
@@ -11352,7 +11357,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  m_AlphaFadeSpeed: 0.15
+  m_AlphaFadeSpeed: 0
 --- !u!114 &2102556077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11629,7 +11634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 9a116d514928d1a4c8a2eead1fb4b62c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

@@ -50,6 +50,7 @@ public class VoiceController : MonoBehaviour
 
     public void StartListening()
     {
+        SoundControl.StopSfx();
         SpeechToText.instance.StartRecording("Start Speaking");
     }
 

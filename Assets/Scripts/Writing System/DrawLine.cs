@@ -284,6 +284,7 @@ public class DrawLine : LetterTraceClass
             speakButton.SetActive(true);
             wordImage.gameObject.SetActive(true);
             Destroy(currLetter);
+            SoundControl.PlayRead();
         }
     }
 
