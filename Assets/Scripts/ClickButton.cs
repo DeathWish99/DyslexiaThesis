@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ClickButton : MonoBehaviour
 {
@@ -22,5 +23,12 @@ public class ClickButton : MonoBehaviour
     {
         an.SetTrigger("Click");
         SoundControl.PlayDoorOpen();
+    }
+
+    public void OnClickToMainMenu()
+    {
+        an.SetTrigger("Click");
+        SoundControl.PlayTouchButton();
+        SceneManager.LoadScene(0);
     }
 }

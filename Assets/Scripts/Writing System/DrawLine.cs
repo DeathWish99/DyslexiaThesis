@@ -154,7 +154,7 @@ public class DrawLine : LetterTraceClass
         //Debug.Log(curved);
         RectTransform rtLine = (RectTransform)intendedLine.lineObj.transform;
 
-        int maxPoints = Convert.ToInt32(rtLine.localScale.y) / 2;
+        //int maxPoints = Convert.ToInt32(rtLine.localScale.y) / 2;
 
         //edgeCollider.bounds.size;
         lineScore = ((float)intendedLine.tempCount / (float)edgeCollider.points.Count()) * 100f;

@@ -1,9 +1,9 @@
 {
     "m_SelectedDeviceId": "273a417839017ece",
     "m_SelectedPackage": {
-        "deviceId": "",
-        "name": "",
-        "processId": 0,
+        "deviceId": "273a417839017ece",
+        "name": "com.BinusGat.NameMe",
+        "processId": 19240,
         "exited": false
     },
     "m_SelectedPriority": 0,
@@ -37,6 +37,12 @@
             "name": "com.BinusGat.NameMe",
             "processId": 23700,
             "exited": true
+        },
+        {
+            "deviceId": "273a417839017ece",
+            "name": "com.BinusGat.NameMe",
+            "processId": 19240,
+            "exited": false
         }
     ],
     "m_Tags": {
